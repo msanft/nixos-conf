@@ -12,7 +12,6 @@
     # ./users.nix
 
     inputs.home-manager.nixosModules.home-manager
-    ../home
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -114,6 +113,18 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+  };
+
+  home-manager.users.moritzs = {pkgs, ...}: {
+    home.stateVersion = "22.11";
+    imports = [
+      ../home
+    ];
+  };
+
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "moritzs";
@@ -124,13 +135,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
