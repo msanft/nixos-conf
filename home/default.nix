@@ -4,7 +4,6 @@
         ./git.nix
     ];
 
-
     programs.vscode.enable = true;
     programs.chromium.enable = true;
 
