@@ -8,6 +8,8 @@
     programs.chromium.enable = true;
 
     home.packages = with pkgs; [
+      neofetch
+      htop
       gh
       go
       gopls
