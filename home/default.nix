@@ -12,5 +12,7 @@
       go
       gopls
       gotools
+      gdb
+      pwndbg
     ];
 }
