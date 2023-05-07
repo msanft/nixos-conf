@@ -135,7 +135,6 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are

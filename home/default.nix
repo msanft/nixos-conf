@@ -14,5 +14,8 @@
       gotools
       gdb
       pwndbg
+      file
+      python3
+      nix-ld
     ];
 }
