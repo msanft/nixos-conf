@@ -105,7 +105,12 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "adaptive";
+    };
+  };
 
   # Enable polkit for sway
   security.polkit.enable = true;
