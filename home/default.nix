@@ -2,6 +2,7 @@
     imports = [
         ./shell
         ./git.nix
+        ./wm
     ];
 
     programs.vscode.enable = true;
