@@ -8,10 +8,12 @@
                 x = 20;
                 y = 20;
                 };
-                opacity = 0.8;
             };
             font = {
                 size = 12;
+                normal = {
+                    family = "JetBrains Mono";
+                };
             };
         };
     };

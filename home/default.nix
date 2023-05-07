@@ -18,5 +18,9 @@
       file
       python3
       nix-ld
+
+      #Fonts
+      dejavu_fonts
+      jetbrains-mono
     ];
 }
