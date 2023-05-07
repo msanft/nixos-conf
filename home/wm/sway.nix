@@ -7,6 +7,11 @@
             startup = [
                 {command = "chromium";}
             ];
+            input = {
+                "type:keyboard" = {
+                    xkb_layout = "de";
+                };
+            };
         };
     };
 }
