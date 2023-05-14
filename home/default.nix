@@ -3,23 +3,33 @@
         ./shell
         ./git.nix
         ./wm
+        ./python
     ];
 
     programs.vscode.enable = true;
     programs.chromium.enable = true;
 
     home.packages = with pkgs; [
+      # Development
       gh
       go
       gopls
       gotools
-      gdb
-      pwndbg
-      file
-      python3
-      nix-ld
+      docker
+      terraform
 
-      #Fonts
+      # Cloud
+      kubectl
+      awscli2
+      azure-cli
+      (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+
+      # Tools
+      file
+      htop
+      jq
+
+      # Fonts
       dejavu_fonts
       jetbrains-mono
     ];
