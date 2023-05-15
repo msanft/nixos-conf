@@ -17,6 +17,8 @@
       gotools
       docker
       terraform
+      gnumake
+      cmake
 
       # Cloud
       kubectl

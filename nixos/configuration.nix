@@ -115,12 +115,14 @@
   # Enable polkit for sway
   security.polkit.enable = true;
 
+  virtualisation.docker.enable = true;
+
   programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.moritzs = {
     isNormalUser = true;
     description = "Moritz Sanft";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
