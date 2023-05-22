@@ -136,7 +136,28 @@
     imports = [
       ../home
     ];
+
+    home.sessionVariables = {
+      XDG_CURRENT_DESKTOP = "sway";
+    };
+
+    xdg.configFile."nixpkgs/config.nix".text = ''
+      {
+        allowUnfree = true;
+      }
+    '';
   };
+
+  xdg = {
+    portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+    };
+  };
+
+  # Needed to store VS Code auth tokens.
+  services.gnome.gnome-keyring.enable = true;
 
   # Enable automatic login for the user.
   # services.xserver.displayManager.autoLogin.enable = true;
