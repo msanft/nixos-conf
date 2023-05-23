@@ -1,6 +1,9 @@
 {config, pkgs, ...}: {
     programs.zsh = {
         enable = true;
+        enableAutosuggestions = true;
+        enableCompletion = true;
+        enableSyntaxHighlighting = true;
 
         shellAliases = {
             update = "sudo nixos-rebuild switch";
@@ -13,7 +16,7 @@
 
         oh-my-zsh = {
             enable = true;
-            plugins = [ "git" ];
+            plugins = [ "git" "sudo" "colored-man-pages" ];
             theme = "robbyrussell";
         };
     };
