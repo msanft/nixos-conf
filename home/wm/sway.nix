@@ -20,6 +20,10 @@ in {
                 "type:keyboard" = {
                     xkb_layout = "de";
                 };
+                "1133:16511:Logitech_G502" = {
+                    accel_profile = "adaptive";
+                    pointer_accel = "-0.65";
+                };
             };
         };
     };
