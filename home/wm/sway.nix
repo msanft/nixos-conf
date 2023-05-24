@@ -21,8 +21,8 @@ in {
                     xkb_layout = "de";
                 };
                 "1133:16511:Logitech_G502" = {
-                    accel_profile = "adaptive";
-                    pointer_accel = "-0.65";
+                    accel_profile = "flat";
+                    pointer_accel = "-0.3";
                 };
             };
         };
