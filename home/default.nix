@@ -4,17 +4,12 @@
         ./git.nix
         ./wm
         ./python
+        ./desktop
     ];
 
     programs.vscode.enable = true;
-    programs.chromium.enable = true;
 
     home.packages = with pkgs; [
-      # Sway
-      xdg-utils
-      xwayland
-      kanshi
-
       # Development
       gh
       go

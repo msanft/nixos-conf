@@ -1,5 +1,5 @@
 {pkgs, ...}: {
     imports = [
-        ./sway
+        ./google-chrome.nix
     ];
 }
