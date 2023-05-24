@@ -10,4 +10,5 @@ constantly changing. It should not be used as a reference for how to do things t
 - [ ] Add a custom cursor
 - [ ] Research service management
 - [ ] Streamline startup / login process
-  
+- [ ] Signed commits / Signed-off-by messages
+- [ ] E-Mail client
