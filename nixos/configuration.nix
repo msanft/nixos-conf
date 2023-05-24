@@ -109,6 +109,22 @@
     };
   };
 
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [
+      roboto
+      jetbrains-mono
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Roboto" ];
+        sansSerif = [ "Roboto" ];
+        monospace = [ "JetBrains Mono" ];
+      };
+    };
+  };
+
   # Needed to store VS Code auth tokens.
   services.gnome.gnome-keyring.enable = true;
 

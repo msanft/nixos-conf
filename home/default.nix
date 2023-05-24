@@ -35,9 +35,5 @@
       file
       htop
       jq
-
-      # Fonts
-      dejavu_fonts
-      jetbrains-mono
     ];
 }
