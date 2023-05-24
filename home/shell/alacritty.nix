@@ -5,8 +5,8 @@
             selection.save_to_clipboard = true;
             window = {
                 padding = {
-                x = 20;
-                y = 20;
+                    x = 20;
+                    y = 20;
                 };
             };
             font = {
