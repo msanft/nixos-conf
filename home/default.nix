@@ -12,7 +12,6 @@
     home.packages = with pkgs; [
       # Development
       gh
-      cryptsetup
       go
       gcc
       gopls
