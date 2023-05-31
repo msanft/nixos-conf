@@ -101,6 +101,8 @@
     '';
   };
 
+  # Exposes D-Bus interfaces for application intents
+  # such as file access, printing, etc.
   xdg = {
     portal = {
       enable = true;

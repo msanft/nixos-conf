@@ -7,7 +7,7 @@ constantly changing. It should not be used as a reference for how to do things t
 
 - [ ] Configure my Swaybar
 - [ ] Theme my Swaybar
-- [ ] Add a custom cursor
+- [x] Add a custom cursor
 - [ ] Research service management
 - [ ] Streamline startup / login process
 - [ ] Signed commits / Signed-off-by messages
