@@ -12,7 +12,7 @@
     exec = "${discordScript}/bin/discord";
     desktopName = "Discord";
     genericName = "Communication";
-    comment = "Microsoft Teams as Chromium web app.";
+    comment = "Discord as Chromium web app.";
     startupWMClass = "discord";
     terminal = true;
   };
