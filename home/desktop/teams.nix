@@ -6,11 +6,12 @@
       swaymsg exec 'chromium --app=https://teams.microsoft.com/'
     '';
   };
+
   teamsDeskopItem = pkgs.makeDesktopItem {
     name = "teams";
     exec = "${teamsScript}/bin/teams";
     desktopName = "Microsoft Teams";
-    genericName = "Buissness Communication";
+    genericName = "Business Communication";
     comment = "Microsoft Teams as Chromium web app.";
     startupWMClass = "teams";
     terminal = true;
