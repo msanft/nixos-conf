@@ -132,5 +132,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+  };
+
   system.stateVersion = "23.05";
 }
