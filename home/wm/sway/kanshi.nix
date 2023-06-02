@@ -37,15 +37,21 @@ in {
 
         office.outputs = [
           {
-                criteria = "${dellP2720D.name} 2SMJK53";
+                criteria = "${dellP2720D.name} JJMJK53";
                 status = "enable";
                 mode = "${dellP2720D.sizeX}x${dellP2720D.sizeY}@${dellP2720D.refreshRate}";
                 position = "0,0";
-            }
+          }
+          {
+                criteria = "${dellP2720D.name} 2SMJK53";
+                status = "enable";
+                mode = "${dellP2720D.sizeX}x${dellP2720D.sizeY}@${dellP2720D.refreshRate}";
+                position = "${dellP2720D.sizeX},0";
+          }
           {
               criteria = "eDP-1";
               status = "enable";
-              position = "${dellP2720D.sizeX},0";
+              position = "5120,0"; # dellP2720D.sizeX * 2
           }
         ];
 
