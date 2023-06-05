@@ -2,37 +2,28 @@
   description = "NixOS Configuration of msanft";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  }: let
-    inherit (self) outputs;
-
-    system = "x86_64-linux";
-
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-
-    lib = nixpkgs.lib;
+  outputs = inputs @ {self, nixpkgs, home-manager, darwin, ...}: let
+    mk-darwin = import ./util/mk-darwin.nix;
   in {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./nixos/configuration.nix
-        ];
-        specialArgs = {inherit inputs outputs;};
-      };
+    nixosConfigurations.tp = nixpkgs.lib.nixosSystem {
+      inherit nixpkgs home-manager;
+      system = "x86_64-linux";
+      modules = [ ./tp/configuration.nix ];
+    };
+    darwinConfigurations.mb = mk-darwin "mb" {
+      inherit darwin nixpkgs home-manager;
+      system = "aarch64-darwin";
     };
   };
 }

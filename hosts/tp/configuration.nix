@@ -87,7 +87,7 @@
   home-manager.users.moritzs = {pkgs, ...}: {
     home.stateVersion = "22.11";
     imports = [
-      ../home
+      ../../home/hosts/tp.nix
     ];
 
     home.sessionVariables = {

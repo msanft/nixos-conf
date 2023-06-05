@@ -2,11 +2,6 @@
   finalPkg = name: "${config.programs.${name}.finalPackage}";
   finalPkgBin = name: "${finalPkg name}/bin/${name}";
 in {
-    imports = [
-        ./kanshi.nix
-        ./rofi.nix
-    ];
-
     wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
