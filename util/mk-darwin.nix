@@ -1,5 +1,5 @@
 # https://github.com/mitchellh/nixos-config/blob/main/lib/mkdarwin.nix
-host: { darwin, nixpkgs, home-manager, system}:
+host: { darwin, nixpkgs, home-manager, system }:
 
 darwin.lib.darwinSystem rec {
   inherit system;

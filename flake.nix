@@ -1,5 +1,5 @@
 {
-  description = "NixOS Configuration of msanft";
+  description = "NixOS / Nix-Darwin Configuration of msanft";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
@@ -13,17 +13,18 @@
     };
   };
 
-  outputs = inputs @ {self, nixpkgs, home-manager, darwin, ...}: let
-    mk-darwin = import ./util/mk-darwin.nix;
-  in {
-    nixosConfigurations.tp = nixpkgs.lib.nixosSystem {
-      inherit nixpkgs home-manager;
-      system = "x86_64-linux";
-      modules = [ ./tp/configuration.nix ];
+  outputs = inputs @ { self, nixpkgs, home-manager, darwin, ... }:
+    let
+      mk-darwin = import ./util/mk-darwin.nix;
+    in
+    {
+      nixosConfigurations.tp = mk-linux "tp" {
+        inherit nixpkgs home-manager;
+        system = "x86_64-linux";
+      };
+      darwinConfigurations.mb = mk-darwin "mb" {
+        inherit darwin nixpkgs home-manager;
+        system = "aarch64-darwin";
+      };
     };
-    darwinConfigurations.mb = mk-darwin "mb" {
-      inherit darwin nixpkgs home-manager;
-      system = "aarch64-darwin";
-    };
-  };
 }

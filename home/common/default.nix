@@ -1,8 +1,8 @@
-{config, pkgs, lib, is-darwin, ...}: {
+{ config, pkgs, lib, is-darwin, ... }: {
   imports = [
-    ../shell
-    ../git.nix
-    ../python
+    ./shell
+    ./git.nix
+    ./python.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,12 +16,15 @@
     terraform
     gnumake
     cmake
+    nil
+    nixpkgs-fmt
+    nixpkgs-lint
 
     # Cloud
     kubectl
     awscli2
     azure-cli
-    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
 
     # Tools
     file

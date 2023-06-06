@@ -1,7 +1,8 @@
-{config, pkgs, ...}: let
+{ config, pkgs, ... }:
+let
   teamsScript = pkgs.writeShellApplication {
     name = "teams";
-    runtimeInputs = [pkgs.chromium];
+    runtimeInputs = [ pkgs.chromium ];
     text = ''
       swaymsg exec 'chromium --app=https://teams.microsoft.com/'
     '';
@@ -16,6 +17,7 @@
     startupWMClass = "teams";
     terminal = true;
   };
-in {
-  home.packages = [teamsDeskopItem teamsScript];
+in
+{
+  home.packages = [ teamsDeskopItem teamsScript ];
 }

@@ -9,5 +9,5 @@ if [ "$(uname)" == "Darwin" ]; then
     fi
 else
     echo "Running on NixOS, building system..."
-    nixos-rebuild switch --flake .#tp $@
+    sudo nixos-rebuild switch --flake .#tp $@
 fi

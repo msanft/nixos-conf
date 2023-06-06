@@ -3,7 +3,8 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }: {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
@@ -12,12 +13,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1c26d940-1a18-4735-95d5-22bd40a5007d";
+    {
+      device = "/dev/disk/by-uuid/1c26d940-1a18-4735-95d5-22bd40a5007d";
       fsType = "ext4";
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/034D-7715";
+    {
+      device = "/dev/disk/by-uuid/034D-7715";
       fsType = "vfat";
     };
 

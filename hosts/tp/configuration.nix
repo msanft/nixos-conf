@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-
+    ../common
     ./hardware-configuration.nix
   ];
 
@@ -84,10 +84,10 @@
     useGlobalPkgs = true;
   };
 
-  home-manager.users.moritzs = {pkgs, ...}: {
+  home-manager.users.moritzs = { pkgs, ... }: {
     home.stateVersion = "22.11";
     imports = [
-      ../../home/hosts/tp.nix
+      ../../home/tp
     ];
 
     home.sessionVariables = {
@@ -107,7 +107,7 @@
     portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
     };
   };
 
