@@ -16,6 +16,7 @@
   outputs = inputs @ { self, nixpkgs, home-manager, darwin, ... }:
     let
       mk-darwin = import ./util/mk-darwin.nix;
+      mk-linux = import ./util/mk-linux.nix;
     in
     {
       nixosConfigurations.tp = mk-linux "tp" {
