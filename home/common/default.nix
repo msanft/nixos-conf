@@ -12,11 +12,10 @@
     gcc
     gopls
     gotools
-    docker
     terraform
     gnumake
     cmake
-    nil
+    rnix-lsp
     nixpkgs-fmt
     nixpkgs-lint
 
@@ -27,7 +26,6 @@
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
 
     # Tools
-    file
     htop
     jq
   ];

@@ -1,34 +1,20 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
     ../common
     ./hardware-configuration.nix
   ];
-
-  nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
-      auto-optimise-store = true;
-    };
-  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "nixos";
-
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "tp";
+    networkmanager.enable = true;
+    extraHosts = ''
+      127.0.0.1    license.confidential.cloud
+    '';
+  };
 
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -71,17 +57,11 @@
 
   virtualisation.docker.enable = true;
 
-  programs.zsh.enable = true;
   users.users.moritzs = {
     isNormalUser = true;
     description = "Moritz Sanft";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
-  };
-
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
   };
 
   home-manager.users.moritzs = { pkgs, ... }: {
@@ -130,12 +110,11 @@
   # Needed to store VS Code auth tokens.
   services.gnome.gnome-keyring.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
+  system = {
+    autoUpgrade = {
+      enable = true;
+      allowReboot = true;
+    };
+    stateVersion = "22.11";
   };
-
-  system.stateVersion = "22.11";
 }

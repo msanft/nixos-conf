@@ -1,7 +1,15 @@
 if [ "$(uname)" == "Darwin" ]; then
     echo "Running on MacOS, building system..."
+
+    # homebrew needs to be explicitly installed as per https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.enable
+    if ! command -v brew &> /dev/null; then
+        echo "Homebrew could not be found, installing..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+
+    # build the actual system
     if [ -d "result" ]; then
-        echo "result directory exists, rebuilding system..."
+        echo "Directory \"result\" exists, rebuilding system..."
         ./result/sw/bin/darwin-rebuild switch --flake .#mb $@
     else
         echo "result directory does not exist, initializing first build..."

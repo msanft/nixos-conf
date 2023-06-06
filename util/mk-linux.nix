@@ -5,6 +5,6 @@ nixpkgs.lib.nixosSystem rec {
 
   modules = [
     ../hosts/${host}/configuration.nix
-    home-manager.darwinModules.home-manager
+    home-manager.nixosModules.home-manager
   ];
 }
