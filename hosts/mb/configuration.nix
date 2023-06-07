@@ -2,6 +2,7 @@
   imports = [
     ../common
     ./brew.nix
+    ./yabai.nix
   ];
   services.nix-daemon.enable = true;
 
