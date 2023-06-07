@@ -12,11 +12,11 @@
         window_placement = "second_child";
         focus_follows_mouse = "autoraise";
         mouse_follows_focus = "off";
-        top_padding = "10";
-        bottom_padding = "10";
-        left_padding = "10";
-        right_padding = "10";
-        window_gap = "10";
+        # top_padding = "10";
+        # bottom_padding = "10";
+        # left_padding = "10";
+        # right_padding = "10";
+        # window_gap = "10";
       };
       # Applications that should not be tiled / layered above
       extraConfig = ''
