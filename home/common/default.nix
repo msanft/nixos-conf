@@ -18,6 +18,11 @@
     rnix-lsp
     nixpkgs-fmt
     nixpkgs-lint
+    bazel-buildtools
+    bazelisk
+    bazel
+    k9s
+    sonobuoy
 
     # Cloud
     kubectl
