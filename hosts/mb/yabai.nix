@@ -1,6 +1,5 @@
 { config, lib, pkgs, ... }: {
-  services = {
-    yabai = {
+  services.yabai = {
       enable = true;
       package = pkgs.yabai;
       config = {
@@ -29,5 +28,4 @@
         yabai -m rule --add app='^System Information$' manage=off layer=above
       '';
     };
-  };
 }
