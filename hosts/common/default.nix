@@ -15,4 +15,8 @@
   };
 
   programs.zsh.enable = true;
+
+  environment.variables = {
+    GOPRIVATE = "github.com/edgelesssys";
+  };
 }
