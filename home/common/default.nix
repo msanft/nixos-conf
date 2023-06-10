@@ -3,6 +3,7 @@
     ./shell
     ./git.nix
     ./python.nix
+    ./vscode.nix
   ];
 
   home.packages = with pkgs; [
