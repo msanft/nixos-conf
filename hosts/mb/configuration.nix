@@ -46,7 +46,6 @@
     FXPreferredViewStyle = "clmv"; # column view
     ShowPathbar = true;
     ShowStatusBar = true;
-    _FXShowPosixPathInTitle = true;
   };
 
   system.defaults.menuExtraClock.ShowSeconds = true;
