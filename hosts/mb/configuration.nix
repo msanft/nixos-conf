@@ -48,6 +48,5 @@
     ShowStatusBar = true;
   };
 
-  system.defaults.menuExtraClock.ShowSeconds = true;
   system.defaults.screencapture.location = "~/Pictures/Screenshots";
 }
