@@ -6,5 +6,10 @@
     brews = [
       "helm"
     ];
+
+    casks = [
+      "docker"
+      "cron"
+    ];
   };
 }
