@@ -23,7 +23,7 @@
     bazelisk
     bazel
     nodejs_20
-
+    kubernetes-helm
 
     # Cloud
     kubectl
