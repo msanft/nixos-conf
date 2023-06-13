@@ -22,14 +22,16 @@
     bazel-buildtools
     bazelisk
     bazel
-    k9s
-    sonobuoy
+    nodejs_20
+
 
     # Cloud
     kubectl
     awscli2
     azure-cli
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    k9s
+    sonobuoy
 
     # Tools
     htop
