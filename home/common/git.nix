@@ -17,5 +17,9 @@
     # };
 
     difftastic.enable = true;
+
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }
