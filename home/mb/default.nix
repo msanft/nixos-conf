@@ -7,5 +7,6 @@
     teams
     slack
     discord
+    zoom-us
   ];
 }
