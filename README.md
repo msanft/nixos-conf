@@ -1,14 +1,13 @@
-# My Personal NixOS Configuration
+# My Personal NixOS / Nix-Darwin Configuration
 
-This is my personal NixOS configuration. It is a work in progress and is
+This is my personal NixOS / Nix-Darwin / Home-Manager configuration. It always is work in progress and is
 constantly changing. It should not be used as a reference for how to do things the best way.
 
-## Bucket List
+## Structure 
 
-- [ ] Configure my Swaybar
-- [ ] Theme my Swaybar
-- [x] Add a custom cursor
-- [ ] Research service management
-- [ ] Streamline startup / login process
-- [ ] Signed commits / Signed-off-by messages
-- [ ] E-Mail client
+- `/hosts`
+  - System configuration for both of my hosts. (One for NixOS, one for Nix-Darwin)
+- `/util`
+  - Utility scripts, functions, ...
+- `/home`
+  - Home-Manager configuration, split into a common part and specific configuration for the different hosts. 
