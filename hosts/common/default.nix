@@ -7,6 +7,12 @@
       auto-optimise-store = true;
     };
     package = pkgs.nix;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+
   };
 
   home-manager = {
