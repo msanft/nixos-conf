@@ -10,7 +10,7 @@
     # Development
     gh
     go
-    gcc
+    gcc13
     gopls
     gotools
     terraform

@@ -12,6 +12,7 @@ in
       modifier = "Mod4";
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";
+      bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
 
       input = {
         "type:keyboard" = {

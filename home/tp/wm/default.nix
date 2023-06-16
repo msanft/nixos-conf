@@ -3,6 +3,7 @@
     ./sway.nix
     ./rofi.nix
     ./kanshi.nix
+    ./waybar.nix
   ];
 
   home.packages = with pkgs; [
