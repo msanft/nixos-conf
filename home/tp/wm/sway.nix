@@ -4,6 +4,8 @@ let
   finalPkgBin = name: "${finalPkg name}/bin/${name}";
 in
 {
+  home.file."wallpaper.png".source = ./wallpaper.png;
+
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -22,6 +24,10 @@ in
           accel_profile = "flat";
           pointer_accel = "-0.3";
         };
+      };
+
+      output = {
+        "*".bg = "~/wallpaper.png fill";
       };
     };
   };
