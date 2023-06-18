@@ -4,6 +4,7 @@
     ./rofi.nix
     ./kanshi.nix
     ./waybar.nix
+    ./swaylock.nix
   ];
 
   home.packages = with pkgs; [

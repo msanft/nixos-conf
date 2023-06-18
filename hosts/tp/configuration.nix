@@ -111,6 +111,30 @@
   # Needed to store VS Code auth tokens.
   services.gnome.gnome-keyring.enable = true;
 
+  # Needs to be explicitly enabled so Swaylock can login for us.
+  security.pam.services.swaylock = { };
+
+  # Otherwise bootlogs end up in the greeter
+  boot.kernelParams = [
+    "console=tty1"
+  ];
+
+  services.greetd = {
+    enable = true;
+    vt = 2;
+    settings = {
+      default_session = {
+        user = "moritzs";
+        command = ''
+          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+          --container-padding 3 \
+          --remember --time --asterisks \
+          --cmd '${pkgs.sway}/bin/sway'
+        '';
+      };
+    };
+  };
+
   system = {
     autoUpgrade = {
       enable = true;
