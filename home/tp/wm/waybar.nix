@@ -34,12 +34,8 @@
             warning = 30;
             critical = 15;
           };
-          format-time = "{H} ={M =02}";
-          format = "{icon} {capacity}% ({time})";
+          format = "{icon} {capacity}%";
           format-charging = " {capacity}% ({time})";
-          format-charging-full = " {capacity}%";
-          format-full = "{icon} {capacity}%";
-          format-alt = "{icon} {power}W";
           format-icons = [
             ""
             ""
@@ -47,18 +43,15 @@
             ""
             ""
           ];
-          tooltip = false;
         };
 
         "clock#time" = {
           interval = 10;
-          tooltip = true;
         };
 
         "clock#date" = {
           interval = 20;
           format = "{:%d.%m.%y}";
-          tooltip = false;
         };
 
         "cpu" = {
@@ -75,7 +68,6 @@
         "disk" = {
           interval = 15;
           format = " {percentage_used}%";
-          tooltip = false;
         };
 
         "memory" = {
@@ -85,7 +77,6 @@
             warning = 70;
             critical = 90;
           };
-          tooltip = false;
         };
 
         "network" = {
@@ -94,18 +85,15 @@
           format-ethernet = " {ifname}";
           format-disconnected = "No connection";
           format-alt = " {ipaddr}/{cidr}";
-          tooltip = false;
         };
 
         "sway/mode" = {
           format = "{}";
-          tooltip = false;
         };
 
         "sway/window" = {
           format = "{}";
           max-length = 50;
-          tooltip = true;
         };
 
         "sway/workspaces" = {
@@ -130,7 +118,6 @@
           };
           scroll-step = 1;
           on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          tooltip = false;
         };
 
         "temperature" = {
@@ -144,7 +131,6 @@
             ""
             ""
           ];
-          tooltip = false;
         };
       };
     };
