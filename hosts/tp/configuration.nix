@@ -1,10 +1,6 @@
-{ inputs, lib, config, pkgs, ... }:
-let
-  modulesPath = ../../modules;
-in
-{
+{ inputs, lib, config, pkgs, ... }: {
   imports = [
-    modulesPath/services/greetd.nix
+    ../../modules/services/greetd.nix
     ../common
     ./hardware-configuration.nix
   ];
