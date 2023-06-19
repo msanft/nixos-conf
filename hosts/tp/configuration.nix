@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ../../modules/services/greetd.nix
+    ../../modules/services/greetd
+    ../../modules/services/vt-color
     ../common
     ./hardware-configuration.nix
   ];
