@@ -2,13 +2,10 @@
   imports = [
     ../../modules/services/greetd
     ../../modules/services/vt-color
+    ../../modules/system/boot
     ../common
     ./hardware-configuration.nix
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   networking = {
     hostName = "tp";
