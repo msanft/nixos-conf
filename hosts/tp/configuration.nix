@@ -1,5 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }:
+let
+  modulesPath = ../../modules;
+in
+{
   imports = [
+    modulesPath/services/greetd.nix
     ../common
     ./hardware-configuration.nix
   ];
@@ -114,41 +119,6 @@
   # Needs to be explicitly enabled so Swaylock can login for us.
   security.pam.services.swaylock = { };
 
-  # Otherwise bootlogs end up in the greeter
-  boot.kernelParams = [
-    "console=tty1"
-  ];
-
-  services.greetd = {
-    enable = true;
-    vt = 2;
-    settings = {
-      default_session = {
-        user = "moritzs";
-        command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet \
-          --remember --time --asterisks \
-          --cmd '${pkgs.sway}/bin/sway'
-        '';
-      };
-    };
-  };
-
-  environment.etc = {
-    "gruvbox-vt" = {
-      source = ./gruvbox-vt;
-      mode = "0777";
-    };
-  };
-
-  systemd.services."vt-colorscheme" = {
-    wantedBy = [ "multi-user.target" ];
-    description = "Adjust the VT colorscheme.";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = ''${pkgs.kbd}/bin/setvtrgb /etc/gruvbox-vt'';
-    };
-  };
 
   system = {
     autoUpgrade = {
