@@ -3,6 +3,7 @@
     ../../modules/services/greetd
     ../../modules/services/vt-color
     ../../modules/system/boot
+    ../../modules/system/fonts
     ../common
     ./hardware-configuration.nix
   ];
@@ -88,22 +89,7 @@
     };
   };
 
-  fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [
-      roboto
-      jetbrains-mono
-      font-awesome # For waybar icons
-    ];
 
-    fontconfig = {
-      defaultFonts = {
-        serif = [ "Roboto" ];
-        sansSerif = [ "Roboto" ];
-        monospace = [ "JetBrains Mono" ];
-      };
-    };
-  };
 
   # Needed to store VS Code auth tokens.
   services.gnome.gnome-keyring.enable = true;
