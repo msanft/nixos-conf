@@ -1,59 +1,20 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
+    ../../modules/services/audio
+    ../../modules/services/desktop
     ../../modules/services/greetd
+    ../../modules/services/input
     ../../modules/services/vt-color
     ../../modules/system/boot
     ../../modules/system/fonts
+    ../../modules/system/i18n
+    ../../modules/system/networking
+    ../../modules/system/security
+    ../../modules/system/virt
+    ../../modules/system/xdg
     ../common
     ./hardware-configuration.nix
   ];
-
-  networking = {
-    hostName = "tp";
-    networkmanager.enable = true;
-    extraHosts = ''
-      127.0.0.1    license.confidential.cloud
-    '';
-  };
-
-  time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
-
-  services.dbus.enable = true;
-
-  console.keyMap = "de";
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  services.xserver.libinput = {
-    enable = true;
-    mouse = {
-      accelProfile = "adaptive";
-    };
-  };
-
-  security.polkit.enable = true;
-
-  virtualisation.docker.enable = true;
 
   users.users.moritzs = {
     isNormalUser = true;
@@ -67,36 +28,7 @@
     imports = [
       ../../home/tp
     ];
-
-    home.sessionVariables = {
-      XDG_CURRENT_DESKTOP = "sway";
-    };
-
-    xdg.configFile."nixpkgs/config.nix".text = ''
-      {
-        allowUnfree = true;
-      }
-    '';
   };
-
-  # Exposes D-Bus interfaces for application intents
-  # such as file access, printing, etc.
-  xdg = {
-    portal = {
-      enable = true;
-      wlr.enable = true;
-      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-    };
-  };
-
-
-
-  # Needed to store VS Code auth tokens.
-  services.gnome.gnome-keyring.enable = true;
-
-  # Needs to be explicitly enabled so Swaylock can login for us.
-  security.pam.services.swaylock = { };
-
 
   system = {
     autoUpgrade = {
