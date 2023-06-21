@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
@@ -7,7 +7,8 @@
     package = pkgs.nix;
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = lib.mkIf (pkgs.stdenv.isLinux) "weekly";
+      interval = lib.mkIf (pkgs.stdenv.isDarwin) { Hour = 24; };
       options = "--delete-older-than 14d";
     };
 
