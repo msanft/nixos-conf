@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: {
+{ pkgs, ... }: {
   # Exposes D-Bus interfaces for application intents
   # such as file access, printing, etc.
   xdg = {
@@ -9,7 +9,7 @@
     };
   };
 
-  home-manager.users."${username}" = { pkgs, ... }: {
+  home-manager.users.moritzs = { pkgs, ... }: {
     home.sessionVariables = {
       XDG_CURRENT_DESKTOP = "sway";
     };
