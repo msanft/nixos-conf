@@ -12,6 +12,9 @@
     xdg-utils
     xwayland
     kanshi
+    grim
+    slurp
+    wl-clipboard
   ];
 
   home.pointerCursor = {
