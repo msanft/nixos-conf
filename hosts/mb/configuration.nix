@@ -3,7 +3,7 @@
     ../common
     ./brew.nix
     ./yabai.nix
-    ./fonts.nix
+    ../../modules/darwin/fonts
   ];
   services.nix-daemon.enable = true;
 
