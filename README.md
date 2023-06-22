@@ -17,6 +17,8 @@ constantly changing. It should not be used as a reference for how to do things t
     - Common configuration between the sibling directories.
   - `/darwin`
     - Modules specific to Nix-Darwin.
+  - `/nix`
+    - Modules to configure Nix and Nixpkgs.
   - `/services`
     - Modules for services. (e.g. systemd units)
   - `/system`
