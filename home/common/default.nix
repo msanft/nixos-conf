@@ -16,7 +16,7 @@
     terraform
     gnumake
     cmake
-    rnix-lsp
+    nil
     nixpkgs-fmt
     nixpkgs-lint
     bazel-buildtools
