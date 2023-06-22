@@ -27,7 +27,10 @@
 
       python.symbol = "";
 
-      terraform.symbol = "󱁢";
+      terraform = {
+        symbol = "󱁢";
+        format = "via [$symbol $workspace]($style)";
+      };
     };
   };
 }
