@@ -37,6 +37,10 @@
       };
       font = {
         size = 12;
+        normal = {
+          family = "JetBrainsMono Nerd Font";
+          style = "Medium";
+        };
       };
     };
   };
