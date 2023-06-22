@@ -13,5 +13,5 @@
     };
   };
 
-  services.nix-daemon.enable = lib.mkIf (pkgs.stdenv.isDarwin) true;
+  services.nix-daemon.enable = if (pkgs.stdenv.isDarwin) then true else false;
 }
