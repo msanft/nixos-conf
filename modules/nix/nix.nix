@@ -11,6 +11,7 @@
       interval = lib.mkIf (pkgs.stdenv.isDarwin) { Hour = 24; };
       options = "--delete-older-than 14d";
     };
-
   };
+
+  services.nix-daemon.enable = lib.mkIf (pkgs.stdenv.isDarwin) true;
 }
