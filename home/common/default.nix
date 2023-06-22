@@ -19,6 +19,7 @@
     nil
     nixpkgs-fmt
     nixpkgs-lint
+    nix-output-monitor
     bazel-buildtools
     bazelisk
     bazel
