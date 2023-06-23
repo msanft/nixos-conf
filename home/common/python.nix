@@ -4,6 +4,9 @@ let
     requests
     beautifulsoup4
     selenium
+    jupyter
+    ipython
+    numpy
   ];
 in
 {
