@@ -7,6 +7,8 @@ let
     jupyter
     ipython
     numpy
+    pycryptodome
+    z3
   ];
 in
 {

@@ -7,6 +7,7 @@
       "docker"
       "cron"
       "zotero"
+      "sage"
     ];
   };
 }
