@@ -4,12 +4,12 @@ if [ ! -d "/nix" ]; then
 fi
 
 NOM_SUFFIX=""
-if [ ! command -v nom &> /dev/null ]; then
-    echo "Nom not found, continuing without..."
-else
-    echo "Nom found, using it to redirect output..."
-    NOM_SUFFIX="|& nom"
-fi
+# if [ ! command -v nom &> /dev/null ]; then
+#     echo "Nom not found, continuing without..."
+# else
+#     echo "Nom found, using it to redirect output..."
+#     NOM_SUFFIX="|& nom"
+# fi
 
 if [ "$(uname)" == "Darwin" ]; then
     echo "Running on MacOS, building system..."
