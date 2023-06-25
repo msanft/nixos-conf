@@ -8,6 +8,7 @@
       "cron"
       "zotero"
       "sage"
+      "insomnia"
     ];
   };
 }
