@@ -7,8 +7,10 @@ let
     jupyter
     ipython
     numpy
-    pycryptodome
     z3
+    pycryptodome
+    pwntools
+    pygame
   ];
 in
 {
