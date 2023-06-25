@@ -56,6 +56,19 @@ in
         }
       ];
 
+      netzlabor.outputs = [
+        {
+          criteria = "eDP-1";
+          status = "enable";
+          position = "0,1080";
+        }
+        {
+          criteria = "AOC 2775 LMKH1JA000309";
+          status = "enable";
+          position = "0,0";
+        }
+      ];
+
       undocked.outputs = [
         {
           criteria = "eDP-1";
