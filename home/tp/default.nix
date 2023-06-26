@@ -2,14 +2,20 @@
   imports = [
     ../common
     ./desktop
+    ./gpg.nix
     ./wm
   ];
 
   programs.vscode.enable = true;
-  programs.alacritty.settings.font.normal.family = "JetBrains Mono";
 
   home.packages = with pkgs; [
     file
     docker
+    sage
+    apfs-fuse
+    ghidra
+    gdb
+    gef
+    pwndbg
   ];
 }
