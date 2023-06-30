@@ -9,7 +9,7 @@
       window_border = "on";
       window_border_width = "2";
       window_placement = "second_child";
-      focus_follows_mouse = "autoraise";
+      #focus_follows_mouse = "autoraise";
       mouse_follows_focus = "off";
       # top_padding = "10";
       # bottom_padding = "10";
