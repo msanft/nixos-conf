@@ -38,5 +38,6 @@
     htop
     jq
     yq-go
+    hugo
   ];
 }
