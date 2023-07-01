@@ -37,5 +37,6 @@
     # Tools
     htop
     jq
+    yq-go
   ];
 }
