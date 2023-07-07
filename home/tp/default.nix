@@ -3,6 +3,7 @@
     ../common
     ./desktop
     ./gpg.nix
+    ./ghidra.nix
     ./wm
   ];
 
@@ -13,9 +14,9 @@
     docker
     sage
     apfs-fuse
-    ghidra
     gdb
     gef
     pwndbg
+    nasm
   ];
 }

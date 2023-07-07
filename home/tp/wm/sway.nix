@@ -9,7 +9,7 @@ in
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    config = rec {
+    config = {
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
