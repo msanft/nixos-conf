@@ -25,6 +25,7 @@
     bazel
     nodejs_20
     kubernetes-helm
+    rustup
 
     # Cloud
     kubectl
