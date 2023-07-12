@@ -5,6 +5,7 @@
     ./kanshi.nix
     ./waybar.nix
     ./swaylock.nix
+    ./gtk.nix
   ];
 
   home.packages = with pkgs; [
