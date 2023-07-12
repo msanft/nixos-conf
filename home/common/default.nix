@@ -40,7 +40,6 @@
     jq
     yq-go
     hugo
-    bluetuith
-    pavucontrol
+    texlive.combined.scheme-full
   ];
 }

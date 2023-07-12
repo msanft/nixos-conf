@@ -18,5 +18,7 @@
     gef
     pwndbg
     nasm
+    bluetuith
+    pavucontrol
   ];
 }
