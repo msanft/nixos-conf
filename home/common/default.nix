@@ -1,4 +1,4 @@
-{ config, pkgs, lib, is-darwin, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./shell
     ./git.nix

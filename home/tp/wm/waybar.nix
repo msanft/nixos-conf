@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   # heavily inspired by https://git.sr.ht/~begs/dotfiles/tree/master/item/.config/waybar
   programs.waybar = {
     enable = true;
