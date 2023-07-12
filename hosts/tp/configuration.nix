@@ -1,6 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ../../modules/services/audio
     ../../modules/services/desktop
     ../../modules/services/greetd
     ../../modules/services/input
@@ -12,6 +11,7 @@
     ../../modules/system/security
     ../../modules/system/virt
     ../../modules/system/xdg
+    ../../modules/system/audio
     ../common
     ./hardware-configuration.nix
   ];
@@ -19,7 +19,7 @@
   users.users.moritzs = {
     isNormalUser = true;
     description = "Moritz Sanft";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
     shell = pkgs.zsh;
   };
 

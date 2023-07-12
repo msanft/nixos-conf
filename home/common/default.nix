@@ -40,5 +40,7 @@
     jq
     yq-go
     hugo
+    bluetuith
+    pavucontrol
   ];
 }

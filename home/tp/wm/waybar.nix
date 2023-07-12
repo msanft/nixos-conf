@@ -117,7 +117,7 @@
             default = [ "" "" ];
           };
           scroll-step = 1;
-          on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
         };
 
         "temperature" = {
