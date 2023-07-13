@@ -8,7 +8,6 @@
     gc = {
       automatic = true;
       dates = lib.mkIf (pkgs.stdenv.isLinux) "weekly";
-      # interval = lib.mkIf (pkgs.stdenv.isDarwin) { Hour = 24; };
       options = "--delete-older-than 14d";
     };
   };
