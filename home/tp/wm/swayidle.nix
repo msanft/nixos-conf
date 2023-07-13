@@ -1,5 +1,5 @@
 { ... }: {
-  programs.swaylock = {
+  services.swayidle = {
     enable = true;
   };
 }

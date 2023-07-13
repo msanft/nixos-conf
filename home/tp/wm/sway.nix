@@ -8,7 +8,7 @@ in
 
   wayland.windowManager.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
+
     config = {
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";

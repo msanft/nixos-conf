@@ -5,6 +5,7 @@
     ./kanshi.nix
     ./waybar.nix
     ./swaylock.nix
+    ./swayidle.nix
     ./gtk.nix
   ];
 
