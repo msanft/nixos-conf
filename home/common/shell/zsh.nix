@@ -7,7 +7,8 @@
 
     shellAliases = {
       update = "sudo nixos-rebuild switch";
-      k = "kubectl";
+      cat = "${pkgs.bat}/bin/bat";
+      ls = "${pkgs.exa}/bin/exa";
     };
 
     history = {
