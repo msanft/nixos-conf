@@ -11,6 +11,11 @@
       name = "Arc";
       package = pkgs.arc-theme;
     };
+
+    font = {
+      name = "Roboto";
+      package = pkgs.roboto;
+    };
   };
 
   home.packages = [ pkgs.dconf ];
