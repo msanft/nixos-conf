@@ -10,6 +10,7 @@
 
     extensions = [
       { id = "cfhdojbkjhnklbpkdaibdccddilifddb"; } # adblock
+      { id = "bcjindcccaagfpapjjmafapmmgkkhgoa"; } # JSON viewer
     ];
   };
 }

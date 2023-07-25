@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./google-chrome.nix
+    ./chromium.nix
     ./teams.nix
     ./discord.nix
   ];
