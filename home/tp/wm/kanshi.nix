@@ -63,7 +63,7 @@ in
           position = "0,1080";
         }
         {
-          criteria = "AOC 2775 LMKH1JA000309";
+          criteria = "*";
           status = "enable";
           position = "0,0";
         }
