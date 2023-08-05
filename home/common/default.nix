@@ -4,6 +4,7 @@
     ./git.nix
     ./python.nix
     ./vscode.nix
+    ../modules/rss
   ];
 
   home.packages = with pkgs; [
@@ -43,6 +44,5 @@
     texlive.combined.scheme-full
     exa
     bat
-    feed2imap-go
   ];
 }

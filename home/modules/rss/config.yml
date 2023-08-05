@@ -1,0 +1,12 @@
+target:
+  scheme: imap
+  user: test@example.com
+  password: passw0rd
+  host: mail.example.com
+  port: 143
+  root: INBOX/Feeds
+
+feeds:
+  - name: XKCD
+    url: http://xkcd.com/rss.xml
+    min-frequency: 12
