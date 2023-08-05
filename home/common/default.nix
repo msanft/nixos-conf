@@ -43,5 +43,6 @@
     texlive.combined.scheme-full
     exa
     bat
+    feed2imap-go
   ];
 }
