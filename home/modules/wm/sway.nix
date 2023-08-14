@@ -4,7 +4,6 @@ let
   finalPkgBin = name: "${finalPkg name}/bin/${name}";
 in
 {
-  home.file."wallpaper.png".source = ./wallpaper.png;
 
   wayland.windowManager.sway = {
     enable = true;
@@ -36,7 +35,7 @@ in
         };
 
       output = {
-        "*".bg = "~/wallpaper.png fill";
+        "*".bg = "${config.stylix.image} fill";
       };
     };
   };

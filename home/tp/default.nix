@@ -1,13 +1,10 @@
 { pkgs, ... }: {
   imports = [
     ../common
-    ./desktop
     ./gpg.nix
-    ./ghidra.nix
-    ./wm
+    ../modules/desktop
+    ../modules/wm
   ];
-
-  programs.vscode.enable = true;
 
   home.packages = with pkgs; [
     file

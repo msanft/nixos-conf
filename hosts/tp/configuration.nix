@@ -3,9 +3,7 @@
     ../../modules/services/desktop
     ../../modules/services/greetd
     ../../modules/services/input
-    ../../modules/services/vt-color
     ../../modules/system/boot
-    ../../modules/system/fonts
     ../../modules/system/i18n
     ../../modules/system/networking
     ../../modules/system/security

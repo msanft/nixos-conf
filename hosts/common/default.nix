@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ../../modules/nix
+    ../../modules/system/stylix
   ];
 
   home-manager = {
