@@ -12,6 +12,7 @@
     ../../modules/system/virt
     ../../modules/system/xdg
     ../../modules/system/audio
+    ../../modules/system/kernel
     ../common
     ./hardware-configuration.nix
   ];
