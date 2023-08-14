@@ -1,12 +1,12 @@
-{ pkgs, ... }: {
+{ ... }: {
   programs.alacritty = {
     enable = true;
     settings = {
       selection.save_to_clipboard = true;
       window = {
         padding = {
-          x = 20;
-          y = 20;
+          x = 10;
+          y = 10;
         };
       };
       colors = {
@@ -36,7 +36,7 @@
         };
       };
       font = {
-        size = 12;
+        size = 10;
         normal = {
           family = "JetBrainsMono Nerd Font";
           style = "Medium";
