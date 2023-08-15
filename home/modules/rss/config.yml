@@ -1,12 +1,11 @@
 target:
   scheme: imap
-  user: test@example.com
-  password: passw0rd
-  host: mail.example.com
-  port: 143
-  root: INBOX/Feeds
+  user: todo
+  password: todo
+  host: outlook.office365.com
+  port: 993
+  root: Feeds
 
 feeds:
-  - name: XKCD
-    url: http://xkcd.com/rss.xml
-    min-frequency: 12
+  - name: Daniel Mangum
+    url: https://danielmangum.com/index.xml
