@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -69,6 +69,7 @@
         golang.go
         hashicorp.terraform
         jnoortheen.nix-ide
+        github.github-vscode-theme
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {

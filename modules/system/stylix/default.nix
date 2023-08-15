@@ -11,9 +11,9 @@ in
   stylix = {
     image = wallpaper;
     base16Scheme = theme;
-    fonts = rec {
+    fonts = {
       monospace = {
-        name = "JetBrains Mono Nerd Font";
+        name = "JetBrainsMono Nerd Font";
         package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
       };
       serif = {
