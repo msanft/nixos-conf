@@ -1,5 +1,9 @@
-{ ... }: {
+{ pkgs, ... }: {
   # heavily inspired by https://git.sr.ht/~begs/dotfiles/tree/master/item/.config/waybar
+  home.packages = [
+    pkgs.jetbrains-mono
+  ];
+
   programs.waybar = {
     enable = true;
     systemd.target = "sway-session.target";
@@ -34,8 +38,8 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon} {capacity}%";
-          format-charging = " {capacity}% ({time})";
+          format = "{icon}  {capacity}%";
+          format-charging = " {capacity}%";
           format-icons = [
             ""
             ""
@@ -57,8 +61,8 @@
         "cpu" = {
           interval = 5;
           tooltip = false;
-          format = " {usage}%";
-          format-alt = " {load}";
+          format = "  {usage}%";
+          format-alt = "  {load}";
           states = {
             warning = 70;
             critical = 90;
@@ -67,12 +71,12 @@
 
         "disk" = {
           interval = 15;
-          format = " {percentage_used}%";
+          format = "  {percentage_used}%";
         };
 
         "memory" = {
           interval = 5;
-          format = " {}%";
+          format = "  {}%";
           states = {
             warning = 70;
             critical = 90;
@@ -81,10 +85,10 @@
 
         "network" = {
           interval = 5;
-          format-wifi = " {essid} ({signalStrength}%)";
-          format-ethernet = " {ifname}";
+          format-wifi = "  {essid} ({signalStrength}%)";
+          format-ethernet = "󰈁 {ifname}";
           format-disconnected = "No connection";
-          format-alt = " {ipaddr}/{cidr}";
+          format-alt = "󰛳  {ipaddr}/{cidr}";
         };
 
         "sway/mode" = {
@@ -104,13 +108,12 @@
         };
 
         "pulseaudio" = {
-          format = "{icon} {volume}%";
-          format-bluetooth = "{icon}  {volume}%";
+          format = "{icon}  {volume}%";
+          format-bluetooth = "{icon}   {volume}%";
           format-muted = "";
           format-icons = {
             headphone = "";
-            hands-free = "";
-            headset = "";
+            headset = "󰋎";
             phone = "";
             portable = "";
             car = "";
@@ -123,7 +126,7 @@
         "temperature" = {
           critical-threshold = 90;
           interval = 5;
-          format = "{icon} {temperatureC}°";
+          format = "{icon}  {temperatureC}°";
           format-icons = [
             ""
             ""

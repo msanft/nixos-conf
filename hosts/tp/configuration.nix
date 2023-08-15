@@ -11,6 +11,7 @@
     ../../modules/system/xdg
     ../../modules/system/audio
     ../../modules/system/kernel
+    ../../modules/system/stylix
     ../common
     ./hardware-configuration.nix
   ];

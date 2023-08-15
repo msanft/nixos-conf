@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1689134369,
-        "narHash": "sha256-0G9dutIvhS/WUr3Awcnqw71g8EVVvvkOhVDnDDbY4Fw=",
+        "lastModified": 1691998815,
+        "narHash": "sha256-HuFgb+W1Dvd0mjjudpTf0hVg/YKKiMRpX14t7dJeTm8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e42fb59768f0305085abde0dd27ab5e0cc15420c",
+        "rev": "da6874e8bb82204323b94154585a1471c739f73e",
         "type": "github"
       },
       "original": {
@@ -146,15 +146,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1691942466,
-        "narHash": "sha256-bK6FFbsKtyLKJLwgHerWp/EMMoWqE0UJk0KEbgYICbY=",
+        "lastModified": 1690463825,
+        "narHash": "sha256-LILKFcKNVxYcYmzCB2+Gswyob5XrPJAF1YBExFR2yak=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "beb35709c9a769a5f279d3177af778a15dcbda46",
+        "rev": "5c829554280f3139ddbfce8561d7430efbf2abfb",
         "type": "github"
       },
       "original": {
         "owner": "danth",
+        "ref": "release-23.05",
         "repo": "stylix",
         "type": "github"
       }

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  theme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+  theme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   wallpaper = pkgs.runCommand "image.png" { } ''
     COLOR=$(${pkgs.yq}/bin/yq -r .base00 ${theme})
     COLOR="#"$COLOR
@@ -11,25 +11,28 @@ in
   stylix = {
     image = wallpaper;
     base16Scheme = theme;
-    fonts = {
-      serif = {
-        package = pkgs.roboto;
-        name = "Roboto";
-      };
-
-      sansSerif = {
-        package = pkgs.roboto;
-        name = "Roboto";
-      };
-
+    fonts = rec {
       monospace = {
-        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
-        name = "JetBrains Mono";
+        name = "JetBrains Mono Nerd Font";
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      };
+      serif = {
+        name = "Roboto";
+        package = pkgs.roboto;
+      };
+      sansSerif = {
+        name = "Roboto";
+        package = pkgs.roboto;
+      };
+      emoji = {
+        name = "Noto Color Emoji";
+        package = pkgs.noto-fonts-emoji;
       };
 
-      emoji = {
-        package = pkgs.font-awesome;
-        name = "FontAwesome";
+      sizes = {
+        terminal = 10;
+        applications = 10;
+        desktop = 10;
       };
     };
   };
