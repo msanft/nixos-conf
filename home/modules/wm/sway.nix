@@ -1,10 +1,17 @@
 { config, pkgs, lib, ... }:
 let
   finalPkg = name: "${config.programs.${name}.finalPackage}";
-  finalPkgBin = name: "${finalPkg name}/bin/${name}";
+  finalPkgBin =name: "${finalPkg name}/bin/${name}";
+  background = "#121212";
+  foreground = "#cacaca";
+  text = "#ffffff";
+  primary = "#cae982";
+  slight = "#242424";
+  dark = "#666666";
+  alert = "#e5786d";
 in
 {
-
+  stylix.targets.sway.enable = false;
   wayland.windowManager.sway = {
     enable = true;
 
@@ -12,6 +19,40 @@ in
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
+
+      colors = {
+          focused = {
+            border = primary;
+            background = primary;
+            text = background;
+            indicator = primary;
+            childBorder = primary;
+          };
+
+          focusedInactive = {
+            border = slight;
+            background = slight;
+            text = text;
+            indicator = slight;
+            childBorder = slight;
+          };
+
+          unfocused = {
+            border = dark;
+            background = dark;
+            text = foreground;
+            indicator = dark;
+            childBorder = dark;
+          };
+
+          urgent = {
+            border = alert;
+            background = alert;
+            text = background;
+            indicator = alert;
+            childBorder = alert;
+          };
+      };
 
       input = {
         "type:keyboard" = {
