@@ -1,4 +1,6 @@
 { pkgs, lib, ... }: {
+
+  stylix.targets.vscode.enable = false;
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;

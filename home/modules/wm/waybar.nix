@@ -3,6 +3,7 @@
     pkgs.jetbrains-mono
   ];
 
+  stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;
     systemd.target = "sway-session.target";
@@ -37,7 +38,7 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon}  {capacity}%";
+          format = "{icon} {capacity}%";
           format-charging = " {capacity}%";
           format-icons = [
             ""
@@ -50,6 +51,7 @@
 
         "clock#time" = {
           interval = 10;
+          format = "{:%H:%M:%S}";
         };
 
         "clock#date" = {
@@ -70,12 +72,12 @@
 
         "disk" = {
           interval = 15;
-          format = "  {percentage_used}%";
+          format = " {percentage_used}%";
         };
 
         "memory" = {
           interval = 5;
-          format = "  {}%";
+          format = " {}%";
           states = {
             warning = 70;
             critical = 90;
@@ -84,10 +86,10 @@
 
         "network" = {
           interval = 5;
-          format-wifi = "  {essid} ({signalStrength}%)";
+          format-wifi = " {essid} ({signalStrength}%)";
           format-ethernet = "󰈁 {ifname}";
           format-disconnected = "No connection";
-          format-alt = "󰛳  {ipaddr}/{cidr}";
+          format-alt = "󰛳 {ipaddr}/{cidr}";
         };
 
         "sway/mode" = {
@@ -107,8 +109,8 @@
         };
 
         "pulseaudio" = {
-          format = "{icon}  {volume}%";
-          format-bluetooth = "{icon}   {volume}%";
+          format = "{icon} {volume}%";
+          format-bluetooth = "{icon}  {volume}%";
           format-muted = "";
           format-icons = {
             headphone = "";
@@ -125,7 +127,7 @@
         "temperature" = {
           critical-threshold = 90;
           interval = 5;
-          format = "{icon}  {temperatureC}°";
+          format = "{icon} {temperatureC}°";
           format-icons = [
             ""
             ""

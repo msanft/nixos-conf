@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  theme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  theme = ./theme.yml;
   wallpaper = pkgs.runCommand "image.png" { } ''
     COLOR=$(${pkgs.yq}/bin/yq -r .base00 ${theme})
     COLOR="#"$COLOR
