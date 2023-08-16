@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
 
   stylix.targets.vscode.enable = false;
   programs.vscode = {
