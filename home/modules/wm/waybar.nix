@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  # heavily inspired by https://git.sr.ht/~begs/dotfiles/tree/master/item/.config/waybar
   home.packages = [
     pkgs.jetbrains-mono
   ];

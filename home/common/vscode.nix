@@ -47,8 +47,7 @@
       "nix.serverSettings" = {
         "nil" = {
           "formatting" = {
-            "command" = [
-              "nixpkgs-fmt"
+            "command" = [              "nixpkgs-fmt"
             ];
           };
         };
@@ -60,6 +59,7 @@
         "editor.tabSize" = 2;
       };
       "window.zoomLevel" = -1;
+      "workbench.colorTheme" = "GitHub Light Default";
     };
 
     extensions = with pkgs.vscode-extensions;
