@@ -1,7 +1,6 @@
 { ... }: {
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
     settings = {
       theme = "gruvbox-dark";
       themes.gruvbox-dark = {
@@ -23,16 +22,16 @@
   };
 
   programs.zsh.initExtra = ''
-    if [[ -z "$ZELLIJ" ]]; then
-        if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-            zellij attach -c
-        else
-            zellij
-        fi
+    if [[ -z "$ZELLIJ" && "$TERM_PROGRAM" != "vscode" ]]; then
+      if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+          zellij attach -c
+      else
+          zellij
+      fi
 
-        if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-            exit
-        fi
+      if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+          exit
+      fi
     fi
   '';
 }
