@@ -1,15 +1,8 @@
 { ... }: {
-  stylix.targets.alacritty.enable = false;
   programs.alacritty = {
     enable = true;
     settings = {
       selection.save_to_clipboard = true;
-      window = {
-        padding = {
-          x = 10;
-          y = 10;
-        };
-      };
       colors = {
         primary = {
           background = "0x282828";

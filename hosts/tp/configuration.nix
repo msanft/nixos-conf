@@ -3,6 +3,7 @@
     ../../modules/services/desktop
     ../../modules/services/greetd
     ../../modules/services/input
+    ../../modules/services/vt-color
     ../../modules/system/boot
     ../../modules/system/i18n
     ../../modules/system/networking
@@ -11,7 +12,7 @@
     ../../modules/system/xdg
     ../../modules/system/audio
     ../../modules/system/kernel
-    ../../modules/system/stylix
+    ../../modules/system/fonts
     ../common
     ./hardware-configuration.nix
   ];

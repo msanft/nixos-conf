@@ -2,8 +2,6 @@
   home.packages = [
     pkgs.jetbrains-mono
   ];
-
-  stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;
     systemd.target = "sway-session.target";

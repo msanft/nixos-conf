@@ -11,7 +11,6 @@ let
   alert = "#e5786d";
 in
 {
-  stylix.targets.sway.enable = false;
   wayland.windowManager.sway = {
     enable = true;
 
@@ -74,10 +73,6 @@ in
           "${mod}+p" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- screenshot-$(date +%Y%m%d-%H%M%S).png";
           "${mod}+Shift+p" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
         };
-
-      output = {
-        "*".bg = "${config.stylix.image} fill";
-      };
     };
   };
 }

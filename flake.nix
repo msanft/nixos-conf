@@ -11,18 +11,13 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:danth/stylix/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = { nixpkgs, home-manager, darwin, stylix, ... }: {
+  outputs = { nixpkgs, home-manager, darwin, ... }: {
     nixosConfigurations.tp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/tp/configuration.nix
         home-manager.nixosModules.home-manager
-        stylix.nixosModules.stylix
       ];
     };
     darwinConfigurations.mb = darwin.lib.darwinSystem {
@@ -30,7 +25,6 @@
       modules = [
         ./hosts/mb/configuration.nix
         home-manager.darwinModules.home-manager
-        stylix.darwinModules.stylix
       ];
     };
   };
