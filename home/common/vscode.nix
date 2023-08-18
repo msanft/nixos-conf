@@ -47,12 +47,13 @@
       "nix.serverSettings" = {
         "nil" = {
           "formatting" = {
-            "command" = [              "nixpkgs-fmt"
+            "command" = [
+              "nixpkgs-fmt"
             ];
           };
         };
       };
-      "editor.fontFamily" = "JetBrains Mono";
+      "editor.fontFamily" = "JetBrainsMono Nerd Font";
       "[nix]" = {
         "editor.formatOnSave" = true;
         "editor.insertSpaces" = true;
