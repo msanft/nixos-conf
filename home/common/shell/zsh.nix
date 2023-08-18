@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, config, ... }: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -9,6 +9,7 @@
       update = "sudo nixos-rebuild switch";
       cat = "${pkgs.bat}/bin/bat";
       ls = "${pkgs.exa}/bin/exa";
+      ll = "ls -la";
     };
 
     history = {

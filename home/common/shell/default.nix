@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
+    ./atuin.nix
     ./alacritty.nix
     ./zsh.nix
-    ./tmux.nix
+    ./zellij.nix
     ./starship.nix
   ];
 }
