@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   finalPkg = name: "${config.programs.${name}.finalPackage}";
-  finalPkgBin =name: "${finalPkg name}/bin/${name}";
+  finalPkgBin = name: "${finalPkg name}/bin/${name}";
   background = "#121212";
   foreground = "#cacaca";
   text = "#ffffff";
@@ -20,37 +20,37 @@ in
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
 
       colors = {
-          focused = {
-            border = primary;
-            background = primary;
-            text = background;
-            indicator = primary;
-            childBorder = primary;
-          };
+        focused = {
+          border = primary;
+          background = primary;
+          text = background;
+          indicator = primary;
+          childBorder = primary;
+        };
 
-          focusedInactive = {
-            border = slight;
-            background = slight;
-            text = text;
-            indicator = slight;
-            childBorder = slight;
-          };
+        focusedInactive = {
+          border = slight;
+          background = slight;
+          text = text;
+          indicator = slight;
+          childBorder = slight;
+        };
 
-          unfocused = {
-            border = dark;
-            background = dark;
-            text = foreground;
-            indicator = dark;
-            childBorder = dark;
-          };
+        unfocused = {
+          border = dark;
+          background = dark;
+          text = foreground;
+          indicator = dark;
+          childBorder = dark;
+        };
 
-          urgent = {
-            border = alert;
-            background = alert;
-            text = background;
-            indicator = alert;
-            childBorder = alert;
-          };
+        urgent = {
+          border = alert;
+          background = alert;
+          text = background;
+          indicator = alert;
+          childBorder = alert;
+        };
       };
 
       input = {
@@ -73,6 +73,13 @@ in
           "${mod}+p" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- screenshot-$(date +%Y%m%d-%H%M%S).png";
           "${mod}+Shift+p" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
         };
+
+      window.commands = [
+        {
+          criteria.shell = "xwayland";
+          command = "title_format \"%title :: %shell\"";
+        }
+      ];
     };
   };
 }
