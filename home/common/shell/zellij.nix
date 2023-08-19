@@ -18,6 +18,7 @@
       };
       default_layout = "compact";
       on_force_close = "quit";
+      mouse_mode = false;
     };
   };
 

@@ -18,6 +18,7 @@
     slurp
     wl-clipboard
   ];
+  programs.zellij.settings.copy_command = "wl-copy";
 
   home.pointerCursor = {
     package = pkgs.vanilla-dmz;
@@ -25,4 +26,5 @@
     gtk.enable = true;
     x11.enable = true;
   };
+
 }
