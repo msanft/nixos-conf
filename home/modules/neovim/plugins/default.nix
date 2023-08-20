@@ -1,5 +1,8 @@
-{ pkgs, ... }: {
-  programs.neovim.plugins =
-    import ./airline pkgs ++
-    import ./treesitter pkgs;
+{ ... }: {
+  imports = [
+    ./airline
+    ./telescope
+    ./treesitter
+    ./nvim-tree
+  ];
 }
