@@ -24,6 +24,5 @@
     };
   };
 
-
-
+  programs.vscode.userSettings."git.enableCommitSigning" = true;
 }
