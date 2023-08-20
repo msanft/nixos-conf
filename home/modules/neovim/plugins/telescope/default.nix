@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  rograms.neovim.extraPackages = with pkgs; [
+  programs.neovim.extraPackages = with pkgs; [
     ripgrep
     fd
   ];

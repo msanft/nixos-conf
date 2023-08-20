@@ -1,9 +1,9 @@
 { pkgs, ... }: {
   imports = [
-    ./shell
-    ./git.nix
-    ./python.nix
-    ./vscode.nix
+    ../modules/shell
+    ../modules/git
+    ../modules/python
+    ../modules/vscode
     ../modules/rss
   ];
 
