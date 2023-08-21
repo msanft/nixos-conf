@@ -12,7 +12,7 @@
     userEmail = "58110325+msanft@users.noreply.github.com";
 
     signing = {
-      key = "899A193768C34EEA";
+      key = "BB8B30F5A024C31C";
       signByDefault = true;
     };
 
