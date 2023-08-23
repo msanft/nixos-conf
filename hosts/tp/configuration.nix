@@ -13,7 +13,6 @@
     ../../modules/system/audio
     ../../modules/system/kernel
     ../../modules/system/fonts
-    ../../modules/system/yubikey
     ../common
     ./hardware-configuration.nix
   ];
