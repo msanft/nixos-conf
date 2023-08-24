@@ -6,17 +6,15 @@ constantly changing. It should not be used as a reference for how to do things t
 ## Structure
 
 - `/hosts`
-  - System configuration for both of my hosts. (One for NixOS, one for Nix-Darwin)
-- `/util`
-  - Utility scripts, functions, ...
-- `/home`
-  - Home-Manager configuration, split into a common part and specific configuration for the different hosts.
+  - System configuration for both of my hosts. (Currently one for NixOS, one for Nix-Darwin)
 - `/modules`
   - NixOS and Nix-Darwin modules.
+  - `/home`
+    - [Home-Manager](https://github.com/nix-community/home-manager) (per-user) modules.
   - `/common`
-    - Common configuration between the sibling directories.
+    - Common configuration data shared between the sibling directories.
   - `/darwin`
-    - Modules specific to Nix-Darwin.
+    - Modules specific to  [Nix-Darwin](https://github.com/LnL7/nix-darwin).
   - `/nix`
     - Modules to configure Nix and Nixpkgs.
   - `/services`

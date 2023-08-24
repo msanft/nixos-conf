@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   imports = [
     ../common/home.nix
-    ../../home/modules/chromium
-    ../../home/modules/neovim
-    ../../home/modules/gpg
-    ../../home/modules/wm
+    ../../modules/home/chromium
+    ../../modules/home/neovim
+    ../../modules/home/gpg
+    ../../modules/home/wm
   ];
 
   home.packages = with pkgs; [
