@@ -3,14 +3,6 @@ if [ ! -d "/nix" ]; then
     curl -L https://nixos.org/nix/install | sh
 fi
 
-NOM_SUFFIX=""
-# if [ ! command -v nom &> /dev/null ]; then
-#     echo "Nom not found, continuing without..."
-# else
-#     echo "Nom found, using it to redirect output..."
-#     NOM_SUFFIX="|& nom"
-# fi
-
 if [ "$(uname)" == "Darwin" ]; then
     echo "Running on MacOS, building system..."
 
@@ -26,9 +18,9 @@ if [ "$(uname)" == "Darwin" ]; then
         ./result/sw/bin/darwin-rebuild switch --flake .#mb $@
     else
         echo "result directory does not exist, initializing first build..."
-        nix build .#darwinConfigurations.mb.system --extra-experimental-features nix-command --extra-experimental-features flakes $@ $NOM_SUFFIX
+        nix build .#darwinConfigurations.mb.system --extra-experimental-features nix-command --extra-experimental-features flakes $@
     fi
 else
     echo "Running on NixOS, building system..."
-    sudo nixos-rebuild switch --flake .#tp $@ $NOM_SUFFIX
+    sudo nixos-rebuild switch --flake .#tp $@
 fi
