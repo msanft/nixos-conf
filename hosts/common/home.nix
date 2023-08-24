@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   imports = [
-    ../modules/shell
-    ../modules/git
-    ../modules/python
-    ../modules/vscode
-    ../modules/rss
+    ../../home/modules/shell
+    ../../home/modules/git
+    ../../home/modules/python
+    ../../home/modules/vscode
+    ../../home/modules/rss
   ];
 
   home.packages = with pkgs; [

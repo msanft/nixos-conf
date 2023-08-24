@@ -15,7 +15,7 @@
   home-manager.users.msanft = { pkgs, ... }: {
     home.stateVersion = "23.05";
     imports = [
-      ../../home/mb
+      ./home.nix
     ];
   };
 }
