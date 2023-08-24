@@ -16,6 +16,7 @@
         white = "#a89984";
         orange = "#d65d0e";
       };
+      ui.pane_frames.hide_session_name = true;
       default_layout = "compact";
       on_force_close = "quit";
       mouse_mode = false;
