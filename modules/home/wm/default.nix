@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    # Sway
+    swayimg
     xdg-utils
     xwayland
     kanshi
