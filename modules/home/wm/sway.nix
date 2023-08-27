@@ -61,6 +61,10 @@ in
           accel_profile = "flat";
           pointer_accel = "-0.3";
         };
+        "9610:54:Glorious_Model_O" = {
+          accel_profile = "flat";
+          pointer_accel = "0.2";
+        };
       };
 
       modifier = "Mod4";
