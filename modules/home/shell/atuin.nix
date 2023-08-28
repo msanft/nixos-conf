@@ -1,7 +1,9 @@
-{ ... }: {
+{ config, ... }: {
   programs.atuin = {
     enable = true;
-    enableZshIntegration = true;
+    enableBashIntegration = if config.programs.bash.enable then true else false;
+    enableZshIntegration = if config.programs.zsh.enable then true else false;
+
     settings = {
       update_check = false;
     };

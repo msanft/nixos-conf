@@ -1,16 +1,22 @@
-{ ... }: {
+{ config, ... }: {
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    enableBashIntegration = if config.programs.bash.enable then true else false;
+    enableZshIntegration = if config.programs.zsh.enable then true else false;
 
     settings = {
       aws.disabled = true;
       gcloud.disabled = true;
       azure.disabled = true;
-      cmake.disabled = true;
-      python.disabled = true;
-      golang.disabled = true;
-      terraform.disabled = true;
+
+      username = {
+        format = "[$user]($style)@";
+        show_always = true;
+      };
+
+      hostname = {
+        ssh_only = false;
+      };
 
       directory = {
         truncation_length = 1;

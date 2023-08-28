@@ -2,6 +2,12 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      window = {
+        padding = {
+          x = 20;
+          y = 20;
+        };
+      };
       selection.save_to_clipboard = true;
       colors = {
         primary = {
