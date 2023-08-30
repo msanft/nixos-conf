@@ -87,4 +87,9 @@
         }
       ];
   };
+
+  home.packages = with pkgs; [
+    delve
+    go-tools
+  ];
 }
