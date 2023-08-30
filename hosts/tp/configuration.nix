@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{  pkgs, ... }: {
   imports = [
     ../../modules/services/desktop
     ../../modules/services/greetd

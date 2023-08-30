@@ -2,9 +2,9 @@
   imports = [
     ../common/home.nix
     ../../modules/home/chromium
-    ../../modules/home/neovim
     ../../modules/home/gpg
     ../../modules/home/wm
+    ../../modules/home/nixvim
   ];
 
   home.packages = with pkgs; [
