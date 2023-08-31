@@ -34,10 +34,6 @@
   };
 
   system = {
-    autoUpgrade = {
-      enable = true;
-      allowReboot = true;
-    };
     stateVersion = "22.11";
   };
 }
