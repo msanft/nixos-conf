@@ -11,6 +11,8 @@ let
   alert = "#e5786d";
 in
 {
+  home.keyboard = null;
+
   wayland.windowManager.sway = {
     enable = true;
 
@@ -55,7 +57,7 @@ in
 
       input = {
         "type:keyboard" = {
-          xkb_layout = "de";
+          xkb_layout = "us-custom,de-custom";
         };
         "1133:16511:Logitech_G502" = {
           accel_profile = "flat";

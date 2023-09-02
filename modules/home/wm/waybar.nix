@@ -19,6 +19,7 @@
         modules-right = [
           "pulseaudio"
           "network"
+          "sway/language"
           "disk"
           "memory"
           "cpu"
@@ -133,6 +134,11 @@
             ""
             ""
           ];
+        };
+
+        "sway/language" = {
+          format = "{}";
+          on-click = "swaymsg input type:keyboard xkb_switch_layout next";
         };
       };
     };
