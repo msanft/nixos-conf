@@ -21,5 +21,6 @@
     slack
     teams
     discord
+    wireguard-tools
   ];
 }
