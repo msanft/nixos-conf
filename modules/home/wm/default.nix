@@ -7,6 +7,7 @@
     ./swaylock.nix
     ./swayidle.nix
     ./gtk.nix
+    ./mako.nix
   ];
 
   home.packages = with pkgs; [
