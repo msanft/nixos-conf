@@ -31,7 +31,7 @@
 
       kubernetes.disabled = false;
 
-      line_break.disabled = true;
+      line_break.disabled = false;
     };
   };
 }
