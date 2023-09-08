@@ -3,7 +3,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
 
     shellAliases = {
       update = "sudo nixos-rebuild switch";

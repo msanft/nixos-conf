@@ -4,8 +4,8 @@ let
 in
 {
   fonts = {
-    enableDefaultFonts = true;
-    fonts = fontList;
+    enableDefaultPackages = true;
+    packages = fontList;
 
     fontconfig = {
       defaultFonts = {
