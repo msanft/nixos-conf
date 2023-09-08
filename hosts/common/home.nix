@@ -17,7 +17,7 @@
     terraform
     gnumake
     cmake
-    nil
+    nixd
     nixpkgs-fmt
     nixpkgs-lint
     nix-output-monitor

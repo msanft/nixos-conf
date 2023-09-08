@@ -22,5 +22,6 @@
     teams
     discord
     wireguard-tools
+    zathura
   ];
 }

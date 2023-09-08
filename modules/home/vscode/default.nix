@@ -43,9 +43,9 @@
       "diffEditor.ignoreTrimWhitespace" = false;
       "security.workspace.trust.untrustedFiles" = "open";
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
+      "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
-        "nil" = {
+        "nixd" = {
           "formatting" = {
             "command" = [
               "nixpkgs-fmt"
