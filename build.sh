@@ -15,12 +15,12 @@ if [ "$(uname)" == "Darwin" ]; then
     # build the actual system
     if [ -d "result" ]; then
         echo "Directory \"result\" exists, rebuilding system..."
-        ./result/sw/bin/darwin-rebuild switch --flake .#mb $@
+        ./result/sw/bin/darwin-rebuild test --flake .#mb $@
     else
         echo "result directory does not exist, initializing first build..."
         nix build .#darwinConfigurations.mb.system --extra-experimental-features nix-command --extra-experimental-features flakes $@
     fi
 else
     echo "Running on NixOS, building system..."
-    sudo nixos-rebuild switch --flake .#tp $@
+    sudo nixos-rebuild test --flake .#tp $@
 fi
