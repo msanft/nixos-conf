@@ -10,8 +10,6 @@
       "terminal.integrated.cursorBlinking" = true;
       "terminal.integrated.cursorStyle" = "line";
       "git.confirmSync" = false;
-      "omnisharp.monoPath" = "/Library/Frameworks/Mono.framework/Versions/Current";
-      "omnisharp.useModernNet" = false;
       "files.autoSave" = "afterDelay";
       "go.toolsManagement.autoUpdate" = true;
       "github.copilot.enable" = {
@@ -33,9 +31,6 @@
         "editor.defaultFormatter" = "vscode.typescript-language-features";
       };
       "javascript.updateImportsOnFileMove.enabled" = "always";
-      "vs-kubernetes" = {
-        "vs-kubernetes.ignore-recommendations" = true;
-      };
       "[python]" = {
         "editor.formatOnType" = true;
       };
@@ -61,6 +56,8 @@
       };
       "window.zoomLevel" = -1;
       "workbench.colorTheme" = "GitHub Light Default";
+      "remote.SSH.configFile" = "/home/moritzs/.ssh/config";
+      "git.enableCommitSigning" = true;
     };
 
     extensions = with pkgs.vscode-extensions;
@@ -71,6 +68,7 @@
         hashicorp.terraform
         jnoortheen.nix-ide
         github.github-vscode-theme
+        ms-vscode-remote.remote-ssh
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {

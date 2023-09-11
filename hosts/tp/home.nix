@@ -18,10 +18,8 @@
     nasm
     bluetuith
     pavucontrol
-    slack
-    teams
-    discord
     wireguard-tools
     zathura
+    slack
   ];
 }
