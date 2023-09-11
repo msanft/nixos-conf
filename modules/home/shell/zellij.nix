@@ -18,8 +18,8 @@ in
   programs.zellij = {
     enable = true;
     settings = {
-      theme = "gruvbox-dark";
-      themes.gruvbox-dark = {
+      theme = "gruvbox-custom";
+      themes.gruvbox-custom = {
         fg = "#ebdbb2";
         bg = "#282828";
         black = "#282828";
