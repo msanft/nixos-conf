@@ -13,7 +13,6 @@
       services.greetd.enableGnomeKeyring = true;
       yubico = {
         enable = true;
-        debug = true;
         mode = "challenge-response";
         id = [ "25808654" ];
       };
