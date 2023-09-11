@@ -1,4 +1,8 @@
 { ... }: {
+  imports = [
+    ./webapps.nix
+  ];
+
   programs.chromium = {
     enable = true;
 
