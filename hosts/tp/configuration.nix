@@ -4,7 +4,6 @@
     ../../modules/services/greetd
     ../../modules/services/input
     ../../modules/services/vt-color
-    ../../modules/system/boot
     ../../modules/system/i18n
     ../../modules/system/networking
     ../../modules/system/security
