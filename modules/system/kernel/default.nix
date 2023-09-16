@@ -8,5 +8,6 @@
         efiSysMountPoint = "/boot/efi";
       };
     };
+    supportedFilesystems = [ "bcachefs" ];
   };
 }
