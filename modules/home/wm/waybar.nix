@@ -37,7 +37,7 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon} {capacity}%";
+          format = "{icon}  {capacity}%";
           format-charging = " {capacity}%";
           format-icons = [
             ""
@@ -61,8 +61,8 @@
         "cpu" = {
           interval = 5;
           tooltip = false;
-          format = "  {usage}%";
-          format-alt = "  {load}";
+          format = " {usage}%";
+          format-alt = " {load}";
           states = {
             warning = 70;
             critical = 90;
@@ -85,7 +85,7 @@
 
         "network" = {
           interval = 5;
-          format-wifi = " {essid} ({signalStrength}%)";
+          format-wifi = "  {essid} ({signalStrength}%)";
           format-ethernet = "󰈁 {ifname}";
           format-disconnected = "No connection";
           format-alt = "󰛳 {ipaddr}/{cidr}";
