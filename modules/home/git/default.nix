@@ -21,6 +21,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       core.askPass = ""; # needs to be empty to use terminal for ask pass
+      push.autoSetupRemote = "true";
     };
   };
 
