@@ -5,6 +5,8 @@
     enableZshIntegration = if config.programs.zsh.enable then true else false;
 
     settings = {
+      add_newline = false;
+
       aws.disabled = true;
       gcloud.disabled = true;
       azure.disabled = true;

@@ -4,8 +4,8 @@
     settings = {
       window = {
         padding = {
-          x = 20;
-          y = 20;
+          x = 10;
+          y = 10;
         };
       };
       selection.save_to_clipboard = true;

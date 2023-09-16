@@ -3,7 +3,7 @@
     ./atuin.nix
     ./alacritty.nix
     ./zsh.nix
-    ./zellij.nix
+    ./tmux.nix
     ./starship.nix
   ];
 }
