@@ -63,12 +63,12 @@
     extensions = with pkgs.vscode-extensions;
       [
         github.vscode-github-actions
-        github.vscode-pull-request-github
         golang.go
         hashicorp.terraform
         jnoortheen.nix-ide
         github.github-vscode-theme
         ms-vscode-remote.remote-ssh
+        zxh404.vscode-proto3
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
