@@ -44,5 +44,8 @@ partial alphanumeric_keys xkb_symbols "ss"
 	key <LatS> { [ s, S, ssharp, NoSymbol ] };
 };
 
-
-
+// € e=Alt
+partial alphanumeric_keys xkb_symbols "euro"
+{
+	key <LatE> { [ e, E, EuroSign, NoSymbol ] };
+};
