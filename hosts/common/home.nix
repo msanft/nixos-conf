@@ -10,7 +10,7 @@
   home.packages = with pkgs; [
     # Development
     gh
-    go
+    go_1_21
     gopls
     gotools
     terraform
