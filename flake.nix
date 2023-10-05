@@ -17,14 +17,21 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, darwin, nixvim, ... }: {
+  outputs = { nixpkgs, home-manager, darwin, nixvim, disko, ... }: {
     nixosConfigurations.tp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/tp/configuration.nix
+        ./hosts/tp/hardware-configuration.nix
         home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        ./hosts/tp/disko.nix
         {
           home-manager.users.moritzs.imports = [
             nixvim.homeManagerModules.nixvim
@@ -37,6 +44,7 @@
       modules = [
         ./hosts/mb/configuration.nix
         home-manager.darwinModules.home-manager
+    
       ];
     };
   };
