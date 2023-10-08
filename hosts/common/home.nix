@@ -33,7 +33,6 @@
     jq
     yq-go
     hugo
-    texlive.combined.scheme-full
     exa
     bat
   ];
