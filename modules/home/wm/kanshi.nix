@@ -56,24 +56,38 @@ in
         }
       ];
 
-      netzlabor.outputs = [
-        {
-          criteria = "eDP-1";
-          status = "enable";
-          position = "0,1080";
-        }
-        {
-          criteria = "*";
-          status = "enable";
-          position = "0,0";
-        }
-      ];
+      # netzlabor.outputs = [
+      #   {
+      #     criteria = "eDP-1";
+      #     status = "enable";
+      #     position = "0,1080";
+      #   }
+      #   {
+      #     criteria = "*";
+      #     status = "enable";
+      #     position = "0,0";
+      #   }
+      # ];
 
       undocked.outputs = [
         {
           criteria = "eDP-1";
           status = "enable";
           position = "0,0";
+        }
+      ];
+
+      buchs.outputs = [
+        {
+          criteria = "eDP-1";
+          status = "enable";
+          position = "0,650";
+        }
+        {
+          criteria = "Philips Consumer Electronics Company PHL 273V7 UK02314023787";
+          status = "enable";
+          mode = "1920x1080@60.000Hz";
+          position = "1920,0";
         }
       ];
     };
