@@ -57,6 +57,8 @@
       "window.zoomLevel" = -1;
       "workbench.colorTheme" = "GitHub Light Default";
       "remote.SSH.configFile" = "/home/moritzs/.ssh/config";
+      # "remote.SSH.useLocalServer" = true;
+      "remote.SSH.showLoginTerminal" = true;
       "git.enableCommitSigning" = true;
     };
 
@@ -69,6 +71,9 @@
         github.github-vscode-theme
         ms-vscode-remote.remote-ssh
         zxh404.vscode-proto3
+        llvm-vs-code-extensions.vscode-clangd
+        waderyan.gitblame
+        github.vscode-pull-request-github
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
