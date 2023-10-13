@@ -1,8 +1,11 @@
 { pkgs, ... }: {
   nixpkgs = {
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+    };
+
     overlays = [
-      (import ../../overlays/mkChromiumDesktopApp.nix)
+      (import ../../overlays/mkDesktopApp.nix)
     ];
   };
 }

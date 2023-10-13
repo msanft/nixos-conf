@@ -1,19 +1,22 @@
 { pkgs, ... }:
 let
   webapps = {
-    teams = pkgs.lib.mkChromiumDesktopApp {
+    teams = pkgs.lib.mkDesktopApp {
       name = "teams";
       displayName = "Microsoft Teams";
+      runtime = pkgs.chromium;
       execScript = "swaymsg exec 'chromium --app=https://teams.microsoft.com/'";
     };
-    discord = pkgs.lib.mkChromiumDesktopApp {
+    discord = pkgs.lib.mkDesktopApp {
       name = "discord";
       displayName = "Discord";
+      runtime = pkgs.chromium;
       execScript = "swaymsg exec 'chromium --app=https://discord.com/app/'";
     };
-    element = pkgs.lib.mkChromiumDesktopApp {
+    element = pkgs.lib.mkDesktopApp {
       name = "element";
       displayName = "Element";
+      runtime = pkgs.chromium;
       execScript = "swaymsg exec 'chromium --app=https://app.element.io/'";
     };
   };

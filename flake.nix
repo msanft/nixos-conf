@@ -44,7 +44,7 @@
       modules = [
         ./hosts/mb/configuration.nix
         home-manager.darwinModules.home-manager
-    
+
       ];
     };
   };

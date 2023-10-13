@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ../common/home.nix
-    ../../modules/home/chromium
+    ../../modules/home/browser/firefox
     ../../modules/home/gpg
     ../../modules/home/wm
     ../../modules/home/nixvim

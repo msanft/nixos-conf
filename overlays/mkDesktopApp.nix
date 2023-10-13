@@ -1,10 +1,18 @@
 final: prev: {
   lib = prev.lib // {
-    mkChromiumDesktopApp = { name, displayName, execScript, genericName ? "Web Application", comment ? "Web Application", ... }:
+    mkDesktopApp =
+      { name
+      , displayName
+      , execScript
+      , runtime
+      , genericName ? "Web Application"
+      , comment ? "Web Application"
+      , ...
+      }:
       rec {
         script = prev.writeShellApplication {
           name = name;
-          runtimeInputs = [ prev.chromium ];
+          runtimeInputs = [ runtime ];
           text = execScript;
         };
         desktopItem = prev.makeDesktopItem {
