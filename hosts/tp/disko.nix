@@ -2,27 +2,52 @@
   disko.devices = {
     disk = {
       vdb = {
-        device = "/dev/disk/by-path/pci-0000:04:00.0-nvme-1";
         type = "disk";
+        device = "/dev/vdb";
         content = {
           type = "gpt";
           partitions = {
             ESP = {
-              end = "100MiB";
+              size = "512M";
               type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
+                mountOptions = [
+                  "defaults"
+                ];
               };
             };
-            root = {
-              name = "root";
-              end = "-0";
+            luks = {
+              size = "100%";
               content = {
-                type = "filesystem";
-                format = "bcachefs";
-                mountpoint = "/";
+                type = "luks";
+                name = "crypted";
+                extraOpenArgs = [ "--allow-discards" ];
+                # if you want to use the key for interactive login be sure there is no trailing newline
+                # for example use `echo -n "password" > /tmp/secret.key`
+                #passwordFile = "/tmp/secret.key"; # Interactive
+                settings.keyFile = "/tmp/secret.key";
+                additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
+                content = {
+                  type = "btrfs";
+                  extraArgs = [ "-f" ];
+                  subvolumes = {
+                    "/root" = {
+                      mountpoint = "/";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/home" = {
+                      mountpoint = "/home";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/nix" = {
+                      mountpoint = "/nix";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                  };
+                };
               };
             };
           };
