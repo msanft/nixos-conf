@@ -29,7 +29,6 @@
                 # for example use `echo -n "password" > /tmp/secret.key`
                 #passwordFile = "/tmp/secret.key"; # Interactive
                 settings.keyFile = "/tmp/secret.key";
-                additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
                 content = {
                   type = "btrfs";
                   extraArgs = [ "-f" ];
