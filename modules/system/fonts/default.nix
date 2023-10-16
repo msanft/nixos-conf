@@ -9,8 +9,8 @@ in
 
     fontconfig = {
       defaultFonts = {
-        serif = [ "Roboto" ];
-        sansSerif = [ "Roboto" ];
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" ];
         monospace = [ "JetBrains Mono" ];
       };
     };
