@@ -8,7 +8,7 @@
     shellAliases = {
       update = "sudo nixos-rebuild switch";
       cat = "${pkgs.bat}/bin/bat";
-      ls = "${pkgs.exa}/bin/exa";
+      ls = "${pkgs.eza}/bin/eza";
       ll = "ls -la";
     };
 
