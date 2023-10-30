@@ -74,6 +74,7 @@
         llvm-vs-code-extensions.vscode-clangd
         waderyan.gitblame
         github.vscode-pull-request-github
+        ms-python.python
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
