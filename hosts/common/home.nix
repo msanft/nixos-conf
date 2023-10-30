@@ -33,7 +33,7 @@
     jq
     yq-go
     hugo
-    exa
+    eza
     bat
   ];
 }
