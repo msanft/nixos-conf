@@ -5,5 +5,7 @@
       efi.canTouchEfiVariables = true;
     };
     supportedFilesystems = [ "btrfs" ];
+
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }
