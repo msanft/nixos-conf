@@ -21,5 +21,7 @@
     wireguard-tools
     zathura
     slack
+    man-pages
+    man-pages-posix
   ];
 }
