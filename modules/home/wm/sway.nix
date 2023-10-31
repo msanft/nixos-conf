@@ -2,13 +2,13 @@
 let
   finalPkg = name: "${config.programs.${name}.finalPackage}";
   finalPkgBin = name: "${finalPkg name}/bin/${name}";
-  background = "#121212";
-  foreground = "#cacaca";
+  border = "#4c7899";
+  background = "#285577";
   text = "#ffffff";
-  primary = "#cae982";
-  slight = "#242424";
-  dark = "#666666";
-  alert = "#e5786d";
+  indicator = "#4c7899";
+  childBorder = "#285577";
+  dark = "#323232";
+  alert = "#ff0000";
 in
 {
   home.keyboard = null;
@@ -22,26 +22,18 @@ in
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
 
       colors = {
-        focused = {
-          border = primary;
-          background = primary;
-          text = background;
-          indicator = primary;
-          childBorder = primary;
-        };
-
         focusedInactive = {
-          border = slight;
-          background = slight;
+          border = border;
+          background = background;
           text = text;
-          indicator = slight;
-          childBorder = slight;
+          indicator = indicator;
+          childBorder = childBorder;
         };
 
         unfocused = {
           border = dark;
           background = dark;
-          text = foreground;
+          text = text;
           indicator = dark;
           childBorder = dark;
         };
@@ -49,7 +41,7 @@ in
         urgent = {
           border = alert;
           background = alert;
-          text = background;
+          text = dark;
           indicator = alert;
           childBorder = alert;
         };
@@ -81,12 +73,14 @@ in
           "${mod}+l" = "exec ${pkgs.swaylock-effects}/bin/swaylock";
         };
 
-      window.commands = [
-        {
-          criteria.shell = "xwayland";
-          command = "title_format \"%title :: %shell\"";
-        }
-      ];
+      window = {
+        commands = [
+          {
+            criteria.shell = "xwayland";
+            command = "title_format \"%title :: %shell\"";
+          }
+        ];
+      };
     };
   };
   home.sessionVariables = {

@@ -23,5 +23,6 @@
     slack
     man-pages
     man-pages-posix
+    brightnessctl
   ];
 }

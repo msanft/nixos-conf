@@ -1,11 +1,9 @@
 { pkgs, ... }: {
-  home.packages = [
-    pkgs.jetbrains-mono
-  ];
   programs.waybar = {
     enable = true;
     systemd.target = "sway-session.target";
     style = builtins.readFile ./waybar.css;
+
     settings = {
       mainBar = {
         layer = "top";
@@ -24,6 +22,7 @@
           "memory"
           "cpu"
           "temperature"
+          "backlight"
           "battery"
           "clock#time"
           "clock#date"
@@ -31,14 +30,22 @@
 
         # Modules
 
+        "backlight" = {
+          interval = 10;
+          device = "intel_backlight";
+          format = "<span font=\"Font Awesome 6 Free\"></span> {percent}%";
+          on-scroll-up = "bash -c 'brightnessctl -d intel_backlight s 10%+'";
+          on-scroll-down = "bash -c 'brightnessctl -d intel_backlight s 10%-'";
+        };
+
         "battery" = {
           interval = 10;
           states = {
             warning = 30;
             critical = 15;
           };
-          format = "{icon}  {capacity}%";
-          format-charging = " {capacity}%";
+          format = "<span font=\"Font Awesome 6 Free\">{icon}</span> {capacity}%";
+          format-charging = "<span font=\"Font Awesome 6 Free\"></span> {capacity}%";
           format-icons = [
             ""
             ""
@@ -61,34 +68,37 @@
         "cpu" = {
           interval = 5;
           tooltip = false;
-          format = " {usage}%";
-          format-alt = " {load}";
+          format = "<span font=\"Font Awesome 6 Free\"></span> {usage}%";
+          format-alt = "<span font=\"Font Awesome 6 Free\"></span> {load}";
           states = {
             warning = 70;
             critical = 90;
           };
+          on-click-right = "swaymsg exec 'alacritty -e htop'";
         };
 
         "disk" = {
           interval = 15;
-          format = " {percentage_used}%";
+          format = "<span font=\"Font Awesome 6 Free\"></span> {percentage_used}%";
         };
 
         "memory" = {
           interval = 5;
-          format = " {}%";
+          format = "<span font=\"Font Awesome 6 Free\"></span> {}%";
           states = {
             warning = 70;
             critical = 90;
           };
+          on-click-right = "swaymsg exec 'alacritty -e htop'";
         };
 
         "network" = {
           interval = 5;
-          format-wifi = "  {essid} ({signalStrength}%)";
-          format-ethernet = "󰈁 {ifname}";
+          format-wifi = "<span font=\"Font Awesome 6 Free\"></span> {essid} ({signalStrength}%)";
+          format-ethernet = "<span font=\"Font Awesome 6 Free\">󰈁</span> {ifname}";
           format-disconnected = "No connection";
-          format-alt = "󰛳 {ipaddr}/{cidr}";
+          format-alt = "<span font=\"Font Awesome 6 Free\">󰛳</span> {ipaddr}/{cidr}";
+          on-click-right = "swaymsg exec 'alacritty -e nmtui-connect'";
         };
 
         "sway/mode" = {
@@ -108,9 +118,9 @@
         };
 
         "pulseaudio" = {
-          format = "{icon} {volume}%";
-          format-bluetooth = "{icon}  {volume}%";
-          format-muted = "";
+          format = "<span font=\"Font Awesome 6 Free\">{icon}</span> {volume}%";
+          format-bluetooth = "<span font=\"Font Awesome 6 Free\">{icon}</span> <span font=\"Font Awesome 6 Free\"></span> {volume}%";
+          format-muted = "<span font=\"Font Awesome 6 Free\"></span>";
           format-icons = {
             headphone = "";
             headset = "󰋎";
@@ -121,12 +131,13 @@
           };
           scroll-step = 1;
           on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
+          on-click-right = "swaymsg exec pavucontrol";
         };
 
         "temperature" = {
           critical-threshold = 90;
           interval = 5;
-          format = "{icon} {temperatureC}°";
+          format = "<span font=\"Font Awesome 6 Free\">{icon}</span> {temperatureC}°";
           format-icons = [
             ""
             ""
@@ -138,7 +149,7 @@
 
         "sway/language" = {
           format = "{}";
-          on-click = "swaymsg input type:keyboard xkb_switch_layout next";
+          on-click-right = "swaymsg input type:keyboard xkb_switch_layout next";
         };
       };
     };

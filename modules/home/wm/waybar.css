@@ -1,72 +1,199 @@
-@define-color background #121212;
-@define-color foreground #cacaca;
-@define-color text #ffffff;
-@define-color primary #cae982;
-@define-color secondary #cae982;
-@define-color slight #242424;
-@define-color dark #666666;
-@define-color alert #e5786d;
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
 
-@define-color on-primary @background;
-@define-color on-secondary @background;
-@define-color on-alert @background;
-@define-color on-dark @text;
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
 
+@keyframes blink-warning {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: orange;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: red;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
     min-height: 0;
-    padding: 0;
     margin: 0;
-    font-family: "JetBrains Mono Nerd Font";
-
+    padding: 0;
+    font-family: monospace;
 }
 
-window {
-    font-size: 12px;
+/* The whole bar */
+#waybar {
+    background: #323232;
+    color: white;
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    font-size: 13px;
 }
 
-window#waybar {
-    background-color: @background;
-    color: @foreground;
+/* Each module */
+#battery,
+#clock,
+#cpu,
+#memory,
+#mode,
+#disk,
+#network,
+#pulseaudio,
+#temperature,
+#language,
+#backlight,
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-#workspaces button>* {
-    padding: 0 8px;
-    color: @text;
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-#workspaces button.focused>* {
-    background-color: @primary;
-    color: @on-primary;
+#battery.warning {
+    color: orange;
 }
 
-#workspaces button.urgent>* {
-    background-color: @alert;
-    color: @on-alert;
+#battery.critical {
+    color: red;
 }
 
-#mode {
-    font-weight: bold;
-    background-color: @primary;
-    color: @on-primary;
-    min-width: 8ex;
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
 }
 
-.modules-right>widget>* {
-    padding: 0px 6px;
-}
-
-#window,
-.modules-right>widget:first-child>* {
-    margin-left: 8px;
-}
-
-.modules-right>widget:last-child>* {
-    padding-right: 8px;
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
 }
 
 #clock {
-    color: @text;
     font-weight: bold;
+}
+
+#cpu {
+    /* No styles */
+}
+
+#cpu.warning {
+    color: orange;
+}
+
+#cpu.critical {
+    color: red;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: orange;
+}
+
+#memory.critical {
+    color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#mode {
+    background: #64727D;
+    border-top: 2px solid white;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+}
+
+#network {
+    /* No styles */
+}
+
+#network.disconnected {
+    color: orange;
+}
+
+#pulseaudio {
+    /* No styles */
+}
+
+#pulseaudio.muted {
+    /* No styles */
+}
+
+#temperature {
+    /* No styles */
+}
+
+#temperature.critical {
+    color: red;
+}
+
+#tray {
+    /* No styles */
+}
+
+#window {
+    padding: 0 10px 0;
+}
+
+#workspaces button {
+    border: 1px solid transparent;
+    padding: 2px 10px 2px;
+    color: #888888;
+}
+
+#workspaces button.focused {
+    border-color: #4c7899;
+    color: white;
+    background-color: #285577;
+}
+
+#workspaces button.urgent {
+    border-color: #c9545d;
+    color: #c9545d;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #4c7899;
+    border: 1px solid transparent;
+    color: white;
+    padding: 2px 10px 2px;
 }
