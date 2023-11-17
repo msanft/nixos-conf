@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
-  fontList = import ../../common/fonts.nix { pkgs = pkgs; };
+  fontList = import ../../common/fonts.nix { inherit pkgs inputs; };
 in
 {
   fonts = {
