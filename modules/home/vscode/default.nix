@@ -49,6 +49,12 @@
         };
       };
       "editor.fontFamily" = "JetBrainsMono Nerd Font";
+      "editor.fontSize" = 14;
+      "editor.lineHeight" = 0;
+      "debug.console.fontSize" = 14;
+      "debug.console.lineHeight" = 1;
+      "terminal.integrated.fontSize" = 14;
+      "terminal.integrated.lineHeight" = 1;
       "[nix]" = {
         "editor.formatOnSave" = true;
         "editor.insertSpaces" = true;
