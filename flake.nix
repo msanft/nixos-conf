@@ -5,6 +5,10 @@
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
+    berkeley-mono = {
+      url = "git+ssh://git@github.com/msanft/berkeley-mono";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +27,8 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, darwin, nixvim, disko, ... }: {
+  outputs = inputs: with inputs; {
+
     nixosConfigurations.tp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -38,7 +43,9 @@
           ];
         }
       ];
+      specialArgs = { inherit inputs; };
     };
+
     darwinConfigurations.mb = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
@@ -47,5 +54,6 @@
 
       ];
     };
+
   };
 }
