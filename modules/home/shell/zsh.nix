@@ -5,12 +5,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases = {
-      update = "sudo nixos-rebuild switch";
-      cat = "${pkgs.bat}/bin/bat";
-      ls = "${pkgs.eza}/bin/eza";
-      ll = "ls -la";
-    };
+    shellAliases = import ./aliases.nix;
 
     history = {
       size = 10000;
