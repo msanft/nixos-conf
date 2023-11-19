@@ -19,5 +19,7 @@
     man-pages
     man-pages-posix
     brightnessctl
+    gdb
+    binutils
   ];
 }

@@ -48,12 +48,12 @@
           };
         };
       };
-      "editor.fontFamily" = "JetBrainsMono Nerd Font";
-      "editor.fontSize" = 14;
+      "editor.fontFamily" = "BerkeleyMono Nerd Font Mono";
+      "editor.fontSize" = 15;
       "editor.lineHeight" = 0;
-      "debug.console.fontSize" = 14;
+      "debug.console.fontSize" = 15;
       "debug.console.lineHeight" = 1;
-      "terminal.integrated.fontSize" = 14;
+      "terminal.integrated.fontSize" = 15;
       "terminal.integrated.lineHeight" = 1;
       "[nix]" = {
         "editor.formatOnSave" = true;
