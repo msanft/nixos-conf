@@ -2,8 +2,9 @@
   imports = [
     ./atuin.nix
     ./alacritty.nix
-    ./zsh.nix
+    ./bash.nix
     ./tmux.nix
     ./starship.nix
+    ./util.nix
   ];
 }

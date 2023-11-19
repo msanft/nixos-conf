@@ -19,10 +19,8 @@
     isNormalUser = true;
     description = "Moritz Sanft";
     extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
-
-  programs.zsh.enable = true;
 
   home-manager.users.moritzs = { pkgs, ... }: {
     home.stateVersion = "22.11";
