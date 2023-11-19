@@ -4,7 +4,8 @@
     keyMode = "vi";
     terminal = "alacritty";
     extraConfig = ''
-      unbind - | # unbind split pane
+      unbind - # unbind split pane
+      unbind | # unbind split pane
       bind - split-window -v # split pane vertically
       bind | split-window -h # split pane horizontally
       bind > swap-pane -D # swap current pane with the next one
