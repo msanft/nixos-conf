@@ -5,7 +5,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases = import ./aliases.nix;
+    shellAliases = import ./aliases.nix { inherit pkgs; };
 
     history = {
       size = 10000;
