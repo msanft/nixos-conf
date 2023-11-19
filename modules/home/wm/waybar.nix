@@ -74,7 +74,7 @@
             warning = 70;
             critical = 90;
           };
-          on-click-right = "swaymsg exec 'alacritty -e htop'";
+          on-click-right = "swaymsg exec 'alacritty -e btop'";
         };
 
         "disk" = {
@@ -89,7 +89,7 @@
             warning = 70;
             critical = 90;
           };
-          on-click-right = "swaymsg exec 'alacritty -e htop'";
+          on-click-right = "swaymsg exec 'alacritty -e btop'";
         };
 
         "network" = {

@@ -29,7 +29,7 @@
     kubernetes-helm
 
     # Tools
-    htop
+    btop
     jq
     yq-go
     hugo
