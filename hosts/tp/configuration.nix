@@ -1,4 +1,4 @@
-{  pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ../../modules/services/desktop
     ../../modules/services/greetd
@@ -18,7 +18,7 @@
   users.users.moritzs = {
     isNormalUser = true;
     description = "Moritz Sanft";
-    extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "audio" "wireshark" ];
     shell = pkgs.bash;
   };
 
@@ -28,6 +28,9 @@
       ./home.nix
     ];
   };
+
+  programs.wireshark.enable = true;
+  environment.systemPackages = with pkgs; [ wireshark ];
 
   system = {
     stateVersion = "22.11";
