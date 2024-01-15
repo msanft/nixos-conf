@@ -8,16 +8,23 @@
   ];
 
   home.packages = with pkgs; [
-    # Development
-    gh
+    # Go
     go_1_21
     gopls
     gotools
-    terraform
+
+    # Nix
     nixd
     nixpkgs-fmt
     nixpkgs-lint
     nix-output-monitor
+
+    # Rust
+    rustc
+    cargo
+    rustfmt
+    rust-analyzer
+    clippy
 
     # Cloud
     kubectl
@@ -27,8 +34,10 @@
     k9s
     sonobuoy
     kubernetes-helm
+    terraform
 
     # Tools
+    gh
     btop
     jq
     yq-go
