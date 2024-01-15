@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  # home.sessionVariables.NIXOS_OZONE_WL = "1"; # run natively under wayland
+
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -66,7 +68,10 @@
       # "remote.SSH.useLocalServer" = true;
       "remote.SSH.showLoginTerminal" = true;
       "git.enableCommitSigning" = true;
+      "bazel.enableCodeLens" = true;
     };
+
+    mutableExtensionsDir = false;
 
     extensions = with pkgs.vscode-extensions;
       [
@@ -81,6 +86,12 @@
         waderyan.gitblame
         github.vscode-pull-request-github
         ms-python.python
+        pkgs.fix-fork.vscode-extensions.ms-vsliveshare.vsliveshare
+        rust-lang.rust-analyzer
+        tamasfe.even-better-toml
+        vscode-extensions.vscodevim.vim
+        vscode-extensions.mkhl.direnv
+        vscode-extensions.skellock.just
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
@@ -101,5 +112,6 @@
   home.packages = with pkgs; [
     delve
     go-tools
+    openssl
   ];
 }
