@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     ripgrep
+    fzf
   ];
 
   programs.nixvim = {
@@ -13,33 +14,19 @@
 
     colorschemes.gruvbox = {
       enable = true;
+      bold = true;
     };
 
     clipboard.providers.wl-copy.enable = true;
 
     plugins = {
       treesitter.enable = true;
-      comment-nvim.enable = true;
-      # emmet.enable = true;
-      nvim-autopairs.enable = true;
-      bufferline.enable = true;
-      which-key.enable = true;
-      nix.enable = true;
 
-      # fugitive.enable = true;
-      # gitgutter.enable = true;
-      # gitsigns.enable = true;
-
-      airline = {
+      lsp = {
         enable = true;
-        theme = "base16_gruvbox_dark_soft";
-      };
-
-      coq-nvim = {
-        enable = true;
-        autoStart = "shut-up";
-        installArtifacts = true;
-        recommendedKeymaps = true;
+        servers = {
+          gopls.enable = true;
+        };
       };
 
       telescope = {
@@ -50,13 +37,25 @@
         };
       };
 
-      lsp = {
+      airline = {
         enable = true;
-        servers = {
-          gopls.enable = true;
-          nil_ls.enable = true;
-        };
+        theme = "base16_gruvbox_dark_soft";
       };
+
+      coq-nvim = {
+        enable = true;
+        autoStart = true;
+        recommendedKeymaps = true;
+      };
+
+      # comment-nvim.enable = true;
+      # emmet.enable = true;
+      nvim-autopairs.enable = true;
+      which-key.enable = true;
+      # nix.enable = true;
+      # fugitive.enable = true;
+      # gitgutter.enable = true;
+      # gitsigns.enable = true;
     };
   };
 }
