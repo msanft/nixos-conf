@@ -20,6 +20,7 @@
     man-pages-posix
     brightnessctl
     gdb
-    binutils
+    clang-tools_17
+    gcc13
   ];
 }
