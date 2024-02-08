@@ -55,6 +55,7 @@
       "editor.lineHeight" = 0;
       "debug.console.fontSize" = 15;
       "debug.console.lineHeight" = 1;
+      "editor.lineNumbers" = "relative";
       "terminal.integrated.fontSize" = 15;
       "terminal.integrated.lineHeight" = 1;
       "[nix]" = {
@@ -86,12 +87,12 @@
         waderyan.gitblame
         github.vscode-pull-request-github
         ms-python.python
-        pkgs.fix-fork.vscode-extensions.ms-vsliveshare.vsliveshare
+        ms-vsliveshare.vsliveshare
         rust-lang.rust-analyzer
         tamasfe.even-better-toml
-        vscode-extensions.vscodevim.vim
-        vscode-extensions.mkhl.direnv
-        vscode-extensions.skellock.just
+        vscodevim.vim
+        mkhl.direnv
+        skellock.just
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {

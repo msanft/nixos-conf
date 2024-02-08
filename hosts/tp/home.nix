@@ -22,5 +22,9 @@
     gdb
     clang-tools_17
     gcc13
+    linuxHeaders
+    gomuks
+    mutt
+    ranger
   ];
 }

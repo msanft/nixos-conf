@@ -44,5 +44,6 @@
     hugo
     eza
     bat
+    tailscale
   ];
 }

@@ -8,9 +8,7 @@ let
     ipython
     numpy
     z3
-    pycryptodome
     pwntools
-    pygame
   ];
 in
 {

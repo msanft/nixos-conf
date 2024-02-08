@@ -56,18 +56,18 @@ in
         }
       ];
 
-      # netzlabor.outputs = [
-      #   {
-      #     criteria = "eDP-1";
-      #     status = "enable";
-      #     position = "0,1080";
-      #   }
-      #   {
-      #     criteria = "*";
-      #     status = "enable";
-      #     position = "0,0";
-      #   }
-      # ];
+      netzlabor.outputs = [
+        {
+          criteria = "eDP-1";
+          status = "enable";
+          position = "0,1080";
+        }
+        {
+          criteria = "*";
+          status = "enable";
+          position = "0,0";
+        }
+      ];
 
       undocked.outputs = [
         {

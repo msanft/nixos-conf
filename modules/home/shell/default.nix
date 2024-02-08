@@ -5,6 +5,7 @@
     ./bash.nix
     ./tmux.nix
     ./starship.nix
+    ./direnv.nix
     ./util.nix
   ];
 }

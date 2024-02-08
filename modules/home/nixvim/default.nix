@@ -14,7 +14,7 @@
 
     colorschemes.gruvbox = {
       enable = true;
-      bold = true;
+      settings.bold = true;
     };
 
     clipboard.providers.wl-copy.enable = true;

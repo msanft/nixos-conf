@@ -3,6 +3,7 @@
     settings = {
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
+      trusted-users = [ "root" "@wheel" ];
     };
     package = pkgs.nix;
     gc = {
@@ -11,6 +12,4 @@
       options = "--delete-older-than 14d";
     };
   };
-
-  # services.nix-daemon.enable = if (pkgs.stdenv.isDarwin) then true else false;
 }
