@@ -52,6 +52,17 @@
         specialArgs = { inherit inputs; };
       };
 
+      zeitgeist = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/zeitgeist/configuration.nix
+          ./hosts/zeitgeist/hardware-configuration.nix
+          disko.nixosModules.disko
+          ./hosts/zeitgeits/disko.nix
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
       alfred = nixpkgs.lib.nixosSystem rec {
         system = "aarch64-linux";
         modules = [
