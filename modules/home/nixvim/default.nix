@@ -39,13 +39,13 @@
 
       airline = {
         enable = true;
-        theme = "base16_gruvbox_dark_soft";
+        settings.theme = "base16_gruvbox_dark_soft";
       };
 
       coq-nvim = {
         enable = true;
-        autoStart = true;
-        recommendedKeymaps = true;
+        settings.auto_start = true;
+        settings.keymap.recommended = true;
       };
 
       # comment-nvim.enable = true;

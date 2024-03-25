@@ -13,6 +13,8 @@ in
         sansSerif = [ "Noto Sans" ];
         monospace = [ "BerkeleyMono Nerd Font Mono" ];
       };
+
+      subpixel.rgba = "rgb";
     };
   };
 }

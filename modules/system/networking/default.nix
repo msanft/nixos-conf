@@ -6,9 +6,9 @@
       127.0.0.1    license.confidential.cloud
     '';
 
-    firewall = {
-      allowedUDPPorts = [ 21842 ]; # Clients and peers can use the same port, see listenport
-    };
+    #firewall = {
+    #  allowedUDPPorts = [ 21842 ]; # Clients and peers can use the same port, see listenport
+    #};
 
     # wireguard.interfaces = {
     #   fluxvpn = {

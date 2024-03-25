@@ -1,4 +1,4 @@
-{ pkgs, inputs, modulesPath, ... }: {
+{ pkgs, rpiKernelPkgs, system, inputs, modulesPath, ... }: {
   imports = [
     "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
     ../../modules/services/ssh
@@ -44,7 +44,11 @@
 
   console.enable = false;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages =
+    let
+      rpiPkgs = import rpiKernelPkgs { inherit system; };
+    in
+    rpiPkgs.linuxPackages_rpi5;
 
   system = {
     stateVersion = "24.05";
