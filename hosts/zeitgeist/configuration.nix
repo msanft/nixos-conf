@@ -18,7 +18,10 @@
   };
 
   my.services.tailscale.enable = true;
-  services.sshd.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "yes";
+  };
   services.earlyoom.enable = true;
 
   systemd = {
@@ -122,6 +125,9 @@
 
   fonts.fontconfig.enable = lib.mkDefault false;
   sound.enable = false;
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   system.stateVersion = "22.11";
 }
