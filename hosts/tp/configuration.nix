@@ -3,6 +3,7 @@
     ../../modules/services/desktop
     ../../modules/services/greetd
     ../../modules/services/input
+    ../../modules/services/tailscale
     ../../modules/system/i18n
     ../../modules/system/networking
     ../../modules/system/security
@@ -27,6 +28,8 @@
       ./home.nix
     ];
   };
+
+  my.services.tailscale.enable = true;
 
   programs.wireshark.enable = true;
   environment.systemPackages = with pkgs; [ wireshark ];
