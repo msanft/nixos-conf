@@ -28,7 +28,7 @@
 
     # Cloud
     kubectl
-    awscli2
+    # awscli2 # broken
     azure-cli
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     k9s
