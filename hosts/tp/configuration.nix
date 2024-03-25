@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, modulesPath, ... }: {
   imports = [
     ../../modules/services/desktop
     ../../modules/services/greetd
@@ -34,7 +34,5 @@
   programs.wireshark.enable = true;
   environment.systemPackages = with pkgs; [ wireshark ];
 
-  system = {
-    stateVersion = "22.11";
-  };
+  system.stateVersion = "22.11";
 }
