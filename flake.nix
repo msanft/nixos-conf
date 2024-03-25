@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      url = "github:nixos/nixpkgs/nixos-unstable";
     };
     berkeley-mono = {
       url = "git+ssh://git@github.com/msanft/berkeley-mono";
@@ -25,7 +25,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    remote-builders = {
+      url = "git+ssh://git@github.com/edgelesssys/nix-remote-builders";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    rpiKernelPkgs.url = "github:leo60228/nixpkgs/linux_rpi5";
   };
 
   outputs = inputs: with inputs; rec {
@@ -37,6 +41,7 @@
           ./hosts/tp/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
+          remote-builders.nixosModules.remote-builders
           ./hosts/tp/disko.nix
           {
             home-manager.users.moritzs.imports = [
@@ -52,7 +57,7 @@
         modules = [
           ./hosts/alfred/configuration.nix
         ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs system rpiKernelPkgs; };
       };
     };
 
