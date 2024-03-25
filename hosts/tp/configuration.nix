@@ -12,6 +12,7 @@
     ../../modules/system/audio
     ../../modules/system/kernel
     ../../modules/system/fonts
+    ../../modules/nix/remote-builders.nix
     ../common
   ];
 

@@ -33,7 +33,7 @@
 
     network = {
       enable = true;
-      systemd.network.networks."10-lan" = {
+      networks."10-lan" = {
         matchConfig.Name = "en*";
         networkConfig.DHCP = "yes";
         linkConfig.RequiredForOnline = "routable";

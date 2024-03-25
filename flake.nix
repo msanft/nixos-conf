@@ -58,7 +58,7 @@
           ./hosts/zeitgeist/configuration.nix
           ./hosts/zeitgeist/hardware-configuration.nix
           disko.nixosModules.disko
-          ./hosts/zeitgeits/disko.nix
+          ./hosts/zeitgeist/disko.nix
         ];
         specialArgs = { inherit inputs; };
       };
