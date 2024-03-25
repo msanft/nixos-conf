@@ -15,6 +15,8 @@
     ../common
   ];
 
+  networking.hostName = "tp";
+
   users.users.moritzs = {
     isNormalUser = true;
     description = "Moritz Sanft";
