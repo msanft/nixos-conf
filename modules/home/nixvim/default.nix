@@ -6,11 +6,10 @@
 
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
 
-    options = {
-      number = true;
-      shiftwidth = 2;
-    };
+    viAlias = true;
+    vimAlias = true;
 
     colorschemes.gruvbox = {
       enable = true;
@@ -37,10 +36,7 @@
         };
       };
 
-      airline = {
-        enable = true;
-        settings.theme = "base16_gruvbox_dark_soft";
-      };
+      airline.enable = true;
 
       coq-nvim = {
         enable = true;
