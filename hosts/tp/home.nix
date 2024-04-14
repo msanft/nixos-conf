@@ -26,5 +26,7 @@
     gomuks
     mutt
     ranger
+    cinny-desktop
+    obsidian
   ];
 }
