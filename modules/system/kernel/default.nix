@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  zramSwap.enable = true;
+
   boot = {
     loader = {
       systemd-boot.enable = true;
