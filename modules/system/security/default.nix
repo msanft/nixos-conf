@@ -8,13 +8,19 @@
   security = {
     polkit.enable = true;
     pam = {
-      # Needs to be explicitly enabled so Swaylock can login for us
-      services.swaylock = { };
-      services.greetd.enableGnomeKeyring = true;
       yubico = {
         enable = true;
         mode = "challenge-response";
         id = [ "25808654" ];
+      };
+
+      services = {
+        # Needs to be explicitly enabled so Swaylock can login for us
+        swaylock = { };
+        greetd.enableGnomeKeyring = true;
+
+        login.u2fAuth = true;
+        sudo.u2fAuth = true;
       };
     };
   };
