@@ -26,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     remote-builders = {
-      url = "git+ssh://git@github.com/edgelesssys/nix-remote-builders";
+      url = "/home/moritzs/dev/nix-remote-builders";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rpiKernelPkgs.url = "github:leo60228/nixpkgs/linux_rpi5";
