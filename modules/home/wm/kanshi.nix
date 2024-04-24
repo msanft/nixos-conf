@@ -53,7 +53,7 @@ in
           criteria = "eDP-1";
           status = "enable";
           position = "5120,0"; # dellP2720D.sizeX * 2
-          scale = "1";
+          scale = 1.0;
         }
       ];
 
@@ -62,7 +62,7 @@ in
           criteria = "eDP-1";
           status = "enable";
           position = "0,1080";
-          scale = "1";
+          scale = 1.0;
         }
         {
           criteria = "*";
@@ -76,7 +76,7 @@ in
           criteria = "eDP-1";
           status = "enable";
           position = "0,0";
-          scale = "1";
+          scale = 1.0;
         }
       ];
 
