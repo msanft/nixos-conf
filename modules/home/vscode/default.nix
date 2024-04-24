@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  # home.sessionVariables.NIXOS_OZONE_WL = "1"; # run natively under wayland
+  home.sessionVariables.NIXOS_OZONE_WL = "1"; # run natively under wayland
 
   programs.vscode = {
     enable = true;
@@ -70,6 +70,8 @@
       "remote.SSH.showLoginTerminal" = true;
       "git.enableCommitSigning" = true;
       "bazel.enableCodeLens" = true;
+      "window.titleBarStyle" = "custom";
+      "window.customTitleBarVisibility" = "auto";
     };
 
     mutableExtensionsDir = false;
@@ -93,6 +95,7 @@
         vscodevim.vim
         mkhl.direnv
         skellock.just
+        ms-toolsai.jupyter
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
