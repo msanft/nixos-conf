@@ -16,6 +16,8 @@ in
   wayland.windowManager.sway = {
     enable = true;
 
+    checkConfig = false;
+
     config = {
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";

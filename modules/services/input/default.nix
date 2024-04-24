@@ -7,12 +7,12 @@
         us-custom = {
           description = "US (ANSI) custom layout";
           languages = [ "eng" ];
-          symbolsFile = pkgs.copyPathToStore ./symbols/us-custom;
+          symbolsFile = ./symbols/us-custom.xkb;
         };
         de-custom = {
           description = "DE (ISO) custom layout";
           languages = [ "ger" ];
-          symbolsFile = pkgs.copyPathToStore ./symbols/de-custom;
+          symbolsFile = ./symbols/de-custom.xkb;
         };
       };
     };

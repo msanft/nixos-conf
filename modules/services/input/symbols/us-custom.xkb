@@ -1,13 +1,13 @@
 default partial alphanumeric_keys modifier_keys xkb_symbols "us-custom" {
-  	name[Group1] = "US (ANSI) custom layout";
+    name[Group1] = "US (ANSI) custom layout";
 
-  	include "us(basic)"
-	include "us-custom(zy)"
-	include "us-custom(ue)"
-	include "us-custom(ae)"
-	include "us-custom(oe)"
-	include "us-custom(ss)"
-	include "us-custom(euro)"
+    include "us(basic)"
+    include "us-custom(zy)"
+    include "us-custom(ue)"
+    include "us-custom(ae)"
+    include "us-custom(oe)"
+    include "us-custom(ss)"
+    include "us-custom(euro)"
 
     include "level3(ralt_switch)"
 };
