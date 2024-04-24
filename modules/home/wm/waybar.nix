@@ -34,8 +34,8 @@
           interval = 10;
           device = "intel_backlight";
           format = "<span font=\"Font Awesome 6 Free\"></span> {percent}%";
-          on-scroll-up = "bash -c 'brightnessctl -d intel_backlight s 10%+'";
-          on-scroll-down = "bash -c 'brightnessctl -d intel_backlight s 10%-'";
+          on-scroll-up = "bash -c 'brightnessctl -d amdgpu_bl1 s 10%+'";
+          on-scroll-down = "bash -c 'brightnessctl -d amdgpu_bl1 s 10%-'";
         };
 
         "battery" = {
