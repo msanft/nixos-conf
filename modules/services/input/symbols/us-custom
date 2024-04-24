@@ -1,51 +1,44 @@
-default partial alphanumeric_keys modifier_keys xkb_symbols "us-custom"
-{
-	name[Group1]="US (ANSI) custom layout";
+default partial alphanumeric_keys modifier_keys xkb_symbols "us-custom" {
+  	name[Group1] = "US (ANSI) custom layout";
 
-	include "us(basic)"
-
+  	include "us(basic)"
 	include "us-custom(zy)"
 	include "us-custom(ue)"
 	include "us-custom(ae)"
 	include "us-custom(oe)"
 	include "us-custom(ss)"
+	include "us-custom(euro)"
 
-	include "level3(ralt_switch)"
+    include "level3(ralt_switch)"
 };
 
 // change z and y
-partial alphanumeric_keys xkb_symbols "zy"
-{
-	key <LatY> { [ z, Z, NoSymbol, NoSymbol ] };
-	key <LatZ> { [ y, Y, NoSymbol, NoSymbol ] };
+partial alphanumeric_keys xkb_symbols "zy" {
+  key<LatY>{[z, Z, NoSymbol, NoSymbol]};
+  key<LatZ>{[y, Y, NoSymbol, NoSymbol]};
 };
 
 // ü and Ü on U+AltGr
-partial alphanumeric_keys xkb_symbols "ue"
-{
-    key <LatU> { [ u, U, udiaeresis, Udiaeresis ] };
+partial alphanumeric_keys xkb_symbols "ue" {
+  key<LatU>{[u, U, udiaeresis, Udiaeresis]};
 };
 
 // ä and Ä on A+AltGr
-partial alphanumeric_keys xkb_symbols "ae"
-{
-    key <LatA> { [ a, A, adiaeresis, Adiaeresis ] };
+partial alphanumeric_keys xkb_symbols "ae" {
+  key<LatA>{[a, A, adiaeresis, Adiaeresis]};
 };
 
 // ö and Ö on O+AltGr
-partial alphanumeric_keys xkb_symbols "oe"
-{
-    key <LatO> { [ o, O, odiaeresis, Odiaeresis ] };
+partial alphanumeric_keys xkb_symbols "oe" {
+  key<LatO>{[o, O, odiaeresis, Odiaeresis]};
 };
 
 // ß s+AltGr
-partial alphanumeric_keys xkb_symbols "ss"
-{
-	key <LatS> { [ s, S, ssharp, NoSymbol ] };
+partial alphanumeric_keys xkb_symbols "ss" {
+  key<LatS>{[s, S, ssharp, NoSymbol]};
 };
 
-// € e=Alt
-partial alphanumeric_keys xkb_symbols "euro"
-{
-	key <LatE> { [ e, E, EuroSign, NoSymbol ] };
+// € e+AltGr
+partial alphanumeric_keys xkb_symbols "euro" {
+  key<LatE>{[e, E, EuroSign, NoSymbol]};
 };
