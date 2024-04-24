@@ -11,7 +11,12 @@
       yubico = {
         enable = true;
         mode = "challenge-response";
-        id = [ "25808654" ];
+        id = "25808654";
+      };
+
+      u2f = {
+        enable = true;
+        cue = true;
       };
 
       services = {
