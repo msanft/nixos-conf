@@ -6,13 +6,14 @@
     ../../modules/services/tailscale
     ../../modules/system/i18n
     ../../modules/system/networking
-    ../../modules/system/security
     ../../modules/system/virt
     ../../modules/system/xdg
     ../../modules/system/audio
     ../../modules/system/kernel
     ../../modules/system/fonts
     ../../modules/nix/remote-builders.nix
+    ../../modules/nixos/yubikey.nix
+    ../../modules/nixos/secureboot.nix
     ../common
   ];
 
@@ -33,6 +34,10 @@
   };
 
   my.services.tailscale.enable = true;
+
+  my.yubikey.enable = true;
+
+  my.secureboot.enable = true;
 
   programs.wireshark.enable = true;
   environment.systemPackages = with pkgs; [ wireshark ];

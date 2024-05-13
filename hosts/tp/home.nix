@@ -3,7 +3,6 @@
     ../common/home.nix
     ../../modules/home/browser/firefox
     ../../modules/home/browser/chromium
-    ../../modules/home/gpg
     ../../modules/home/wm
     ../../modules/home/nixvim
   ];
@@ -28,5 +27,8 @@
     ranger
     cinny-desktop
     obsidian
+    unzip
+    zip
+    gnupg
   ];
 }
