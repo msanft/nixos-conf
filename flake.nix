@@ -29,6 +29,10 @@
       url = "/home/moritzs/dev/nix-remote-builders";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rpiKernelPkgs.url = "github:leo60228/nixpkgs/linux_rpi5";
   };
 
@@ -42,6 +46,7 @@
           home-manager.nixosModules.home-manager
           disko.nixosModules.disko
           remote-builders.nixosModules.remote-builders
+          lanzaboote.nixosModules.lanzaboote
           ./hosts/tp/disko.nix
           {
             home-manager.users.moritzs.imports = [
