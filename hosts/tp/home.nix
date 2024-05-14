@@ -3,7 +3,6 @@
     ../common/home.nix
     ../../modules/home/browser/firefox
     ../../modules/home/browser/chromium
-    ../../modules/home/wm
     ../../modules/home/nixvim
   ];
 

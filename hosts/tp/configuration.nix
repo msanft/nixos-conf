@@ -14,6 +14,7 @@
     ../../modules/nix/remote-builders.nix
     ../../modules/nixos/yubikey.nix
     ../../modules/nixos/secureboot.nix
+    ../../modules/nixos/sway
     ../common
   ];
 
@@ -35,9 +36,11 @@
 
   my.services.tailscale.enable = true;
 
-  my.yubikey.enable = true;
-
-  my.secureboot.enable = true;
+  my = {
+    yubikey.enable = true;
+    secureboot.enable = true;
+    sway.enable = true;
+  };
 
   programs.wireshark.enable = true;
   environment.systemPackages = with pkgs; [ wireshark ];
