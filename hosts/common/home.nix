@@ -1,15 +1,13 @@
 { pkgs, ... }: {
   imports = [
     ../../modules/home/shell
-    ../../modules/home/git
-    ../../modules/home/python
-    ../../modules/home/vscode
-    ../../modules/home/rss
+    ../../modules/home/git.nix
+    ../../modules/home/vscode.nix
   ];
 
   home.packages = with pkgs; [
     # Go
-    go_1_21
+    go
     gopls
     gotools
 
@@ -18,6 +16,9 @@
     nixpkgs-fmt
     nixpkgs-lint
     nix-output-monitor
+
+    # Python
+    python3
 
     # Rust
     rustc

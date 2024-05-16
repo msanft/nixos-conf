@@ -46,5 +46,7 @@ in
           RestartSec = 0;
         };
       };
+
+      programs.dconf.enable = true;
     };
 }
