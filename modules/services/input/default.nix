@@ -16,12 +16,12 @@
         };
       };
     };
+  };
 
-    libinput = {
-      enable = true;
-      mouse = {
-        accelProfile = "adaptive";
-      };
+  services.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "adaptive";
     };
   };
 
