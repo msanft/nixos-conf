@@ -5,35 +5,36 @@
     enableZshIntegration = if config.programs.zsh.enable then true else false;
 
     settings = {
+      format = "$time$all";
       add_newline = false;
 
       aws.disabled = true;
       gcloud.disabled = true;
       azure.disabled = true;
 
+      character = {
+        success_symbol = "[❯](bold green)";
+        error_symbol = "[✖](bold red)";
+      };
+
       username = {
-        format = "[$user]($style)@";
+        format = "[$user]($style):(grey)";
         show_always = true;
       };
 
-      hostname = {
-        ssh_only = false;
-      };
-
-      directory = {
-        truncation_length = 1;
-        read_only = "";
-        format = "[$path]($style) [$read_only]($read_only_style)";
-      };
-
       git_branch = {
-        symbol = "";
-        format = "on [$symbol $branch(:$remote_branch)]($style) ";
+        format = "@ [$branch(:$remote_branch)]($style) ";
       };
+
+      time = {
+        disabled = false;
+        format = "[\\[$time\\]](bold dark grey) ";
+        time_format = "%R";
+      };
+
+      line_break.disabled = true;
 
       kubernetes.disabled = false;
-
-      line_break.disabled = false;
     };
   };
 }
