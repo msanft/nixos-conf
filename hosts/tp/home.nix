@@ -29,6 +29,7 @@
     zip
     gnupg
     pass
+    zed-editor
   ];
 
   my.thunderbird.enable = true;
