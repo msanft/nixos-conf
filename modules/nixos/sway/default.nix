@@ -47,6 +47,8 @@ in
         };
       };
 
+      services.dbus.enable = true;
+
       programs.dconf.enable = true;
     };
 }

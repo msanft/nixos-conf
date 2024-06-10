@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    ../../modules/services/desktop
     ../../modules/services/greetd
     ../../modules/services/input
     ../../modules/services/tailscale
@@ -27,7 +26,7 @@
     shell = pkgs.bash;
   };
 
-  home-manager.users.moritzs = { pkgs, ... }: {
+  home-manager.users.moritzs = { ... }: {
     home.stateVersion = "22.11";
     imports = [
       ./home.nix
