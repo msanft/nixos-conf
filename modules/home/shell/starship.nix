@@ -11,6 +11,13 @@
       aws.disabled = true;
       gcloud.disabled = true;
       azure.disabled = true;
+      golang.disabled = true;
+      nix_shell.disabled = true;
+      c.disabled = true;
+      direnv.disabled = true;
+      docker_context.disabled = true;
+      nodejs.disabled = true;
+
 
       character = {
         success_symbol = "[❯](bold green)";
@@ -32,7 +39,7 @@
         time_format = "%R";
       };
 
-      line_break.disabled = true;
+      line_break.disabled = false;
 
       kubernetes.disabled = false;
     };
