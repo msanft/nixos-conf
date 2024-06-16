@@ -8,7 +8,6 @@
   networking.hostName = "zeitgeist";
 
   services.openssh.settings = {
-    PasswordAuthentication = false;
     PermitRootLogin = "without-password";
   };
 
