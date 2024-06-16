@@ -33,10 +33,19 @@
       url = "github:nix-community/lanzaboote/v0.4.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
     nixosConfigurations = {
+
       tp = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -66,6 +75,7 @@
         ];
         specialArgs = { inherit inputs; };
       };
+
     };
 
     darwinConfigurations.mb = inputs.darwin.lib.darwinSystem {
@@ -75,5 +85,16 @@
         inputs.home-manager.darwinModules.home-manager
       ];
     };
-  };
+
+  } // inputs.flake-utils.lib.eachDefaultSystem (system:
+    let pkgs = import inputs.nixpkgs { inherit system; }; in
+    {
+
+      devShells.default = pkgs.mkShell {
+        buildInputs = [
+          inputs.colmena.packages.${system}.colmena
+        ];
+      };
+
+    });
 }
