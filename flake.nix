@@ -43,7 +43,7 @@
     };
   };
 
-  outputs = inputs: {
+  outputs = inputs: rec {
     nixosConfigurations = {
 
       tp = inputs.nixpkgs.lib.nixosSystem {
@@ -85,6 +85,19 @@
         inputs.home-manager.darwinModules.home-manager
       ];
     };
+
+    colmena = {
+        meta = {
+          nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+          nodeNixpkgs = builtins.mapAttrs (_: v: v.pkgs) nixosConfigurations;
+          nodeSpecialArgs = builtins.mapAttrs (_: v: v._module.specialArgs) nixosConfigurations;
+          specialArgs.lib = inputs.nixpkgs.lib;
+        };
+      } // builtins.mapAttrs
+        (_: v: {
+          imports = v._module.args.modules;
+        })
+        nixosConfigurations;
 
   } // inputs.flake-utils.lib.eachDefaultSystem (system:
     let pkgs = import inputs.nixpkgs { inherit system; }; in

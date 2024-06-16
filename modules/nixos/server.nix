@@ -32,15 +32,24 @@
     tailscale
   ];
 
-  users.users.msanft = {
-    isNormalUser = true;
-    description = "Moritz Sanft";
-    extraGroups = [ "wheel" ];
-    shell = pkgs.bash;
-    openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHG4Gb4iiSrqLqrARn/2gmJvyBQ9I+qUN+TwdJDIJUZMrBA7cLNbX/qsyEgG9hMd7GqXVQW7USMu4Dl7S1h+3RUWVOM0QwAA35qjTUpulf4nSJvgIdCjp3DZ8yntHpfL7CeOpcQCi/d4TVHwXSvoPU1rMs566PLXMkJIlBc/Q86v6b+mBlsLRcecBoBWBXeIcABN3oUvBQ+O6A5HEBd+Ec2A2BLykRkBAeBpUSFEBF/5fDgnUsNgpa6lMMtSOCBjjko/PmGT7KuhMIdpdMtTSc3wc4QFKAFecddO5MgkPY0gAUVzVtEe1xlYen37+2sKzbfsQ2ZvW/tKxCVGc71SPTdtz+bhC6hIBLrT63RPUyXUmt1QiwveJHv8/tHYZmHDabAuVPqPnRw2mN37fx+oeWc4wE+B5GBQxdVDPM8M5IBbI6FB4IHA1SzGsBTOIaO1B+XSblxvk/8z1/BGM7ya0E2ilkGpD9C+4AH0yejT9ztFWqNf/JEvIedIXPqkptvvYKJTuhw+hsbsN2hAkF4yiEXko2cIV97btJJl3E9/M0dFSuh3Q3igejSIoDBZTl5Z73zJ4znKx/6FGUHk+Cq8JMU6X82Y3ULQaVPpaiCtXx+OJLlUeQ9K1WIn5wI3cdXj3A3gPXjks+lVxh4gUnzzv4jVDxP736TYJAXliR/d6Aaw=="
-    ];
-  };
+  users.users =
+    let
+      sshKeys =
+        [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHG4Gb4iiSrqLqrARn/2gmJvyBQ9I+qUN+TwdJDIJUZMrBA7cLNbX/qsyEgG9hMd7GqXVQW7USMu4Dl7S1h+3RUWVOM0QwAA35qjTUpulf4nSJvgIdCjp3DZ8yntHpfL7CeOpcQCi/d4TVHwXSvoPU1rMs566PLXMkJIlBc/Q86v6b+mBlsLRcecBoBWBXeIcABN3oUvBQ+O6A5HEBd+Ec2A2BLykRkBAeBpUSFEBF/5fDgnUsNgpa6lMMtSOCBjjko/PmGT7KuhMIdpdMtTSc3wc4QFKAFecddO5MgkPY0gAUVzVtEe1xlYen37+2sKzbfsQ2ZvW/tKxCVGc71SPTdtz+bhC6hIBLrT63RPUyXUmt1QiwveJHv8/tHYZmHDabAuVPqPnRw2mN37fx+oeWc4wE+B5GBQxdVDPM8M5IBbI6FB4IHA1SzGsBTOIaO1B+XSblxvk/8z1/BGM7ya0E2ilkGpD9C+4AH0yejT9ztFWqNf/JEvIedIXPqkptvvYKJTuhw+hsbsN2hAkF4yiEXko2cIV97btJJl3E9/M0dFSuh3Q3igejSIoDBZTl5Z73zJ4znKx/6FGUHk+Cq8JMU6X82Y3ULQaVPpaiCtXx+OJLlUeQ9K1WIn5wI3cdXj3A3gPXjks+lVxh4gUnzzv4jVDxP736TYJAXliR/d6Aaw=="
+        ];
+
+    in
+    {
+      root.openssh.authorizedKeys.keys = sshKeys;
+      msanft = {
+        isNormalUser = true;
+        description = "Moritz Sanft";
+        extraGroups = [ "wheel" ];
+        shell = pkgs.bash;
+        openssh.authorizedKeys.keys = sshKeys;
+      };
+    };
 
   zramSwap.enable = true;
 
@@ -76,17 +85,6 @@
     };
 
     tmp.cleanOnBoot = true;
-  };
-
-  system.activationScripts.diff = {
-    supportsDryActivation = true;
-    text = ''
-      if [[ -e /run/current-system ]]; then
-        echo "--- diff to current-system"
-        ${pkgs.nvd}/bin/nvd --nix-bin-dir=${config.nix.package}/bin diff /run/current-system "$systemConfig"
-        echo "---"
-      fi
-    '';
   };
 
   time.timeZone = lib.mkDefault "UTC";

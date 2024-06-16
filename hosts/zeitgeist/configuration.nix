@@ -7,7 +7,10 @@
 
   networking.hostName = "zeitgeist";
 
-  services.openssh.settings.PermitRootLogin = "yes";
+  services.openssh.settings = {
+    PasswordAuthentication = false;
+    PermitRootLogin = "without-password";
+  };
 
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "en*";
