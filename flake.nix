@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+      url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
     berkeley-mono = {
       url = "git+ssh://git@github.com/msanft/berkeley-mono";
@@ -19,7 +19,7 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
       url = "github:nix-community/disko";
@@ -30,58 +30,49 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.3.0";
+      url = "github:nix-community/lanzaboote/v0.4.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rpiKernelPkgs.url = "github:leo60228/nixpkgs/linux_rpi5";
   };
 
-  outputs = inputs: with inputs; rec {
+  outputs = inputs: {
     nixosConfigurations = {
-      tp = nixpkgs.lib.nixosSystem {
+      tp = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/tp/configuration.nix
           ./hosts/tp/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          disko.nixosModules.disko
-          remote-builders.nixosModules.remote-builders
-          lanzaboote.nixosModules.lanzaboote
+          inputs.home-manager.nixosModules.home-manager
+          inputs.disko.nixosModules.disko
+          inputs.remote-builders.nixosModules.remote-builders
+          inputs.lanzaboote.nixosModules.lanzaboote
           ./hosts/tp/disko.nix
           {
             home-manager.users.moritzs.imports = [
-              nixvim.homeManagerModules.nixvim
+              inputs.nixvim.homeManagerModules.nixvim
             ];
           }
         ];
         specialArgs = { inherit inputs; };
       };
 
-      zeitgeist = nixpkgs.lib.nixosSystem {
+      zeitgeist = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/zeitgeist/configuration.nix
           ./hosts/zeitgeist/hardware-configuration.nix
-          disko.nixosModules.disko
+          inputs.disko.nixosModules.disko
           ./hosts/zeitgeist/disko.nix
         ];
         specialArgs = { inherit inputs; };
       };
-
-      alfred = nixpkgs.lib.nixosSystem rec {
-        system = "aarch64-linux";
-        modules = [
-          ./hosts/alfred/configuration.nix
-        ];
-        specialArgs = { inherit inputs system rpiKernelPkgs; };
-      };
     };
 
-    darwinConfigurations.mb = darwin.lib.darwinSystem {
+    darwinConfigurations.mb = inputs.darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./hosts/mb/configuration.nix
-        home-manager.darwinModules.home-manager
+        inputs.home-manager.darwinModules.home-manager
       ];
     };
   };
