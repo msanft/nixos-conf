@@ -1,7 +1,8 @@
-{ config, lib, pkgs, inputs, modulesPath, ... }: {
+{ homepage, ... }: {
   imports = [
     ../../modules/nix
     ../../modules/nixos/server.nix
+    ../../modules/nixos/homepage.nix
     ../../modules/nixos/home-assistant.nix
   ];
 
@@ -9,6 +10,11 @@
 
   services.openssh.settings = {
     PermitRootLogin = "without-password";
+  };
+
+  my.homepage = {
+    enable = true;
+    package = homepage;
   };
 
   systemd.network.networks."10-lan" = {

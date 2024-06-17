@@ -41,6 +41,10 @@
       url = "github:zhaofengli/colmena";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    homepage = {
+      url = "github:msanft/homepage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: rec {
@@ -65,7 +69,7 @@
         specialArgs = { inherit inputs; };
       };
 
-      zeitgeist = inputs.nixpkgs.lib.nixosSystem {
+      zeitgeist = inputs.nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         modules = [
           ./hosts/zeitgeist/configuration.nix
@@ -73,7 +77,7 @@
           inputs.disko.nixosModules.disko
           ./hosts/zeitgeist/disko.nix
         ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { homepage = inputs.homepage.packages.${system}.default; };
       };
 
     };
@@ -87,17 +91,17 @@
     };
 
     colmena = {
-        meta = {
-          nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
-          nodeNixpkgs = builtins.mapAttrs (_: v: v.pkgs) nixosConfigurations;
-          nodeSpecialArgs = builtins.mapAttrs (_: v: v._module.specialArgs) nixosConfigurations;
-          specialArgs.lib = inputs.nixpkgs.lib;
-        };
-      } // builtins.mapAttrs
-        (_: v: {
-          imports = v._module.args.modules;
-        })
-        nixosConfigurations;
+      meta = {
+        nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+        nodeNixpkgs = builtins.mapAttrs (_: v: v.pkgs) nixosConfigurations;
+        nodeSpecialArgs = builtins.mapAttrs (_: v: v._module.specialArgs) nixosConfigurations;
+        specialArgs.lib = inputs.nixpkgs.lib;
+      };
+    } // builtins.mapAttrs
+      (_: v: {
+        imports = v._module.args.modules;
+      })
+      nixosConfigurations;
 
   } // inputs.flake-utils.lib.eachDefaultSystem (system:
     let pkgs = import inputs.nixpkgs { inherit system; }; in
