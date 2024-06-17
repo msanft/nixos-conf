@@ -34,5 +34,11 @@
       --jump nixos-fw-refuse
   '';
 
+  services.cloudflare-dyndns = {
+    enable = true;
+    domains = [ "msanft.foo" ];
+    apiTokenFile = "/etc/cloudflare-dyndns.secret";
+  };
+
   system.stateVersion = "22.11";
 }
