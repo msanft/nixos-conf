@@ -16,7 +16,7 @@ in
       };
     };
 
-  imports = [ ./caddy.nix ];
+  imports = [ ./caddy.nix ./dyndns.nix ];
 
   config = lib.mkIf cfg.enable
     {
@@ -30,5 +30,7 @@ in
           '';
         };
       };
+
+      my.dyndns.domains = [ "msanft.foo" ];
     };
 }

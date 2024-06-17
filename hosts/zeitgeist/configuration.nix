@@ -2,7 +2,9 @@
   imports = [
     ../../modules/nix
     ../../modules/nixos/server.nix
+    ../../modules/nixos/dyndns.nix
     ../../modules/nixos/homepage.nix
+    ../../modules/nixos/hedgedoc.nix
     ../../modules/nixos/home-assistant.nix
   ];
 
@@ -16,6 +18,10 @@
     enable = true;
     package = homepage;
   };
+
+  my.hedgedoc.enable = true;
+
+  my.dyndns.enable = true;
 
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "en*";
@@ -39,12 +45,6 @@
       --protocol tcp \
       --jump nixos-fw-refuse
   '';
-
-  services.cloudflare-dyndns = {
-    enable = true;
-    domains = [ "msanft.foo" ];
-    apiTokenFile = "/etc/cloudflare-dyndns.secret";
-  };
 
   system.stateVersion = "22.11";
 }
