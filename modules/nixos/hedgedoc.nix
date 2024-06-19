@@ -29,7 +29,7 @@ in
       services.caddy.virtualHosts = {
         "pad.msanft.foo" = {
           extraConfig = ''
-            reverse_proxy :${toString config.services.hedgedoc.settings.port}
+            reverse_proxy localhost:${toString config.services.hedgedoc.settings.port}
           '';
         };
       };
