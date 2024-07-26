@@ -1,6 +1,4 @@
 { ... }: {
-  sound.enable = true;
-
   hardware.bluetooth.enable = true;
 
   security.rtkit.enable = true;
