@@ -27,7 +27,7 @@
   hardware = {
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    opengl = { enable = true; driSupport = true; };
+    graphics = { enable = true; };
   };
   services.hardware.bolt.enable = true;
 }
