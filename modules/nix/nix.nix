@@ -5,7 +5,7 @@
       auto-optimise-store = true;
       trusted-users = [ "root" "@wheel" ];
     };
-    package = pkgs.nixVersions.nix_2_21;
+    package = pkgs.nixVersions.nix_2_22;
     gc = {
       automatic = true;
       dates = lib.mkIf (pkgs.stdenv.isLinux) "weekly";
