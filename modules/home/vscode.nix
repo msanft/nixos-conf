@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }:
+{
   home.sessionVariables.NIXOS_OZONE_WL = "1"; # run natively under wayland
 
   programs.vscode = {
@@ -44,9 +45,7 @@
       "nix.serverSettings" = {
         "nixd" = {
           "formatting" = {
-            "command" = [
-              "nixpkgs-fmt"
-            ];
+            "command" = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
           };
         };
       };
@@ -76,7 +75,8 @@
 
     mutableExtensionsDir = false;
 
-    extensions = with pkgs.vscode-extensions;
+    extensions =
+      with pkgs.vscode-extensions;
       [
         github.vscode-github-actions
         golang.go
