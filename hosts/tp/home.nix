@@ -22,7 +22,7 @@
     clang-tools_17
     gcc13
     linuxHeaders
-    ranger
+    yazi
     cinny-desktop
     obsidian
     unzip
@@ -30,6 +30,7 @@
     gnupg
     pass
     zed-editor
+    ida-pro
   ];
 
   my.thunderbird.enable = true;
