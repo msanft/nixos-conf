@@ -1,11 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 {
   services.home-assistant = {
     enable = true;
+
     extraComponents = [
       # Components required to complete the onboarding
       "esphome"
@@ -16,13 +18,21 @@
       "shelly"
       "hue"
     ];
-    openFirewall = true;
+
     config = {
       # Includes dependencies for a basic setup
       # https://www.home-assistant.io/integrations/default_config/
       default_config = { };
 
       "automation ui" = "!include automations.yaml";
+    };
+  };
+
+  services.caddy.virtualHosts = {
+    "hass.msanft.home" = {
+      extraConfig = ''
+        reverse_proxy localhost:8123
+      '';
     };
   };
 
