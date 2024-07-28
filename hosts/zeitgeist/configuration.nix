@@ -1,10 +1,16 @@
-{ homepage, ... }: {
+{ homepage, ... }:
+{
   imports = [
     ../../modules/nix
     ../../modules/nixos/server.nix
     ../../modules/nixos/dyndns.nix
     ../../modules/nixos/homepage.nix
     ../../modules/nixos/hedgedoc.nix
+    ../../modules/nixos/prometheus
+    ../../modules/nixos/grafana
+    ../../modules/nixos/loki
+    ../../modules/nixos/prometheus/exporters/node-exporter.nix
+    ../../modules/nixos/prometheus/exporters/caddy.nix
     ../../modules/nixos/home-assistant.nix
   ];
 
@@ -20,6 +26,18 @@
   };
 
   my.hedgedoc.enable = true;
+
+  my.prometheus = {
+    enable = true;
+    exporters = {
+      node.enable = true;
+      caddy.enable = true;
+    };
+  };
+
+  my.grafana.enable = true;
+
+  my.loki.enable = true;
 
   my.dyndns.enable = true;
 
