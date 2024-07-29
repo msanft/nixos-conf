@@ -24,6 +24,15 @@
       # https://www.home-assistant.io/integrations/default_config/
       default_config = { };
 
+      http = {
+        base_url = "https://hass.msanft.home";
+        use_x_forwarded_for = true;
+        trusted_proxies = [
+          "127.0.0.1"
+          "::1"
+        ];
+      };
+
       "automation ui" = "!include automations.yaml";
     };
   };
@@ -31,6 +40,8 @@
   services.caddy.virtualHosts = {
     "hass.msanft.home" = {
       extraConfig = ''
+        tls internal
+
         reverse_proxy localhost:8123
       '';
     };
