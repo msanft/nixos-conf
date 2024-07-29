@@ -12,6 +12,7 @@ in
   config = lib.mkIf cfg.enable {
     services.prometheus = {
       enable = true;
+      globalConfig.scrape_interval = "15s";
       webExternalUrl = "https://prometheus.msanft.home/";
     };
 
