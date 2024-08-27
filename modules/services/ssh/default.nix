@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   cfg = config.my.services.ssh;
 
@@ -7,30 +12,29 @@ let
   };
 in
 {
-  options.my.services.ssh = with lib;
-    {
-      enable = mkEnableOption "Build the SSH configuration.";
-      server = mkEnableOption "Run an SSH server. (i.e. enable the SSH daemon)";
-      allowedUsers = mkOption {
-        type = types.listOf types.str;
-        default = [ ];
-        description = ''
-          Users who are allowed to log in via SSH.
-        '';
-      };
+  options.my.services.ssh = with lib; {
+    enable = mkEnableOption "Build the SSH configuration.";
+    server = mkEnableOption "Run an SSH server. (i.e. enable the SSH daemon)";
+    allowedUsers = mkOption {
+      type = types.listOf types.str;
+      default = [ ];
+      description = ''
+        Users who are allowed to log in via SSH.
+      '';
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    services.openssh = {
+      enable = cfg.server;
     };
 
-  config = lib.mkIf cfg.enable
-    {
-      services.openssh = {
-        enable = cfg.server;
-      };
+    environment.systemPackages = [ pkgs.openssh ];
 
-      environment.systemPackages = [ pkgs.openssh ];
-
-      users.users = lib.mkIf cfg.server
-        (lib.genAttrs cfg.allowedUsers (user: {
-          openssh.authorizedKeys.keys = lib.attrValues keys;
-        }));
-    };
+    users.users = lib.mkIf cfg.server (
+      lib.genAttrs cfg.allowedUsers (user: {
+        openssh.authorizedKeys.keys = lib.attrValues keys;
+      })
+    );
+  };
 }

@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   finalPkg = name: "${config.programs.${name}.finalPackage}";
   finalPkgBin = name: "${finalPkg name}/bin/${name}";
@@ -33,7 +38,7 @@ in
     config = {
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";
-      bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
+      bars = [ { command = "${pkgs.waybar}/bin/waybar"; } ];
 
       colors = {
         focusedInactive = {
@@ -135,6 +140,20 @@ in
       enable = true;
 
       profiles = {
+        netzlabor.outputs = [
+          {
+            criteria = "eDP-1";
+            status = "enable";
+            position = "0,1080";
+            scale = 1.0;
+          }
+          {
+            criteria = "*";
+            status = "enable";
+            position = "0,0";
+          }
+        ];
+
         docked.outputs = [
           {
             criteria = "${dellG3223D.name} H916XG3";
@@ -176,20 +195,6 @@ in
           }
         ];
 
-        netzlabor.outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            position = "0,1080";
-            scale = 1.0;
-          }
-          {
-            criteria = "*";
-            status = "enable";
-            position = "0,0";
-          }
-        ];
-
         undocked.outputs = [
           {
             criteria = "eDP-1";
@@ -199,16 +204,16 @@ in
           }
         ];
 
-        buchs.outputs = [
+        parents.outputs = [
           {
             criteria = "eDP-1";
             status = "enable";
-            position = "0,1080";
+            position = "2560,0";
           }
           {
-            criteria = "Philips Consumer Electronics Company PHL 273V7 UK02314023787";
+            criteria = "ASUSTek COMPUTER INC VG32AQA1A RCLMQS032087";
             status = "enable";
-            mode = "1920x1080@60.000Hz";
+            mode = "2560x1440@144.001Hz";
             position = "0,0";
           }
         ];
@@ -386,7 +391,10 @@ in
             phone = "";
             portable = "";
             car = "";
-            default = [ "" "" ];
+            default = [
+              ""
+              ""
+            ];
           };
           scroll-step = 1;
           on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";

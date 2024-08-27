@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../../modules/services/greetd
     ../../modules/services/input
@@ -22,20 +23,27 @@
   users.users.moritzs = {
     isNormalUser = true;
     description = "Moritz Sanft";
-    extraGroups = [ "networkmanager" "wheel" "docker" "audio" "wireshark" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "audio"
+      "wireshark"
+    ];
     shell = pkgs.bash;
   };
 
-  home-manager.users.moritzs = { ... }: {
-    home.stateVersion = "22.11";
-    imports = [
-      ./home.nix
-    ];
-  };
+  home-manager.users.moritzs =
+    { ... }:
+    {
+      home.stateVersion = "22.11";
+      imports = [ ./home.nix ];
+    };
 
-  my.services.tailscale.enable = true;
+  services.fwupd.enable = true;
 
   my = {
+    services.tailscale.enable = true;
     yubikey.enable = true;
     secureboot.enable = true;
     sway.enable = true;

@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   programs.ripgrep.enable = true;
 
   programs.fzf = {

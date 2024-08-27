@@ -2,7 +2,8 @@
 let
   berkeley-mono = inputs.berkeley-mono.packages.x86_64-linux;
 in
-with pkgs; [
+with pkgs;
+[
   roboto
   noto-fonts
   jetbrains-mono

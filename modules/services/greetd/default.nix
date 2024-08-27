@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Otherwise bootlogs end up in the greeter
   boot.kernelParams = [
     "console=tty1"

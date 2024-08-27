@@ -1,4 +1,5 @@
-{  pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   imports = [
     ./nix.nix
     ./nixpkgs.nix
@@ -14,6 +15,5 @@
       fi
     '';
   };
-
 
 }

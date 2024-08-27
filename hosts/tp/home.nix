@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ../common/home.nix
     ../../modules/home/browser/firefox
@@ -23,7 +24,6 @@
     gcc13
     linuxHeaders
     yazi
-    cinny-desktop
     obsidian
     unzip
     zip
@@ -31,6 +31,7 @@
     pass
     zed-editor
     ida-pro
+    sublime-merge
   ];
 
   my.thunderbird.enable = true;

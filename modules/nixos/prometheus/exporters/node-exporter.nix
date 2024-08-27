@@ -11,7 +11,10 @@ in
     services.prometheus = {
       exporters.node = {
         enable = true;
-        enabledCollectors = [ "systemd" "processes" ];
+        enabledCollectors = [
+          "systemd"
+          "processes"
+        ];
       };
 
       scrapeConfigs = [

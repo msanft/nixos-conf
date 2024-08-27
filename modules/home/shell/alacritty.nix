@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.alacritty =
     let
       font = "BerkeleyMono Nerd Font Mono";
@@ -66,12 +67,30 @@
           };
 
           indexed_colors = [
-            { index = 16; color = "0xfe8019"; }
-            { index = 17; color = "0xd65d0e"; }
-            { index = 18; color = "0x3c3836"; }
-            { index = 19; color = "0x504945"; }
-            { index = 20; color = "0xbdae93"; }
-            { index = 21; color = "0xebdbb2"; }
+            {
+              index = 16;
+              color = "0xfe8019";
+            }
+            {
+              index = 17;
+              color = "0xd65d0e";
+            }
+            {
+              index = 18;
+              color = "0x3c3836";
+            }
+            {
+              index = 19;
+              color = "0x504945";
+            }
+            {
+              index = 20;
+              color = "0xbdae93";
+            }
+            {
+              index = 21;
+              color = "0xebdbb2";
+            }
           ];
         };
       };

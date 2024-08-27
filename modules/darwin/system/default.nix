@@ -1,4 +1,5 @@
-{ pkgs, system, ... }: {
+{ pkgs, system, ... }:
+{
   system.defaults.NSGlobalDomain = {
     "com.apple.swipescrolldirection" = false;
     AppleInterfaceStyleSwitchesAutomatically = true;

@@ -1,9 +1,13 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
     package = pkgs.nixVersions.nix_2_22;
     gc = {

@@ -1,4 +1,5 @@
-{ pkgs, system, ... }: {
+{ pkgs, system, ... }:
+{
   imports = [
     ../common
     ../../modules/darwin/brew
@@ -12,10 +13,12 @@
     name = "msanft";
     home = "/Users/msanft";
   };
-  home-manager.users.msanft = { pkgs, ... }: {
-    home.stateVersion = "23.05";
-    imports = [
-      ./home.nix
-    ];
-  };
+  home-manager.users.msanft =
+    { pkgs, ... }:
+    {
+      home.stateVersion = "23.05";
+      imports = [
+        ./home.nix
+      ];
+    };
 }

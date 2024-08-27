@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.tmux = {
     enable = true;
     keyMode = "vi";

@@ -9,10 +9,10 @@ in
 
   config = lib.mkIf cfg.enable {
     services.caddy.globalConfig = ''
-        servers {
-          metrics
-        }
-      '';
+      servers {
+        metrics
+      }
+    '';
 
     services.prometheus.scrapeConfigs = [
       {

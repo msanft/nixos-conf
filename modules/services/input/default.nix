@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services.xserver = {
     xkb = {
       layout = "us-custom,de-custom";

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.resolved = {
     enable = true;
   };
@@ -23,7 +24,10 @@
         peers = [
           {
             publicKey = "lWpULQEkTfwTwZ2zTIZhph9s8A4XKXO5SdU+FQP9kzg=";
-            allowedIPs = [ "10.1.8.0/24" "10.13.37.0/29" ];
+            allowedIPs = [
+              "10.1.8.0/24"
+              "10.13.37.0/29"
+            ];
             endpoint = "vpn.fluxfingers.net:51820"; # ToDo: route to endpoint not automatically configured https://wiki.archlinux.org/index.php/WireGuard#Loop_routing https://discourse.nixos.org/t/solved-minimal-firewall-setup-for-wireguard-client/7577
             persistentKeepalive = 25;
           }

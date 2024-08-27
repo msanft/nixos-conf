@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.starship = {
     enable = true;
     enableBashIntegration = if config.programs.bash.enable then true else false;
@@ -17,7 +18,6 @@
       direnv.disabled = true;
       docker_context.disabled = true;
       nodejs.disabled = true;
-
 
       character = {
         success_symbol = "[❯](bold green)";

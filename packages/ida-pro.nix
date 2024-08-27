@@ -1,27 +1,28 @@
-{ autoPatchelfHook
-, cairo
-, copyDesktopItems
-, dbus
-, fetchurl
-, fontconfig
-, freetype
-, glib
-, gtk3
-, lib
-, libdrm
-, libGL
-, libkrb5
-, libsecret
-, libsForQt5
-, libunwind
-, libxkbcommon
-, makeDesktopItem
-, makeWrapper
-, openssl
-, stdenv
-, xorg
-, zlib
-, curl
+{
+  autoPatchelfHook,
+  cairo,
+  copyDesktopItems,
+  dbus,
+  fetchurl,
+  fontconfig,
+  freetype,
+  glib,
+  gtk3,
+  lib,
+  libdrm,
+  libGL,
+  libkrb5,
+  libsecret,
+  libsForQt5,
+  libunwind,
+  libxkbcommon,
+  makeDesktopItem,
+  makeWrapper,
+  openssl,
+  stdenv,
+  xorg,
+  zlib,
+  curl,
 }:
 stdenv.mkDerivation rec {
   pname = "ida-pro";
@@ -50,7 +51,12 @@ stdenv.mkDerivation rec {
   };
   desktopItems = [ desktopItem ];
 
-  nativeBuildInputs = [ makeWrapper copyDesktopItems autoPatchelfHook libsForQt5.wrapQtAppsHook ];
+  nativeBuildInputs = [
+    makeWrapper
+    copyDesktopItems
+    autoPatchelfHook
+    libsForQt5.wrapQtAppsHook
+  ];
 
   # We just get a runfile in $src, so no need to unpack it.
   dontUnpack = true;

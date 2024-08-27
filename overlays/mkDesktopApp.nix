@@ -1,13 +1,14 @@
 final: prev: {
   lib = prev.lib // {
     mkDesktopApp =
-      { name
-      , displayName
-      , execScript
-      , runtime
-      , genericName ? "Web Application"
-      , comment ? "Web Application"
-      , ...
+      {
+        name,
+        displayName,
+        execScript,
+        runtime,
+        genericName ? "Web Application",
+        comment ? "Web Application",
+        ...
       }:
       rec {
         script = prev.writeShellApplication {

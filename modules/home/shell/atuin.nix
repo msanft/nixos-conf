@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.atuin = {
     enable = true;
     enableBashIntegration = if config.programs.bash.enable then true else false;
