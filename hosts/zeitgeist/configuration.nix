@@ -12,6 +12,7 @@
     ../../modules/nixos/prometheus/exporters/node-exporter.nix
     ../../modules/nixos/prometheus/exporters/caddy.nix
     ../../modules/nixos/home-assistant.nix
+    ../../modules/nixos/nextcloud.nix
   ];
 
   networking.hostName = "zeitgeist";
@@ -26,6 +27,8 @@
   };
 
   my.hedgedoc.enable = true;
+
+  my.nextcloud.enable = true;
 
   my.prometheus = {
     enable = true;
@@ -46,6 +49,9 @@
     networkConfig.DHCP = "yes";
     linkConfig.RequiredForOnline = "routable";
   };
+  systemd.network.wait-online.anyInterface = true;
+  networking.networkmanager.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   boot.supportedFilesystems = [ "btrfs" ];
 
