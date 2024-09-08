@@ -14,7 +14,7 @@
     ../../modules/nix/remote-builders.nix
     ../../modules/nixos/yubikey.nix
     ../../modules/nixos/secureboot.nix
-    ../../modules/nixos/sway
+    ../../modules/nixos/i3
     ../common
   ];
 
@@ -28,7 +28,6 @@
       "wheel"
       "docker"
       "audio"
-      "wireshark"
     ];
     shell = pkgs.bash;
   };
@@ -46,11 +45,8 @@
     services.tailscale.enable = true;
     yubikey.enable = true;
     secureboot.enable = true;
-    sway.enable = true;
+    i3.enable = true;
   };
-
-  programs.wireshark.enable = true;
-  environment.systemPackages = with pkgs; [ wireshark ];
 
   system.stateVersion = "22.11";
 }

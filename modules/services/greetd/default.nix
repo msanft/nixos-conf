@@ -6,7 +6,7 @@
   ];
 
   services.greetd = {
-    enable = true;
+    enable = false;
     vt = 2;
     settings = {
       default_session = {
@@ -14,7 +14,7 @@
         command = ''
           ${pkgs.greetd.tuigreet}/bin/tuigreet \
           --remember --time --asterisks \
-          --cmd '${pkgs.sway}/bin/sway'
+          --cmd '${pkgs.i3}/bin/i3'
         '';
       };
     };

@@ -225,6 +225,10 @@ in
     defaultTimeout = 2000;
   };
 
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "sway";
+  };
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland; # wayland native replacement

@@ -13,18 +13,4 @@
       config.common.default = "*";
     };
   };
-
-  home-manager.users.moritzs =
-    { pkgs, ... }:
-    {
-      home.sessionVariables = {
-        XDG_CURRENT_DESKTOP = "sway";
-      };
-
-      xdg.configFile."nixpkgs/config.nix".text = ''
-        {
-          allowUnfree = true;
-        }
-      '';
-    };
 }

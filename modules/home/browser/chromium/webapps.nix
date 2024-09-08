@@ -5,19 +5,19 @@ let
       name = "teams";
       displayName = "Microsoft Teams";
       runtime = pkgs.chromium;
-      execScript = "swaymsg exec 'chromium --app=https://teams.microsoft.com/'";
+      execScript = "chromium --app=https://teams.microsoft.com/";
     };
     discord = pkgs.lib.mkDesktopApp {
       name = "discord";
       displayName = "Discord";
       runtime = pkgs.chromium;
-      execScript = "swaymsg exec 'chromium --app=https://discord.com/app/'";
+      execScript = "chromium --app=https://discord.com/app/";
     };
     element = pkgs.lib.mkDesktopApp {
       name = "element";
       displayName = "Element";
       runtime = pkgs.chromium;
-      execScript = "swaymsg exec 'chromium --app=https://app.element.io/'";
+      execScript = "chromium --app=https://app.element.io/";
     };
   };
 in

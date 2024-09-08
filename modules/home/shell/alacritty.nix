@@ -31,7 +31,7 @@
             family = font;
             style = "Italic";
           };
-          size = 11;
+          size = 10;
         };
 
         colors = {

@@ -11,6 +11,7 @@
     ../../modules/nixos/loki
     ../../modules/nixos/prometheus/exporters/node-exporter.nix
     ../../modules/nixos/prometheus/exporters/caddy.nix
+    ../../modules/nixos/prometheus/exporters/nextcloud.nix
     ../../modules/nixos/home-assistant.nix
     ../../modules/nixos/nextcloud.nix
   ];
@@ -35,6 +36,7 @@
     exporters = {
       node.enable = true;
       caddy.enable = true;
+      nextcloud.enable = true;
     };
   };
 

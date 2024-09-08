@@ -50,8 +50,6 @@ in
         };
 
         services = {
-          # Needs to be explicitly enabled so Swaylock can login for us
-          swaylock = { };
           greetd.enableGnomeKeyring = true;
         };
       };

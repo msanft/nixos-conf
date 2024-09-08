@@ -46,6 +46,9 @@ in
       };
     };
 
+    # for YubiKey login
+    security.services.swaylock = { };
+
     services.dbus.enable = true;
 
     programs.dconf.enable = true;

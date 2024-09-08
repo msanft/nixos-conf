@@ -8,10 +8,22 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    services.prometheus.exporters.nextcloud = {
-      enable = true;
-      username = "exporter";
-      passwordFile = "/etc/nextcloud-exporter-pass";
+    services.prometheus = {
+      exporters.nextcloud = {
+        enable = true;
+        username = "exporter";
+        passwordFile = "/etc/nextcloud-exporter-pass";
+        url = "http://localhost:8810";
+      };
+
+      scrapeConfigs = [
+        {
+          job_name = "nextcloud";
+          static_configs = [
+            { targets = [ "localhost:${toString config.services.prometheus.exporters.nextcloud.port}" ]; }
+          ];
+        }
+      ];
     };
   };
 }
