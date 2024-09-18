@@ -4,23 +4,8 @@
   pkgs,
   ...
 }:
-let
-  cfg = config.my.yubikey;
-in
+
 {
-  options.my.yubikey = with lib; {
-    enable = mkEnableOption "Enable YubiKey integration.";
-    # id = mkOption {
-    #   type = types.str;
-    #   description = "The ID of the YubiKey to integrate.";
-    # };
-  };
-
-  config = lib.mkIf cfg.enable {
-    # assertions = [
-    #   { assertion = cfg.id != null; message = "You must provide a YubiKey ID."; }
-    # ];
-
     # Integration with GPG (used for SSH, Git, etc.)
     programs.gnupg.agent = {
       enable = true;
@@ -38,12 +23,6 @@ in
     security = {
       polkit.enable = true;
       pam = {
-        # yubico = {
-        #   enable = true;
-        #   mode = "challenge-response";
-        #   id = cfg.id;
-        # };
-
         u2f = {
           enable = true;
           cue = true;
@@ -65,5 +44,4 @@ in
        RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
     '';
     services.systemd-lock-handler.enable = true;
-  };
 }

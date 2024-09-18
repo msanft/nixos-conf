@@ -10,11 +10,11 @@
     vt = 2;
     settings = {
       default_session = {
-        user = "moritzs";
+        user = "msanft";
         command = ''
           ${pkgs.greetd.tuigreet}/bin/tuigreet \
           --remember --time --asterisks \
-          --cmd '${pkgs.i3}/bin/i3'
+          --cmd 'sway'
         '';
       };
     };

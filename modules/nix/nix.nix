@@ -9,7 +9,9 @@
         "@wheel"
       ];
     };
-    package = pkgs.nixVersions.nix_2_22;
+
+    package = pkgs.nixVersions.git;
+
     gc = {
       automatic = true;
       dates = lib.mkIf (pkgs.stdenv.isLinux) "weekly";
