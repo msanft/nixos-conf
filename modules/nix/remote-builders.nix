@@ -4,6 +4,6 @@
     enable = true;
     useBuildersAsSubstituters = true;
     username = "msanft";
-    identityFile = "/home/moritzs/.ssh/nix_rb_x86";
+    identityFile = "/home/msanft/.ssh/nix_rb_x86";
   };
 }

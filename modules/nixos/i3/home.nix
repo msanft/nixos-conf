@@ -29,6 +29,11 @@
             "${mod}+Shift+p" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
           };
       };
+
+      extraConfig = ''
+        # force border for all windows
+        for_window [class=".*"] border normal 1
+      '';
     };
   };
 

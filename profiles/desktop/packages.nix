@@ -1,0 +1,58 @@
+{
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
+    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    awscli2
+    azure-cli
+    bat
+    bluetuith
+    brightnessctl
+    btop
+    cargo
+    clang-tools_17
+    clippy
+    docker
+    eza
+    file
+    gcc13
+    gdb
+    gh
+    gnupg
+    go
+    gopls
+    gotools
+    hugo
+    jq
+    k9s
+    kubectl
+    kubernetes-helm
+    linuxHeaders
+    man-pages
+    man-pages-posix
+    nix-output-monitor
+    nixd
+    nixpkgs-fmt
+    nixpkgs-lint
+    obsidian
+    pass
+    pavucontrol
+    python3
+    rust-analyzer
+    rustc
+    rustfmt
+    slack
+    sonobuoy
+    sublime-merge
+    terraform
+    unzip
+    wireguard-tools
+    yazi
+    yq-go
+    zathura
+    zed-editor
+    zip
+  ];
+}

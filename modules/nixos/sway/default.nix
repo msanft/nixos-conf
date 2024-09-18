@@ -13,7 +13,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home-manager.users.moritzs.imports = [
+    home-manager.users.msanft.imports = [
       ./home.nix
     ];
 

@@ -1,6 +1,15 @@
 { pkgs, inputs, ... }:
 let
-  fontList = import ../../common/fonts.nix { inherit pkgs inputs; };
+  berkeley-mono = inputs.berkeley-mono.packages.x86_64-linux;
+  fontList = with pkgs; [
+    roboto
+    noto-fonts
+    jetbrains-mono
+    font-awesome # For waybar icons
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    berkeley-mono.berkeley-mono
+    berkeley-mono.berkeley-mono-nerd-font
+  ];
 in
 {
   fonts = {

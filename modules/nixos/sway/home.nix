@@ -35,6 +35,8 @@ in
 
     checkConfig = false;
 
+    # xwayland = true;
+
     config = {
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";
@@ -165,12 +167,8 @@ in
             criteria = "${dellG3223D.name} HBN6XG3";
             status = "enable";
             mode = "${dellG3223D.sizeX}x${dellG3223D.sizeY}@${dellG3223D.refreshRate}";
-            position = "${dellG3223D.sizeX},0";
-          }
-          {
-            criteria = "eDP-1";
-            status = "disable";
-            position = "0,0";
+            position = "${dellG3223D.sizeX},900";
+            transform = "270";
           }
         ];
 

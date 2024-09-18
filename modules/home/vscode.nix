@@ -1,7 +1,5 @@
 { pkgs, lib, ... }:
 {
-  home.sessionVariables.NIXOS_OZONE_WL = "1"; # run natively under wayland
-
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -64,7 +62,7 @@
       };
       "window.zoomLevel" = -1;
       "workbench.colorTheme" = "GitHub Light Default";
-      "remote.SSH.configFile" = "/home/moritzs/.ssh/config";
+      "remote.SSH.configFile" = "/home/msanft/.ssh/config";
       # "remote.SSH.useLocalServer" = true;
       "remote.SSH.showLoginTerminal" = true;
       "git.enableCommitSigning" = true;
@@ -88,7 +86,7 @@
         llvm-vs-code-extensions.vscode-clangd
         waderyan.gitblame
         github.vscode-pull-request-github
-        ms-python.python
+        # ms-python.python # hash mismatch as of 2024/09/12
         ms-vsliveshare.vsliveshare
         rust-lang.rust-analyzer
         tamasfe.even-better-toml
