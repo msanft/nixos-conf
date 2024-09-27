@@ -10,7 +10,7 @@
       ];
     };
 
-    package = pkgs.nixVersions.git;
+    package = pkgs.nixVersions.latest;
 
     gc = {
       automatic = true;
