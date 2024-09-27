@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ../../modules/services/tailscale
+    ./tailscale.nix
   ];
 
   systemd = {
@@ -31,8 +31,6 @@
   };
 
   services.openssh.enable = true;
-
-  my.services.tailscale.enable = true;
 
   environment.systemPackages = with pkgs; [
     tailscale
