@@ -21,9 +21,14 @@
 
     networks."10-eno2" = {
       matchConfig.Name = "eno2";
-      networkConfig.DHCP = "ipv4";
+      networkConfig = {
+        DHCP = "ipv4";
+        IPv6AcceptRA = true;
+      };
     };
   };
+
+  services.resolved.domains = [ "msanft.home" ];
 
   system.stateVersion = "24.05";
 }
