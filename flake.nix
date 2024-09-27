@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
+      url = "github:nix-community/nixvim";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
@@ -82,7 +82,7 @@
           };
         };
 
-        zeitgeist = inputs.nixpkgs.lib.nixosSystem rec {
+        "zeitgeist.msanft.home" = inputs.nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           modules = [
             ./hosts/zeitgeist/configuration.nix
