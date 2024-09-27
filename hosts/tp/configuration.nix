@@ -1,4 +1,6 @@
-{ }:
+{
+  ...
+}:
 {
   imports = [
     ../../modules/nix/remote-builders.nix

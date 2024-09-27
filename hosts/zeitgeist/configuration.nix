@@ -1,4 +1,7 @@
-{ homepage, ... }:
+{
+  homepage,
+  ...
+}:
 {
   imports = [
     ../../modules/nix
