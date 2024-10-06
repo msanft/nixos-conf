@@ -73,42 +73,29 @@
 
     mutableExtensionsDir = false;
 
-    extensions =
-      with pkgs.vscode-extensions;
-      [
-        github.vscode-github-actions
-        golang.go
-        hashicorp.terraform
-        jnoortheen.nix-ide
-        github.github-vscode-theme
-        ms-vscode-remote.remote-ssh
-        zxh404.vscode-proto3
-        llvm-vs-code-extensions.vscode-clangd
-        waderyan.gitblame
-        github.vscode-pull-request-github
-        # ms-python.python # hash mismatch as of 2024/09/12
-        ms-vsliveshare.vsliveshare
-        rust-lang.rust-analyzer
-        tamasfe.even-better-toml
-        vscodevim.vim
-        mkhl.direnv
-        skellock.just
-        ms-toolsai.jupyter
-      ]
-      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "copilot";
-          publisher = "GitHub";
-          version = "1.96.257";
-          sha256 = "1hgj3847g3z3rh6s1kfqk0pjs7qv7li3njl6wfgzv65f6hkn27rp";
-        }
-        {
-          name = "vscode-bazel";
-          publisher = "bazelbuild";
-          version = "0.7.0";
-          sha256 = "05wvih09184bsp4rv2m55z0sasra2qrvch5m3bkbrjq7rcqgibgx";
-        }
-      ];
+    extensions = with pkgs.vscode-extensions; [
+      bazelbuild.vscode-bazel
+      github.copilot
+      github.copilot-chat
+      github.github-vscode-theme
+      github.vscode-github-actions
+      github.vscode-pull-request-github
+      golang.go
+      hashicorp.terraform
+      jnoortheen.nix-ide
+      llvm-vs-code-extensions.vscode-clangd
+      mkhl.direnv
+      ms-python.python # hash mismatch as of 2024/09/12
+      ms-toolsai.jupyter
+      ms-vscode-remote.remote-ssh
+      rust-lang.rust-analyzer
+      skellock.just
+      tamasfe.even-better-toml
+      usernamehw.errorlens
+      vscodevim.vim
+      waderyan.gitblame
+      zxh404.vscode-proto3
+    ];
   };
 
   home.packages = with pkgs; [
