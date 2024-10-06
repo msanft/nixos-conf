@@ -59,8 +59,8 @@
           interval = 1;
         }
         {
-          block = "load";
-          format = " $icon $1m ";
+          block = "net";
+          format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device ";
           interval = 1;
         }
         {
