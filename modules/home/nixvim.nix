@@ -22,6 +22,8 @@
     plugins = {
       treesitter.enable = true;
 
+      web-devicons.enable = true;
+
       lsp = {
         enable = true;
         servers = {
