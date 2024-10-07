@@ -25,7 +25,7 @@
             mod = config.xsession.windowManager.i3.config.modifier;
           in
           lib.mkOptionDefault {
-            "${mod}+Shift+l" = "exec i3lock -c 000000";
+            "${mod}+Shift+l" = "exec ${pkgs.i3lock}/bin/i3lock -c 000000";
             "${mod}+Shift+p" = "exec ${pkgs.maim}/bin/maim -s | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
           };
       };
