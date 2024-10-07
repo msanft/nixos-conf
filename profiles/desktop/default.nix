@@ -54,7 +54,18 @@
 
   zramSwap.enable = true;
 
+  networking.networkmanager.wifi.backend = "iwd";
+
+  system.switch = {
+    enable = false;
+    enableNg = true;
+  };
+
+  services.dbus.implementation = "broker";
+
   boot = {
+    tmp.useTmpfs = true;
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
