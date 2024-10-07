@@ -79,7 +79,7 @@ in
         in
         {
           enable = true;
-          time = 5; # minutes
+          time = 15; # minutes
           locker = lockCmd;
           notify = 15; # seconds
           notifier = notifyCmd;
