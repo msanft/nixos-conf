@@ -61,6 +61,8 @@
     enableNg = true;
   };
 
+  virtualisation.docker.enable = true;
+
   services.dbus.implementation = "broker";
 
   boot = {
