@@ -56,12 +56,10 @@
         }
         {
           block = "cpu";
-          interval = 1;
         }
         {
           block = "net";
-          format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device ";
-          interval = 1;
+          format = " $icon {$signal_strength $ssid $frequency|Wired} via $device ";
         }
         {
           block = "sound";
@@ -69,7 +67,6 @@
         {
           block = "time";
           format = " $timestamp.datetime(f:'%a %d/%m %R') ";
-          interval = 60;
         }
       ];
       settings.theme.overrides = {
