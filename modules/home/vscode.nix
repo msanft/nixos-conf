@@ -95,6 +95,7 @@
       vscodevim.vim
       waderyan.gitblame
       zxh404.vscode-proto3
+      mshr-h.veriloghdl
     ];
   };
 
