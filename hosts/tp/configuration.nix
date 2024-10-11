@@ -17,5 +17,8 @@
 
   boot.supportedFilesystems = [ "nfs" ];
 
+  # For routing all traffic through WireGuard
+  networking.firewall.checkReversePath = false;
+
   system.stateVersion = "22.11";
 }
