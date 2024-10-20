@@ -17,14 +17,11 @@
     docker
     eza
     file
-    gcc13
-    gdb
     gh
     gnupg
     go
     gopls
     gotools
-    hugo
     jq
     k9s
     kubectl
@@ -44,7 +41,6 @@
     rustc
     rustfmt
     slack
-    sonobuoy
     sublime-merge
     terraform
     unzip
@@ -54,5 +50,6 @@
     zathura
     zed-editor
     zip
+    slack
   ];
 }
