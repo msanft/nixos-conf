@@ -7,7 +7,6 @@
 
   networking.hostName = "bastion";
 
-  boot.supportedFilesystems = [ "nfs" ];
 
   boot.initrd.systemd.network.enable = true;
 
@@ -27,6 +26,10 @@
       };
     };
   };
+
+  users.users.msanft.extraGroups = [ "wireshark" ];
+  programs.wireshark.enable = true;
+  environment.systemPackages = [ pkgs.wireshark ];
 
   services.resolved.domains = [ "msanft.home" ];
 
