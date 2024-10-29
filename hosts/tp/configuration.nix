@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 {
@@ -10,12 +11,18 @@
 
   networking.hostName = "tp";
 
-  users.users.msanft.extraGroups = [ "networkmanager" ];
+  users.users.msanft.extraGroups = [
+    "networkmanager"
+    "wireshark"
+  ];
   networking.networkmanager.enable = true;
 
   my.secureboot.enable = true;
 
   boot.supportedFilesystems = [ "nfs" ];
+
+  programs.wireshark.enable = true;
+  environment.systemPackages = [ pkgs.wireshark ];
 
   # For routing all traffic through WireGuard
   networking.firewall.checkReversePath = false;
