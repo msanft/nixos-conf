@@ -26,6 +26,7 @@ in
     programs.i3lock = {
       enable = true;
       u2fSupport = true;
+      package = pkgs.i3lock-fancy-rapid;
     };
 
     systemd.user.services.i3 = {
@@ -47,7 +48,7 @@ in
         Type = "forking";
 
         # ... and i3lock will fork only after it has locked the screen.
-        ExecStart = "${lib.getExe pkgs.i3lock}";
+        ExecStart = "${pkgs.i3lock-fancy-rapid}/bin/i3lock-fancy-rapid 10 pixel";
 
         # If i3lock crashes, always restart it immediately:
         Restart = "on-failure";
@@ -74,7 +75,7 @@ in
       };
       xautolock =
         let
-          lockCmd = "${pkgs.i3lock}/bin/i3lock -c 000000";
+          lockCmd = "${pkgs.i3lock-fancy-rapid}/bin/i3lock-fancy-rapid 10 pixel";
           notifyCmd = "${pkgs.libnotify}/bin/notify-send 'Locking screen in 15 seconds'";
         in
         {
