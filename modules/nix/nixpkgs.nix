@@ -8,7 +8,6 @@
 
     overlays = [
       (import ../../overlays/mkDesktopApp.nix)
-      (import ../../overlays/packages.nix)
     ];
   };
 }
