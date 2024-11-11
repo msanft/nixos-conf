@@ -85,17 +85,16 @@
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       mkhl.direnv
-      ms-python.python # hash mismatch as of 2024/09/12
+      ms-python.python
       ms-toolsai.jupyter
       ms-vscode-remote.remote-ssh
       rust-lang.rust-analyzer
       skellock.just
       tamasfe.even-better-toml
       usernamehw.errorlens
-      vscodevim.vim
+      # vscodevim.vim
       waderyan.gitblame
       zxh404.vscode-proto3
-      mshr-h.veriloghdl
     ];
   };
 
