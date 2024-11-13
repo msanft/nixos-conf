@@ -88,4 +88,21 @@
     127.0.0.1    license.confidential.cloud
     127.0.0.1    mastodon.local
   '';
+
+  security.pki.certificates = [
+    # Caddy
+    ''
+      -----BEGIN CERTIFICATE-----
+      MIIBpDCCAUqgAwIBAgIRAMzh2Rzul+SMU/Ww2TFGhFUwCgYIKoZIzj0EAwIwMDEu
+      MCwGA1UEAxMlQ2FkZHkgTG9jYWwgQXV0aG9yaXR5IC0gMjAyNCBFQ0MgUm9vdDAe
+      Fw0yNDA3MjYyMDIzMDhaFw0zNDA2MDQyMDIzMDhaMDAxLjAsBgNVBAMTJUNhZGR5
+      IExvY2FsIEF1dGhvcml0eSAtIDIwMjQgRUNDIFJvb3QwWTATBgcqhkjOPQIBBggq
+      hkjOPQMBBwNCAASC8nbFrKX0Nb8wT6R6hhCeR/ZHYTmIvyQ1KCMEW0Mti+2srfOX
+      lC+b5aZbT17sXXilHfan08Nst4nZsVUzKHbko0UwQzAOBgNVHQ8BAf8EBAMCAQYw
+      EgYDVR0TAQH/BAgwBgEB/wIBATAdBgNVHQ4EFgQUyIUXVXnou1Ag8mgxQZG457aP
+      TUQwCgYIKoZIzj0EAwIDSAAwRQIgI/4E9l0uPu4w+KEVzOMBz7F1HWL2fZYHF9We
+      CjhfZMYCIQCA1rWQ2ixNkCwVeF29QgfZDxmhlwBisYuDh1MhreMdBw==
+      -----END CERTIFICATE-----
+    ''
+  ];
 }
