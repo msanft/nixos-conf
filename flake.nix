@@ -39,7 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ida-pro-overlay = {
-      url = "path:/home/msanft/dev/ida-pro-overlay";
+      url = "github:msanft/ida-pro-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -81,6 +81,9 @@
             {
               home-manager.users.msanft.imports = [
                 inputs.nixvim.homeManagerModules.nixvim
+              ];
+              nixpkgs.overlays = [
+                inputs.ida-pro-overlay.overlays.default
               ];
             }
           ];
