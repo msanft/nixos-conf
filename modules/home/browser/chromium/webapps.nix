@@ -5,29 +5,21 @@ let
       name = "teams";
       displayName = "Microsoft Teams";
       runtime = pkgs.chromium;
-      execScript = "chromium --app=https://teams.microsoft.com/";
+      execScript = "exec chromium --app=https://teams.microsoft.com/";
     };
     discord = pkgs.lib.mkDesktopApp {
       name = "discord";
       displayName = "Discord";
       runtime = pkgs.chromium;
-      execScript = "chromium --app=https://discord.com/app/";
-    };
-    element = pkgs.lib.mkDesktopApp {
-      name = "element";
-      displayName = "Element";
-      runtime = pkgs.chromium;
-      execScript = "chromium --app=https://app.element.io/";
+      execScript = "exec chromium --app=https://discord.com/app/";
     };
   };
 in
 {
-  home.packages = with pkgs; [
+  home.packages = [
     webapps.teams.script
     webapps.teams.desktopItem
     webapps.discord.script
     webapps.discord.desktopItem
-    webapps.element.script
-    webapps.element.desktopItem
   ];
 }
