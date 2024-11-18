@@ -48,7 +48,6 @@
     yazi
     yq-go
     zathura
-    zed-editor
     zip
     slack
     (callPackage ida-pro {
