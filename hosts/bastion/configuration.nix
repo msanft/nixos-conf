@@ -7,7 +7,6 @@
 
   networking.hostName = "bastion";
 
-
   boot.initrd.systemd.network.enable = true;
 
   networking = {
@@ -32,6 +31,8 @@
   environment.systemPackages = [ pkgs.wireshark ];
 
   services.resolved.domains = [ "msanft.home" ];
+
+  systemd.services.autorandr.after = [ "multi-user.target" ];
 
   system.stateVersion = "24.05";
 }
