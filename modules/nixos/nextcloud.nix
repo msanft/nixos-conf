@@ -19,7 +19,7 @@ in
   config = lib.mkIf cfg.enable {
     services.nextcloud = {
       enable = true;
-      package = pkgs.nextcloud29;
+      package = pkgs.nextcloud30;
       https = true;
       hostName = "cloud.msanft.home";
       enableImagemagick = true;
@@ -37,7 +37,12 @@ in
       };
     };
 
-    services.nginx.virtualHosts."cloud.msanft.home".listen = [ { addr = "127.0.0.1"; port = 8810; } ];
+    services.nginx.virtualHosts."cloud.msanft.home".listen = [
+      {
+        addr = "127.0.0.1";
+        port = 8810;
+      }
+    ];
 
     services.caddy.virtualHosts = {
       "cloud.msanft.home" = {
