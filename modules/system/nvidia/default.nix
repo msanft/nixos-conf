@@ -8,6 +8,7 @@
 
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.production;
+    open = true;
   };
 
   home-manager.users.msanft.imports = [
