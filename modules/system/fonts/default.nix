@@ -6,7 +6,7 @@ let
     noto-fonts
     jetbrains-mono
     font-awesome # For waybar icons
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
     berkeley-mono.berkeley-mono
     berkeley-mono.berkeley-mono-nerd-font
   ];
