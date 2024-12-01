@@ -15,3 +15,4 @@ jobs:
           pr-title: Update Flake Inputs
           pr-labels: dependencies
           token: ${{ secrets.PR_TOKEN }}
+          inputs: nixpkgs home-manager nixvim disko lanzaboote flake-utils colmena
