@@ -13,6 +13,7 @@
     ../../modules/nix
     ../../modules/nixos/yubikey.nix
     ../../modules/nixos/i3
+    ../../modules/nixos/emacs
     ./packages.nix
   ];
 

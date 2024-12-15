@@ -42,6 +42,10 @@
       url = "github:msanft/ida-pro-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -64,6 +68,7 @@
               ];
               nixpkgs.overlays = [
                 inputs.ida-pro-overlay.overlays.default
+                inputs.emacs-overlay.overlays.default
               ];
             }
           ];
@@ -84,6 +89,7 @@
               ];
               nixpkgs.overlays = [
                 inputs.ida-pro-overlay.overlays.default
+                inputs.emacs-overlay.overlays.default
               ];
             }
           ];
