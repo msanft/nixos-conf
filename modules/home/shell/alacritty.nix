@@ -2,7 +2,7 @@
 {
   programs.alacritty =
     let
-      font = "BerkeleyMono Nerd Font Mono";
+      font = "TX-02";
     in
     {
       enable = true;
@@ -21,15 +21,15 @@
         font = {
           normal = {
             family = font;
-            style = "Regular";
+            style = "Condensed";
           };
           bold = {
             family = font;
-            style = "Bold";
+            style = "Bold Condensed";
           };
           italic = {
             family = font;
-            style = "Italic";
+            style = "Condensed Oblique";
           };
           size = 10;
         };

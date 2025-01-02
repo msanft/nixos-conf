@@ -47,8 +47,9 @@
           };
         };
       };
-      "editor.fontFamily" = "BerkeleyMono Nerd Font Mono";
+      "editor.fontFamily" = "TX-02";
       "editor.fontSize" = 15;
+      "editor.fontLigatures" = true;
       "editor.lineHeight" = 0;
       "debug.console.fontSize" = 15;
       "debug.console.lineHeight" = 1;

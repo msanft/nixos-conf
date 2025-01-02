@@ -20,7 +20,7 @@ in
       defaultFonts = {
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" ];
-        monospace = [ "BerkeleyMono Nerd Font Mono" ];
+        monospace = [ "TX-02 Condensed" ];
       };
 
       subpixel.rgba = "rgb";
