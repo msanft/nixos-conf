@@ -48,13 +48,13 @@
         };
       };
       "editor.fontFamily" = "TX-02";
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 16;
       "editor.fontLigatures" = true;
       "editor.lineHeight" = 0;
-      "debug.console.fontSize" = 15;
+      "debug.console.fontSize" = 16;
       "debug.console.lineHeight" = 1;
       "editor.lineNumbers" = "relative";
-      "terminal.integrated.fontSize" = 15;
+      "terminal.integrated.fontSize" = 16;
       "terminal.integrated.lineHeight" = 1;
       "[nix]" = {
         "editor.formatOnSave" = true;
