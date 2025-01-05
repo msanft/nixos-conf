@@ -22,6 +22,8 @@
     go
     gopls
     gotools
+    delve
+    go-tools
     jq
     k9s
     kubectl

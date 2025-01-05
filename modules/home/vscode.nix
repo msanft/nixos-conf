@@ -51,10 +51,10 @@
       "editor.fontFamily" = "BerkeleyMono Nerd Font Mono";
       "editor.fontSize" = 15;
       "editor.lineHeight" = 0;
-      "debug.console.fontSize" = 16;
+      "debug.console.fontSize" = 15;
       "debug.console.lineHeight" = 1;
       "editor.lineNumbers" = "relative";
-      "terminal.integrated.fontSize" = 16;
+      "terminal.integrated.fontSize" = 15;
       "terminal.integrated.lineHeight" = 1;
       "[nix]" = {
         "editor.formatOnSave" = true;
@@ -93,15 +93,8 @@
       skellock.just
       tamasfe.even-better-toml
       usernamehw.errorlens
-      # vscodevim.vim
       waderyan.gitblame
       zxh404.vscode-proto3
     ];
   };
-
-  home.packages = with pkgs; [
-    delve
-    go-tools
-    openssl
-  ];
 }
