@@ -11,40 +11,25 @@
     bluetuith
     brightnessctl
     btop
-    cargo
-    clang-tools_17
-    clippy
     docker
     eza
     file
     gh
     gnupg
-    go
-    gopls
-    gotools
-    delve
-    go-tools
     jq
     k9s
     kubectl
     kubernetes-helm
-    linuxHeaders
     man-pages
     man-pages-posix
     nix-output-monitor
     nixd
     nixpkgs-fmt
-    nixpkgs-lint
     obsidian
     pass
     pavucontrol
     python3
-    rust-analyzer
-    rustc
-    rustfmt
     slack
-    sublime-merge
-    terraform
     unzip
     wireguard-tools
     yazi
