@@ -70,6 +70,7 @@
       "bazel.enableCodeLens" = true;
       "window.titleBarStyle" = "custom";
       "window.customTitleBarVisibility" = "auto";
+      "direnv.restart.automatic" = true;
     };
 
     mutableExtensionsDir = false;
