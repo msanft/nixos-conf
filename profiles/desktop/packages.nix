@@ -38,7 +38,8 @@
     zip
     slack
     (callPackage ida-pro {
-      runfile = /nix/store/z83flk6c9fm9li3gs13vbamq2szg9rwf-ida-pro_90_x64linux.run;
+      runfile = /nix/store/vpyzqrrlild2y2622bcj7prlm2pcsn74-ida-pro_90sp1_x64linux.run;
     })
+    zulip
   ];
 }
