@@ -91,6 +91,8 @@
     127.0.0.1    mastodon.local
   '';
 
+  systemd.services.autorandr.after = [ "multi-user.target" ];
+
   security.pki.certificates = [
     # Caddy
     ''

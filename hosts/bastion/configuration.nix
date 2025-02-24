@@ -32,7 +32,5 @@
 
   services.resolved.domains = [ "msanft.home" ];
 
-  systemd.services.autorandr.after = [ "multi-user.target" ];
-
   system.stateVersion = "24.05";
 }
