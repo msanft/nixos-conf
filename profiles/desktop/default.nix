@@ -75,9 +75,7 @@
 
     initrd.systemd.enable = true;
 
-    # Stick to 6.11, because NVIDIA driver is broken on 6.12
-    # See https://github.com/NixOS/nixpkgs/issues/357643
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   my.i3.enable = true;
