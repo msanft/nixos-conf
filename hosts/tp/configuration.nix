@@ -17,7 +17,7 @@
   ];
   networking.networkmanager.enable = true;
 
-  my.secureboot.enable = true;
+  my.secureboot.enable = false;
 
   boot.supportedFilesystems = [ "nfs" ];
 
