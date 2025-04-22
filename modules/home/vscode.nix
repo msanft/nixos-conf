@@ -2,7 +2,7 @@
 {
   programs.vscode = {
     enable = true;
-    
+
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
@@ -96,6 +96,7 @@
         usernamehw.errorlens
         waderyan.gitblame
         zxh404.vscode-proto3
+        svelte.svelte-vscode
       ];
     };
 
