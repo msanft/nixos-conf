@@ -127,10 +127,9 @@
         pkgs = import inputs.nixpkgs { inherit system; };
       in
       {
-
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            inputs.colmena.packages.${system}.colmena
+            pkgs.colmena
           ];
         };
       }
