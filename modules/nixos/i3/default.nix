@@ -117,12 +117,8 @@ in
             "eDP-1" = {
               enable = true;
               position = "4000x600";
-              scale = {
-                x = 2;
-                y = 2;
-              };
               mode = "2880x1800";
-              rate = "120.00";
+              rate = "60.00";
             };
           };
         };
