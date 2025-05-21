@@ -7,17 +7,6 @@
     {
       enable = true;
       settings = {
-        window = {
-          padding = {
-            x = 0;
-            y = 0;
-          };
-          dynamic_padding = true;
-          decorations = "none";
-        };
-
-        selection.save_to_clipboard = true;
-
         font = {
           normal = {
             family = font;
