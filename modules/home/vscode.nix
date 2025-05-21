@@ -73,6 +73,7 @@
         "window.titleBarStyle" = "custom";
         "window.customTitleBarVisibility" = "auto";
         "direnv.restart.automatic" = true;
+        "git.blame.editorDecoration.enabled" = true;
       };
 
       extensions = with pkgs.vscode-extensions; [
@@ -94,7 +95,6 @@
         skellock.just
         tamasfe.even-better-toml
         usernamehw.errorlens
-        waderyan.gitblame
         zxh404.vscode-proto3
         svelte.svelte-vscode
       ];
