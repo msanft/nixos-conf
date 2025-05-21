@@ -1,0 +1,57 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.my.gnome;
+in
+{
+  options.my.gnome = with lib; {
+    enable = mkEnableOption "Enable Gnome DE.";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home-manager.users.msanft.imports = [
+      ./home.nix
+    ];
+
+    services.xserver.enable = true;
+    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.desktopManager.gnome.enable = true;
+
+    programs.dconf.enable = true;
+
+    environment.gnome.excludePackages = with pkgs; [
+      baobab
+      epiphany
+      evince
+      geary
+      gnome-backgrounds
+      gnome-calculator
+      gnome-calendar
+      gnome-characters
+      gnome-clocks
+      gnome-connections
+      gnome-console
+      gnome-contacts
+      gnome-disk-utility
+      gnome-font-viewer
+      gnome-logs
+      gnome-maps
+      gnome-music
+      gnome-software
+      gnome-text-editor
+      gnome-tour
+      gnome-user-docs
+      gnome-weather
+      orca
+      simple-scan
+      snapshot
+      totem
+      xterm
+      yelp
+    ];
+  };
+}
