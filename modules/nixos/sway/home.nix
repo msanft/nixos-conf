@@ -35,8 +35,6 @@ in
 
     checkConfig = false;
 
-    # xwayland = true;
-
     config = {
       terminal = "alacritty";
       menu = "${finalPkgBin "rofi"} -show drun -show-icons -pid";
@@ -89,8 +87,10 @@ in
           mod = config.wayland.windowManager.sway.config.modifier;
         in
         lib.mkOptionDefault {
-          "${mod}+p" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- screenshot-$(date +%Y%m%d-%H%M%S).png";
-          "${mod}+Shift+p" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
+          "${mod}+p" =
+            "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "${mod}+Shift+p" =
+            "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g- - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
           "${mod}+l" = "exec ${pkgs.swaylock-effects}/bin/swaylock";
         };
 
@@ -142,33 +142,23 @@ in
       enable = true;
 
       profiles = {
-        netzlabor.outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            position = "0,1080";
-            scale = 1.0;
-          }
-          {
-            criteria = "*";
-            status = "enable";
-            position = "0,0";
-          }
-        ];
-
         docked.outputs = [
           {
             criteria = "${dellG3223D.name} H916XG3";
             status = "enable";
             mode = "${dellG3223D.sizeX}x${dellG3223D.sizeY}@${dellG3223D.refreshRate}";
-            position = "0,0";
+            position = "0,890";
           }
           {
             criteria = "${dellG3223D.name} HBN6XG3";
             status = "enable";
             mode = "${dellG3223D.sizeX}x${dellG3223D.sizeY}@${dellG3223D.refreshRate}";
-            position = "${dellG3223D.sizeX},900";
+            position = "2560,0";
             transform = "270";
+          }
+          {
+            criteria = "Toshiba America Info Systems Inc T749-fHD720 0x88888800";
+            status = "disable";
           }
         ];
 
@@ -199,20 +189,6 @@ in
             status = "enable";
             position = "0,0";
             scale = 1.0;
-          }
-        ];
-
-        parents.outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            position = "2560,0";
-          }
-          {
-            criteria = "ASUSTek COMPUTER INC VG32AQA1A RCLMQS032087";
-            status = "enable";
-            mode = "2560x1440@144.001Hz";
-            position = "0,0";
           }
         ];
       };
