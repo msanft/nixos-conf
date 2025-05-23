@@ -618,11 +618,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1746169220,
-        "narHash": "sha256-crpCnQWks/mthUUZCK4vUFhkohIqt1iApxX5auaOU/A=",
+        "lastModified": 1747984070,
+        "narHash": "sha256-Iqeijh4UJVkFB7JN+Ymk/ctyu2c5xh+9aqweR4lFgPQ=",
         "ref": "refs/heads/main",
-        "rev": "dcd2c7b314d27b81ba2a06261d67175d1a867a48",
-        "revCount": 74,
+        "rev": "49664a34c6dbdc12376d76e0b2b8b5cb2cec84a5",
+        "revCount": 75,
         "type": "git",
         "url": "ssh://git@github.com/edgelesssys/nix-remote-builders"
       },

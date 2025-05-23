@@ -27,10 +27,6 @@
           enable = true;
           settings.cue = true;
         };
-
-        services = {
-          greetd.enableGnomeKeyring = true;
-        };
       };
     };
 

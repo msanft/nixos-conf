@@ -49,7 +49,14 @@ in
     security.pam.services.swaylock = { };
 
     services.dbus.enable = true;
-
     programs.dconf.enable = true;
+
+    services.displayManager = {
+      defaultSession = "sway";
+      autoLogin = {
+        enable = true;
+        user = "msanft";
+      };
+    };
   };
 }

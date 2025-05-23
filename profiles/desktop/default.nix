@@ -4,7 +4,6 @@
 }:
 {
   imports = [
-    ../../modules/services/greetd
     ../../modules/services/input
     ../../modules/nixos/tailscale.nix
     ../../modules/system/i18n

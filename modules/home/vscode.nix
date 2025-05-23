@@ -1,5 +1,7 @@
 { pkgs, lib, ... }:
 {
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
+
   programs.vscode = {
     enable = true;
 
@@ -76,28 +78,38 @@
         "git.blame.editorDecoration.enabled" = true;
       };
 
-      extensions = with pkgs.vscode-extensions; [
-        bazelbuild.vscode-bazel
-        github.copilot
-        github.copilot-chat
-        github.github-vscode-theme
-        github.vscode-github-actions
-        github.vscode-pull-request-github
-        golang.go
-        hashicorp.terraform
-        jnoortheen.nix-ide
-        llvm-vs-code-extensions.vscode-clangd
-        mkhl.direnv
-        ms-python.python
-        ms-toolsai.jupyter
-        ms-vscode-remote.remote-ssh
-        rust-lang.rust-analyzer
-        skellock.just
-        tamasfe.even-better-toml
-        usernamehw.errorlens
-        zxh404.vscode-proto3
-        svelte.svelte-vscode
-      ];
+      extensions =
+        with pkgs.vscode-extensions;
+        [
+          bazelbuild.vscode-bazel
+          github.copilot
+          github.copilot-chat
+          github.github-vscode-theme
+          github.vscode-github-actions
+          github.vscode-pull-request-github
+          golang.go
+          hashicorp.terraform
+          jnoortheen.nix-ide
+          llvm-vs-code-extensions.vscode-clangd
+          mkhl.direnv
+          ms-python.python
+          ms-toolsai.jupyter
+          ms-vscode-remote.remote-ssh
+          rust-lang.rust-analyzer
+          skellock.just
+          tamasfe.even-better-toml
+          usernamehw.errorlens
+          zxh404.vscode-proto3
+          svelte.svelte-vscode
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "amp";
+            publisher = "sourcegraph";
+            version = "0.0.1747973460";
+            hash = "sha256-vrW7gmvISAYtkHoBgXBY00QT9IDWzGUvouB/Lq1WgiY=";
+          }
+        ];
     };
 
     mutableExtensionsDir = false;
