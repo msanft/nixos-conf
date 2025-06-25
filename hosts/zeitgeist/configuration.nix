@@ -43,6 +43,8 @@
     };
   };
 
+  services.fwupd.enable = true;
+
   my.grafana.enable = true;
 
   my.loki.enable = true;
