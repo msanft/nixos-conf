@@ -99,14 +99,7 @@
           usernamehw.errorlens
           zxh404.vscode-proto3
           svelte.svelte-vscode
-        ]
-        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "amp";
-            publisher = "sourcegraph";
-            version = "0.0.1747973460";
-            hash = "sha256-vrW7gmvISAYtkHoBgXBY00QT9IDWzGUvouB/Lq1WgiY=";
-          }
+          james-yu.latex-workshop
         ];
     };
 
