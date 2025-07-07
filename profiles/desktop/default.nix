@@ -56,11 +56,6 @@
 
   networking.networkmanager.wifi.backend = "iwd";
 
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
-
   virtualisation.docker.enable = true;
 
   services.dbus.implementation = "broker";
