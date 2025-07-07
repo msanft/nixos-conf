@@ -11,7 +11,7 @@
     ../../modules/system/fonts
     ../../modules/nix
     ../../modules/nixos/yubikey.nix
-    ../../modules/nixos/sway
+    ../../modules/nixos/gnome
     ../../modules/nixos/plymouth
     ./packages.nix
   ];
@@ -73,7 +73,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  my.sway.enable = true;
+  my.gnome.enable = true;
   my.plymouth.enable = true;
 
   services.fwupd.enable = true;
