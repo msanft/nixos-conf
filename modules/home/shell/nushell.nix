@@ -13,9 +13,9 @@
       $env.SSH_AUTH_SOCK = ($env.SSH_AUTH_SOCK? | default (${pkgs.gnupg}/bin/gpgconf --list-dirs agent-ssh-socket))
     '';
 
-    extraEnv = ''
-      $env.config.buffer_editor = "code"
-      $env.config.show_banner = false
-    '';
+    settings = {
+      buffer_editor = "code";
+      show_banner = false;
+    };
   };
 }

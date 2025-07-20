@@ -50,7 +50,7 @@
           };
         };
         "editor.fontLigatures" = true;
-        "editor.fontFamily" = "BerkeleyMono Nerd Font Mono";
+        "editor.fontFamily" = "BerkeleyMono Nerd Font Mono Condensed";
         "editor.fontSize" = 15;
         "editor.lineHeight" = 0;
         "debug.console.fontSize" = 15;

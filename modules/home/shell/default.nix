@@ -8,6 +8,8 @@
     ./starship.nix
   ];
 
+  home.shell.enableNushellIntegration = config.programs.nushell.enable;
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
