@@ -3,7 +3,7 @@
   programs.starship = {
     enable = true;
     enableBashIntegration = if config.programs.bash.enable then true else false;
-    enableZshIntegration = if config.programs.zsh.enable then true else false;
+    enableNushellIntegration = if config.programs.nushell.enable then true else false;
 
     settings = {
       format = "$time$all";
@@ -21,7 +21,7 @@
 
       character = {
         success_symbol = "[❯](bold green)";
-        error_symbol = "[✖](bold red)";
+        error_symbol = "[❯](bold red)";
       };
 
       username = {

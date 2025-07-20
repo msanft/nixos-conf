@@ -66,7 +66,6 @@
         "window.zoomLevel" = -1;
         "workbench.colorTheme" = "GitHub Light Default";
         "remote.SSH.configFile" = "/home/msanft/.ssh/config";
-        # "remote.SSH.useLocalServer" = true;
         "remote.SSH.showLoginTerminal" = true;
         "git.enableCommitSigning" = true;
         "bazel.enableCodeLens" = true;
@@ -74,33 +73,40 @@
         "window.customTitleBarVisibility" = "auto";
         "direnv.restart.automatic" = true;
         "git.blame.editorDecoration.enabled" = true;
+        "github.copilot.nextEditSuggestions.enabled" = false;
+        "terminal.integrated.defaultProfile.linux" = "Nushell";
+        "terminal.integrated.profiles.linux" = {
+          "Nushell" = {
+            "path" = "/home/msanft/.nix-profile/bin/nu";
+          };
+        };
+        "editor.minimap.renderCharacters" = false;
       };
 
-      extensions =
-        with pkgs.vscode-extensions;
-        [
-          bazelbuild.vscode-bazel
-          github.copilot
-          github.copilot-chat
-          github.github-vscode-theme
-          github.vscode-github-actions
-          github.vscode-pull-request-github
-          golang.go
-          hashicorp.terraform
-          jnoortheen.nix-ide
-          llvm-vs-code-extensions.vscode-clangd
-          mkhl.direnv
-          ms-python.python
-          ms-toolsai.jupyter
-          ms-vscode-remote.remote-ssh
-          rust-lang.rust-analyzer
-          skellock.just
-          tamasfe.even-better-toml
-          usernamehw.errorlens
-          zxh404.vscode-proto3
-          svelte.svelte-vscode
-          james-yu.latex-workshop
-        ];
+      extensions = with pkgs.vscode-extensions; [
+        bazelbuild.vscode-bazel
+        github.copilot
+        github.copilot-chat
+        github.github-vscode-theme
+        github.vscode-github-actions
+        github.vscode-pull-request-github
+        golang.go
+        hashicorp.terraform
+        jnoortheen.nix-ide
+        llvm-vs-code-extensions.vscode-clangd
+        mkhl.direnv
+        ms-python.python
+        ms-toolsai.jupyter
+        ms-vscode-remote.remote-ssh
+        rust-lang.rust-analyzer
+        skellock.just
+        tamasfe.even-better-toml
+        usernamehw.errorlens
+        zxh404.vscode-proto3
+        svelte.svelte-vscode
+        james-yu.latex-workshop
+        thenuprojectcontributors.vscode-nushell-lang
+      ];
     };
 
     mutableExtensionsDir = false;

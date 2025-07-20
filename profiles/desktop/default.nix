@@ -10,7 +10,7 @@
     ../../modules/system/audio
     ../../modules/system/fonts
     ../../modules/nix
-    ../../modules/nixos/yubikey.nix
+    ../../modules/nixos/yubikey
     ../../modules/nixos/gnome
     ../../modules/nixos/plymouth
     ./packages.nix
