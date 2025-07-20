@@ -30,6 +30,13 @@
 
   hardware.gpgSmartcards.enable = true;
 
+  programs.bash.loginShellInit = ''
+    GPG_TTY="$(${pkgs.coreutils}/bin/tty)"
+    export GPG_TTY
+    ${pkgs.gnupg}/bin/gpg-connect-agent --quiet updatestartuptty /bye > /dev/null
+    export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+  '';
+
   # Locks the screen when the YubiKey is removed
   services.udev.extraRules = ''
     ACTION=="remove",\

@@ -77,7 +77,7 @@
         "terminal.integrated.defaultProfile.linux" = "Nushell";
         "terminal.integrated.profiles.linux" = {
           "Nushell" = {
-            "path" = "/home/msanft/.nix-profile/bin/nu";
+            "path" = "${pkgs.nushell}/bin/nu";
           };
         };
         "editor.minimap.renderCharacters" = false;
