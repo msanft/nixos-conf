@@ -27,17 +27,6 @@
     shell = pkgs.bash;
   };
 
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    users.msanft =
-      { ... }:
-      {
-        home.stateVersion = "24.05";
-        imports = [ ./home.nix ];
-      };
-  };
-
   # Exposes D-Bus interfaces for application intents
   # such as file access, printing, etc.
   xdg = {

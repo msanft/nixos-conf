@@ -13,10 +13,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home-manager.users.msanft.imports = [
-      ./home.nix
-    ];
-
     services.xserver.enable = true;
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
@@ -27,6 +23,7 @@ in
       baobab
       epiphany
       evince
+      file-roller
       geary
       gnome-backgrounds
       gnome-calculator
@@ -37,7 +34,6 @@ in
       gnome-console
       gnome-contacts
       gnome-disk-utility
-      gnome-font-viewer
       gnome-logs
       gnome-maps
       gnome-music

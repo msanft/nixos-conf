@@ -1,14 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 let
-  berkeley-mono = inputs.berkeley-mono.packages.x86_64-linux;
   fontList = with pkgs; [
-    roboto
     noto-fonts
-    jetbrains-mono
     font-awesome # For waybar icons
     nerd-fonts.jetbrains-mono
-    berkeley-mono.berkeley-mono
-    berkeley-mono.berkeley-mono-nerd-font
+    nerd-fonts.iosevka
   ];
 in
 {
@@ -20,7 +16,7 @@ in
       defaultFonts = {
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" ];
-        monospace = [ "BerkeleyMono Nerd Font Mono Condensed" ];
+        monospace = [ "Iosevka Nerd Font" ];
       };
 
       subpixel.rgba = "rgb";

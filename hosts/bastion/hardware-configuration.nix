@@ -19,16 +19,20 @@
     "xhci_pci"
     "ahci"
     "usbhid"
+    "usb_storage"
+    "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/53c3c1cd-e72f-4fe5-b16b-4228e23cc6be";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
+    device = "/dev/disk/by-uuid/8ce2e898-1534-449a-a673-92270f5b2bee";
+    fsType = "ext4";
   };
+
+  boot.initrd.luks.devices."luks-d631c730-a598-4924-a22d-eec4bb733f2a".device =
+    "/dev/disk/by-uuid/d631c730-a598-4924-a22d-eec4bb733f2a";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/3B8A-5772";
