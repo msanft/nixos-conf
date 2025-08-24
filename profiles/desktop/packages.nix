@@ -13,6 +13,7 @@
     nix-output-monitor
     go
     clang
+    clangd
     gcc
     docker
     man-pages
@@ -64,5 +65,6 @@
     teams-for-linux
     firefox
     google-chrome
+    _1password-gui
   ];
 }
