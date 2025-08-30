@@ -13,7 +13,6 @@
     nix-output-monitor
     go
     clang
-    clangd
     gcc
     docker
     man-pages
@@ -26,12 +25,12 @@
 
     # IDE
     vscode
-    neovim
+    helix
 
     # Cloud Stuff
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     awscli2
-    azure-cli
+    # azure-cli # TODO(msanft): re-enable once https://github.com/NixOS/nixpkgs/issues/437525 is resolved
     kubectl
     k9s
     kubernetes-helm
