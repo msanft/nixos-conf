@@ -12,7 +12,9 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@e50d5f73bfe71c2dd0aa4218de8f4afa59f8f81d # v16
       - uses: DeterminateSystems/update-flake-lock@a2bbe0274e3a0c4194390a1e445f734c597ebc37 # v24
         with:
-          pr-title: Update Flake Inputs
+          pr-title: Update flake inputs
           pr-labels: dependencies
-          token: ${{ secrets.PR_TOKEN }}
+          token: ${{ secrets.PR_TOKEN }} # Required so CI runs on the PR directly.
           inputs: nixpkgs disko colmena
+          pr-assignees: msanft
+          pr-reviewers: msanft
