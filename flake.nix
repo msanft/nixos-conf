@@ -1,22 +1,10 @@
 {
   inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    remote-builders = {
-      url = "git+ssh://git@github.com/edgelesssys/nix-remote-builders";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    disko.url = "github:nix-community/disko";
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     colmena = {
       url = "github:zhaofengli/colmena";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    homepage = {
-      url = "github:msanft/homepage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ida-pro-overlay = {
@@ -29,26 +17,6 @@
     inputs:
     rec {
       nixosConfigurations = {
-        tp = inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/tp/configuration.nix
-            ./hosts/tp/hardware-configuration.nix
-            inputs.disko.nixosModules.disko
-            inputs.remote-builders.nixosModules.remote-builders
-            inputs.lanzaboote.nixosModules.lanzaboote
-            ./hosts/tp/disko.nix
-            {
-              nixpkgs.overlays = [
-                inputs.ida-pro-overlay.overlays.default
-              ];
-            }
-          ];
-          specialArgs = {
-            inherit inputs;
-          };
-        };
-
         bastion = inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
@@ -59,6 +27,7 @@
                 inputs.ida-pro-overlay.overlays.default
               ];
             }
+            inputs.determinate.nixosModules.default
           ];
           specialArgs = {
             inherit inputs;
