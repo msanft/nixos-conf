@@ -17,4 +17,3 @@ jobs:
           token: ${{ secrets.PR_TOKEN }} # Required so CI runs on the PR directly.
           inputs: nixpkgs disko colmena
           pr-assignees: msanft
-          pr-reviewers: msanft
