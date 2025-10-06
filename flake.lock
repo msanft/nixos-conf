@@ -204,11 +204,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758125965,
-        "narHash": "sha256-OGriNp3Q/eSo8JL5qeRbgVNB49SMO3qbfd50wVQBm0s=",
+        "lastModified": 1758527109,
+        "narHash": "sha256-82ibOn1D5U0FMt7a2wir7lzUl9SbJvjGIGZgUI4JGEI=",
         "owner": "msanft",
         "repo": "ida-pro-overlay",
-        "rev": "b69522edab2be3afe06396468fde48a55edbb488",
+        "rev": "8581ad9182898b82a58a3a4d3a8a146ed4418dc1",
         "type": "github"
       },
       "original": {
@@ -337,11 +337,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1758294315,
-        "narHash": "sha256-H+C4c+jKCZpSJHODHFaY6b2ciB3Hv00V5QKA7yUVtis=",
+        "lastModified": 1759600836,
+        "narHash": "sha256-ad0XLmCm17Ffg9GafSjuaGat01iTJmDk2IrX9+5jdzo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "90ade7da38aa49c2e2693a04a44662a0e61530e9",
+        "rev": "0832d1b3a08fe4c695507a075d547ebfa818dfa0",
         "type": "github"
       },
       "original": {
