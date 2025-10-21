@@ -30,11 +30,12 @@
 
     # Cloud Stuff
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-    awscli2
+    # awscli2
     # azure-cli # TODO(msanft): re-enable once https://github.com/NixOS/nixpkgs/issues/437525 is resolved
     kubectl
     k9s
     kubernetes-helm
+    k6 # to satisfy the IDE extension
 
     # Shell
     bash
