@@ -58,6 +58,7 @@
     p7zip
     wget
     xxd
+    patchelf
 
     # Desktop Applications
     vscode
