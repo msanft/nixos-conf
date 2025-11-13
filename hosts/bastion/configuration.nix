@@ -9,6 +9,7 @@
 
   users.users.msanft.extraGroups = [ "wireshark" ];
   programs.wireshark.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
 
   services.resolved.domains = [ "msanft.home" ];
 
