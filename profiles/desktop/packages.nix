@@ -13,6 +13,7 @@
     nix-output-monitor
     go
     clang
+    clang-tools
     gcc
     docker
     man-pages
@@ -23,6 +24,7 @@
     direnv
     difftastic
     wget
+    bun
 
     # IDE
     vscode
@@ -30,8 +32,6 @@
 
     # Cloud Stuff
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-    # awscli2
-    # azure-cli # TODO(msanft): re-enable once https://github.com/NixOS/nixpkgs/issues/437525 is resolved
     kubectl
     k9s
     kubernetes-helm
@@ -59,6 +59,7 @@
     wget
     xxd
     patchelf
+    wormhole-rs
 
     # Desktop Applications
     vscode
@@ -71,7 +72,7 @@
     google-chrome
     _1password-gui
     thunderbird
-
+    
     (callPackage ida-pro {
       runfile = /nix/store/lrdbfymfpv633532pf6zx4hjngiy7gih-ida-pro_92_x64linux.run;
     })

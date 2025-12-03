@@ -10,6 +10,7 @@ in
 {
   fonts = {
     enableDefaultPackages = true;
+    enableGhostscriptFonts = true;
     packages = fontList;
 
     fontconfig = {
