@@ -72,9 +72,7 @@
     google-chrome
     _1password-gui
     thunderbird
-    
-    (callPackage ida-pro {
-      runfile = /nix/store/lrdbfymfpv633532pf6zx4hjngiy7gih-ida-pro_92_x64linux.run;
-    })
+
+    ida-pro
   ];
 }
