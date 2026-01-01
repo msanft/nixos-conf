@@ -60,6 +60,8 @@
     xxd
     patchelf
     wormhole-rs
+    dig
+    net-tools
 
     # Desktop Applications
     vscode
