@@ -70,9 +70,9 @@
 
   networking.extraHosts = ''
     127.0.0.1    license.confidential.cloud
-    127.0.0.1    ampcode.com
   '';
-
+  # 127.0.0.1    ampcode.com
+  
   systemd.services.autorandr.after = [ "multi-user.target" ];
 
   security.pki.certificates = [
