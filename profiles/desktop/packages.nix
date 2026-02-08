@@ -62,6 +62,9 @@
     wormhole-rs
     dig
     net-tools
+    ripgrep
+    codeql
+    claude-code
 
     # Desktop Applications
     vscode
@@ -74,6 +77,7 @@
     google-chrome
     _1password-gui
     thunderbird
+    signal-desktop
 
     ida-pro
   ];
