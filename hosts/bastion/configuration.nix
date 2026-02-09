@@ -11,7 +11,7 @@
   programs.wireshark.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
 
-  services.resolved.domains = [ "msanft.home" ];
+  services.resolved.settings.Resolve.Domains = [ "msanft.home" ];
 
   system.stateVersion = "25.11";
 }
