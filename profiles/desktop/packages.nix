@@ -63,7 +63,6 @@
     dig
     net-tools
     ripgrep
-    codeql
     claude-code
 
     # Desktop Applications
