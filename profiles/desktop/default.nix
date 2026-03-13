@@ -58,6 +58,7 @@
 
     initrd.systemd.enable = true;
 
+    # TODO: Switch to 6.19 once build is fixed
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
@@ -68,11 +69,12 @@
 
   services.resolved.enable = true;
 
+  services.paretosecurity.enable = true;
+
   networking.extraHosts = ''
     127.0.0.1    license.confidential.cloud
   '';
-  # 127.0.0.1    ampcode.com
-  
+
   systemd.services.autorandr.after = [ "multi-user.target" ];
 
   security.pki.certificates = [

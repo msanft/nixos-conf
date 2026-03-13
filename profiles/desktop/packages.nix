@@ -1,6 +1,15 @@
 { pkgs
 , ...
 }:
+let
+  ida-patched = (pkgs.callPackage ../../packages/ida-patched {
+    ida-package = pkgs.ida-pro;
+    patch = (pkgs.fetchurl {
+      url = "https://gist.github.com/ReaJason/466ab4f35171b2dcca1c075ce5ee1195/raw/599773699a663b6e5eac6e06552b7597244bd4dc/patch.py";
+      hash = "sha256-p4HqJctK550XEkOH4WraQZE16e+3AYlG0LFFyCI503s=";
+    });
+  });
+in
 {
   environment.systemPackages = with pkgs; [
     # Dev Tooling
@@ -78,6 +87,10 @@
     thunderbird
     signal-desktop
 
-    ida-pro
+    ida-patched
+  ];
+
+  systemd.tmpfiles.rules = [
+    "L+ /var/lib/idapro.hexlic - - - - ${ida-patched}/share/idapro.hexlic"
   ];
 }
