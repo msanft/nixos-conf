@@ -73,6 +73,7 @@ in
     net-tools
     ripgrep
     claude-code
+    fd
 
     # Desktop Applications
     vscode
