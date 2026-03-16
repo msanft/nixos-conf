@@ -5,6 +5,7 @@
   imports = [
     ../../modules/services/input
     ../../modules/nixos/tailscale.nix
+    ../../modules/nixos/secureboot.nix
     ../../modules/system/i18n
     ../../modules/system/audio
     ../../modules/system/fonts
@@ -58,12 +59,13 @@
 
     initrd.systemd.enable = true;
 
-    # TODO: Switch to 6.19 once build is fixed
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
   my.gnome.enable = true;
   my.plymouth.enable = true;
+
+  my.secureboot.enable = true;
 
   services.fwupd.enable = true;
 
