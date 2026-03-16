@@ -88,6 +88,9 @@ in
     thunderbird
     signal-desktop
 
+    # Gnome extensions
+    gnomeExtensions.appindicator
+
     ida-patched
   ];
 
