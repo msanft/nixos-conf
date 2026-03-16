@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../../profiles/desktop
@@ -7,11 +7,17 @@
 
   networking.hostName = "bastion";
 
-  users.users.msanft.extraGroups = [ "wireshark" ];
   programs.wireshark.enable = true;
 
   programs.virt-manager.enable = true;
-  
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.vhostUserPackages = [ pkgs.virtiofsd ];
+  };
+  virtualisation.spiceUSBRedirection.enable = true;
+
+  users.users.msanft.extraGroups = [ "wireshark" "libvirtd" ];
+
   hardware.nvidia-container-toolkit.enable = true;
 
   services.resolved.settings.Resolve.Domains = [ "msanft.home" ];
